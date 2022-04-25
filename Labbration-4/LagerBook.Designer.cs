@@ -44,7 +44,7 @@
             this.tabControl2.Location = new System.Drawing.Point(0, 0);
             this.tabControl2.Name = "tabControl2";
             this.tabControl2.SelectedIndex = 0;
-            this.tabControl2.Size = new System.Drawing.Size(1630, 1087);
+            this.tabControl2.Size = new System.Drawing.Size(1555, 1031);
             this.tabControl2.TabIndex = 0;
             // 
             // BokTab
@@ -52,7 +52,7 @@
             this.BokTab.Location = new System.Drawing.Point(4, 29);
             this.BokTab.Name = "BokTab";
             this.BokTab.Padding = new System.Windows.Forms.Padding(3);
-            this.BokTab.Size = new System.Drawing.Size(1622, 1054);
+            this.BokTab.Size = new System.Drawing.Size(1547, 998);
             this.BokTab.TabIndex = 2;
             this.BokTab.Text = "Bok";
             this.BokTab.UseVisualStyleBackColor = true;
@@ -66,13 +66,12 @@
             this.DataSpelTab.TabIndex = 3;
             this.DataSpelTab.Text = "DataSpel";
             this.DataSpelTab.UseVisualStyleBackColor = true;
-      
             // 
             // FilmTab
             // 
             this.FilmTab.Location = new System.Drawing.Point(4, 29);
             this.FilmTab.Name = "FilmTab";
-            this.FilmTab.Size = new System.Drawing.Size(1580, 888);
+            this.FilmTab.Size = new System.Drawing.Size(1622, 1054);
             this.FilmTab.TabIndex = 4;
             this.FilmTab.Text = "Film";
             this.FilmTab.UseVisualStyleBackColor = true;
@@ -81,7 +80,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1630, 1087);
+            this.ClientSize = new System.Drawing.Size(1555, 1031);
             this.Controls.Add(this.tabControl2);
             this.Name = "LagerTabs";
             this.Text = "LagerTabs";

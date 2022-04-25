@@ -25,11 +25,12 @@ namespace Labbration_4
             Kassa kassa = new Kassa();
             kassa.ShowDialog();
         }
-
+        /*
         private void Form1_Load(object sender, EventArgs e)
         {
            
         }
+        */
 
         private void AvslutaButton_Click(object sender, EventArgs e)
         {
