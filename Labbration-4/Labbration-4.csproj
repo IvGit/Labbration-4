@@ -51,6 +51,7 @@
   <ItemGroup>
     <Compile Include="Book.cs" />
     <Compile Include="DataSpel.cs" />
+    <Compile Include="Filmer.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -83,11 +84,11 @@
     <Compile Include="påLagerControll.Designer.cs">
       <DependentUpon>påLagerControll.cs</DependentUpon>
     </Compile>
-    <Compile Include="SpelManagmentControl.cs">
+    <Compile Include="SäljaControll.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="SpelManagmentControl.Designer.cs">
-      <DependentUpon>SpelManagmentControl.cs</DependentUpon>
+    <Compile Include="SäljaControll.Designer.cs">
+      <DependentUpon>SäljaControll.cs</DependentUpon>
     </Compile>
     <Compile Include="UserControl1.cs">
       <SubType>UserControl</SubType>
@@ -100,6 +101,12 @@
     </Compile>
     <Compile Include="UserControl2.Designer.cs">
       <DependentUpon>UserControl2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl3.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControl3.Designer.cs">
+      <DependentUpon>UserControl3.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
@@ -125,14 +132,17 @@
     <EmbeddedResource Include="påLagerControll.resx">
       <DependentUpon>påLagerControll.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="SpelManagmentControl.resx">
-      <DependentUpon>SpelManagmentControl.cs</DependentUpon>
+    <EmbeddedResource Include="SäljaControll.resx">
+      <DependentUpon>SäljaControll.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControl1.resx">
       <DependentUpon>UserControl1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControl2.resx">
       <DependentUpon>UserControl2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControl3.resx">
+      <DependentUpon>UserControl3.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

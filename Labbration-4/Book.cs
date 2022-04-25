@@ -8,6 +8,17 @@
         public string Författare { get; set; }
         public string Genre { get; set; }
         public string Format { get; set; }
+        public bool BoVale { get; internal set; }
+
+        public Book()
+        {
+            BoVale = false;
+        }
+
+        public override string ToString()
+        {
+            return $"{Genre} {Format}";
+        }
 
 
     }

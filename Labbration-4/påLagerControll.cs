@@ -140,5 +140,15 @@ namespace Labbration_4
             BookDataGrid_SelectionChanged(sender, null);
            // SetTextEnabled(false);
         }
+
+        private void BookDataGrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void MainSpliter_Panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

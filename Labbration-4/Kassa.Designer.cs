@@ -28,20 +28,49 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.SäljaTab = new System.Windows.Forms.TabControl();
+            this.SäljaTab1 = new System.Windows.Forms.TabPage();
+            this.SäljaTab.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // SäljaTab
+            // 
+            this.SäljaTab.Controls.Add(this.SäljaTab1);
+            this.SäljaTab.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.SäljaTab.Location = new System.Drawing.Point(0, 0);
+            this.SäljaTab.Name = "SäljaTab";
+            this.SäljaTab.SelectedIndex = 0;
+            this.SäljaTab.Size = new System.Drawing.Size(815, 759);
+            this.SäljaTab.TabIndex = 0;
+            // 
+            // SäljaTab1
+            // 
+            this.SäljaTab1.Location = new System.Drawing.Point(4, 29);
+            this.SäljaTab1.Name = "SäljaTab1";
+            this.SäljaTab1.Padding = new System.Windows.Forms.Padding(3);
+            this.SäljaTab1.Size = new System.Drawing.Size(807, 726);
+            this.SäljaTab1.TabIndex = 0;
+            this.SäljaTab1.Text = "Sälja";
+            this.SäljaTab1.UseVisualStyleBackColor = true;
+            this.SäljaTab1.Click += new System.EventHandler(this.SäljaTab1_Click);
             // 
             // Kassa
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1601, 928);
+            this.ClientSize = new System.Drawing.Size(815, 759);
+            this.Controls.Add(this.SäljaTab);
             this.Name = "Kassa";
             this.Text = "Kassa";
-          
+            this.Load += new System.EventHandler(this.Kassa_Load);
+            this.SäljaTab.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
+
+        private System.Windows.Forms.TabControl SäljaTab;
+        private System.Windows.Forms.TabPage SäljaTab1;
     }
 }

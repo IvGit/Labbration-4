@@ -1,6 +1,6 @@
 ﻿namespace Labbration_4
 {
-    partial class SpelManagmentControl
+    partial class UserControl3
     {
         /// <summary> 
         /// Required designer variable.
@@ -28,8 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
-            components = new System.ComponentModel.Container();
+            this.SuspendLayout();
+            // 
+            // UserControl3
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Name = "UserControl3";
+            this.Size = new System.Drawing.Size(732, 566);
+            this.ResumeLayout(false);
+
         }
 
         #endregion

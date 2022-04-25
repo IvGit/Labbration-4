@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Labbration_4
 {
-    public partial class SpelManagmentControl : UserControl
+    public partial class UserControl3 : UserControl
     {
-        public SpelManagmentControl()
+        public UserControl3()
         {
             InitializeComponent();
         }

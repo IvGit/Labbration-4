@@ -86,7 +86,7 @@
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.BookDataGrid.DefaultCellStyle = dataGridViewCellStyle2;
-            this.BookDataGrid.Location = new System.Drawing.Point(-3, 3);
+            this.BookDataGrid.Location = new System.Drawing.Point(-3, 0);
             this.BookDataGrid.MultiSelect = false;
             this.BookDataGrid.Name = "BookDataGrid";
             this.BookDataGrid.ReadOnly = true;
@@ -107,6 +107,7 @@
             this.BookDataGrid.ShowRowErrors = false;
             this.BookDataGrid.Size = new System.Drawing.Size(954, 819);
             this.BookDataGrid.TabIndex = 0;
+            this.BookDataGrid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.BookDataGrid_CellContentClick);
             this.BookDataGrid.SelectionChanged += new System.EventHandler(this.BookDataGrid_SelectionChanged);
             // 
             // MainSpliter
@@ -139,6 +140,7 @@
             this.MainSpliter.Panel2.Controls.Add(this.label1);
             this.MainSpliter.Panel2.Controls.Add(this.Titt);
             this.MainSpliter.Panel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MainSpliter.Panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.MainSpliter_Panel2_Paint);
             this.MainSpliter.Size = new System.Drawing.Size(1456, 911);
             this.MainSpliter.SplitterDistance = 954;
             this.MainSpliter.TabIndex = 1;

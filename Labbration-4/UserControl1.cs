@@ -17,7 +17,7 @@ namespace Labbration_4
         {
             InitializeComponent();
             this.DataSpelSource = dataSpelSource;
-            dataGridView1.DataSource = dataSpelSource;
+            DataSpelDataGrid.DataSource = dataSpelSource;
 
         }
 

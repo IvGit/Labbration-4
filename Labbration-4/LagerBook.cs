@@ -12,8 +12,11 @@ namespace Labbration_4
 {
     public partial class LagerTabs : Form
     {
+        BindingList <Filmer> FilmerList;
         BindingList<Book> BookList;
         BindingList<DataSpel> DataspelList;
+
+        BindingSource FilmSource;
         BindingSource DataSpelSource;
         BindingSource BookListSource;
         public LagerTabs()
@@ -44,6 +47,24 @@ namespace Labbration_4
 
             DataSpelSource = new BindingSource();
             DataSpelSource.DataSource = DataspelList;
+
+          
+
+
+
+            FilmerList = new BindingList<Filmer>()
+            {
+                new Filmer()
+                {
+                    Namn =" nycklen till frihet", Pris = "99",Format = "DVD", Speltid =" 142"
+                }
+            };
+
+            FilmSource = new BindingSource();
+            FilmSource.DataSource = FilmerList;
+
+
+
         }
 
         private void Lager_Load(object sender, EventArgs e)
@@ -57,10 +78,25 @@ namespace Labbration_4
             DataSpelTab.Controls.Add(cl);
 
 
-            UserControl2 control2 = new UserControl2();
+            UserControl2 control2 = new UserControl2(FilmSource);
             control2.Dock = DockStyle.Fill;
             FilmTab.Controls.Add(control2);
+
         }
 
+        private void BokTab_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void FilmTab_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void DataSpelTab_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

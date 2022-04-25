@@ -56,25 +56,28 @@
             this.BokTab.TabIndex = 2;
             this.BokTab.Text = "Bok";
             this.BokTab.UseVisualStyleBackColor = true;
+            this.BokTab.Click += new System.EventHandler(this.BokTab_Click);
             // 
             // DataSpelTab
             // 
             this.DataSpelTab.Location = new System.Drawing.Point(4, 29);
             this.DataSpelTab.Name = "DataSpelTab";
             this.DataSpelTab.Padding = new System.Windows.Forms.Padding(3);
-            this.DataSpelTab.Size = new System.Drawing.Size(1622, 1054);
+            this.DataSpelTab.Size = new System.Drawing.Size(1547, 998);
             this.DataSpelTab.TabIndex = 3;
             this.DataSpelTab.Text = "DataSpel";
             this.DataSpelTab.UseVisualStyleBackColor = true;
+            this.DataSpelTab.Click += new System.EventHandler(this.DataSpelTab_Click);
             // 
             // FilmTab
             // 
             this.FilmTab.Location = new System.Drawing.Point(4, 29);
             this.FilmTab.Name = "FilmTab";
-            this.FilmTab.Size = new System.Drawing.Size(1622, 1054);
+            this.FilmTab.Size = new System.Drawing.Size(1547, 998);
             this.FilmTab.TabIndex = 4;
             this.FilmTab.Text = "Film";
             this.FilmTab.UseVisualStyleBackColor = true;
+            this.FilmTab.Click += new System.EventHandler(this.FilmTab_Click);
             // 
             // LagerTabs
             // 
