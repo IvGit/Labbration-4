@@ -43,15 +43,11 @@ namespace Labbration_4
         private void BookListDataGrid_selectionChanged(object sender, EventArgs e)
         {
             if (BookListDataGrid.SelectedRows.Count < 1)
-            
-              //  SetTextEnabled(true);
                 return;
-            
-
             var book = (Book)BookListDataGrid.SelectedRows[0].DataBoundItem;
             textBox1.Text = book.Genre;
             BookListDataGrid.ClearSelection();
-            textBox1.Focus();   
+            textBox1.Focus();
             textBox1.SelectAll();
         }
 
@@ -68,12 +64,25 @@ namespace Labbration_4
 
         private void FinishButton_Click(object sender, EventArgs e)
         {
-            foreach(var item in textBox1.Items)
+            foreach(var item in listBox1.Items)
             {
                 var book = (Book)item;
-                book.BoVale = true;
+                book.BoVale = radioLend.Checked;
             }
             BookListS.ResetBindings(false);
+            listBox1.Items.Clear();
+            textBox1.Text = "";
+            textBox1.Focus();
+        }
+
+        private void radioLend_CheckedChanged(object sender, EventArgs e)
+        {
+            FinishButon.Text = "Lend ";
+        }
+
+        private void RadioReturn_CheckedChanged(object sender, EventArgs e)
+        {
+            FinishButon.Text = "Return ";
         }
     }
 }

@@ -33,10 +33,12 @@
             this.AddToTabelButton = new System.Windows.Forms.Button();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
+            this.FinishButon = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.BookListDataGrid = new System.Windows.Forms.DataGridView();
-            this.FinishButon = new System.Windows.Forms.Button();
+            this.RadioReturn = new System.Windows.Forms.RadioButton();
+            this.radioLend = new System.Windows.Forms.RadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -61,14 +63,14 @@
             // 
             this.textBox1.Location = new System.Drawing.Point(60, 72);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(171, 26);
+            this.textBox1.Size = new System.Drawing.Size(137, 26);
             this.textBox1.TabIndex = 1;
             // 
             // AddToTabelButton
             // 
             this.AddToTabelButton.Location = new System.Drawing.Point(132, 105);
             this.AddToTabelButton.Name = "AddToTabelButton";
-            this.AddToTabelButton.Size = new System.Drawing.Size(97, 34);
+            this.AddToTabelButton.Size = new System.Drawing.Size(87, 34);
             this.AddToTabelButton.TabIndex = 2;
             this.AddToTabelButton.Text = "Add";
             this.AddToTabelButton.UseVisualStyleBackColor = true;
@@ -99,6 +101,8 @@
             // 
             // splitContainer2.Panel1
             // 
+            this.splitContainer2.Panel1.Controls.Add(this.radioLend);
+            this.splitContainer2.Panel1.Controls.Add(this.RadioReturn);
             this.splitContainer2.Panel1.Controls.Add(this.FinishButon);
             this.splitContainer2.Panel1.Controls.Add(this.label2);
             this.splitContainer2.Panel1.Controls.Add(this.textBox1);
@@ -109,8 +113,18 @@
             // 
             this.splitContainer2.Panel2.Controls.Add(this.listBox1);
             this.splitContainer2.Size = new System.Drawing.Size(990, 230);
-            this.splitContainer2.SplitterDistance = 200;
+            this.splitContainer2.SplitterDistance = 222;
             this.splitContainer2.TabIndex = 5;
+            // 
+            // FinishButon
+            // 
+            this.FinishButon.Location = new System.Drawing.Point(51, 105);
+            this.FinishButon.Name = "FinishButon";
+            this.FinishButon.Size = new System.Drawing.Size(75, 34);
+            this.FinishButon.TabIndex = 4;
+            this.FinishButon.Text = "Finish";
+            this.FinishButon.UseVisualStyleBackColor = true;
+            this.FinishButon.Click += new System.EventHandler(this.FinishButton_Click);
             // 
             // label2
             // 
@@ -128,7 +142,7 @@
             this.listBox1.ItemHeight = 20;
             this.listBox1.Location = new System.Drawing.Point(0, 0);
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(1132, 331);
+            this.listBox1.Size = new System.Drawing.Size(764, 230);
             this.listBox1.TabIndex = 4;
             // 
             // BookListDataGrid
@@ -154,15 +168,29 @@
             this.BookListDataGrid.TabIndex = 0;
             this.BookListDataGrid.SelectionChanged += new System.EventHandler(this.BookListDataGrid_selectionChanged);
             // 
-            // FinishButon
+            // RadioReturn
             // 
-            this.FinishButon.Location = new System.Drawing.Point(51, 111);
-            this.FinishButon.Name = "FinishButon";
-            this.FinishButon.Size = new System.Drawing.Size(75, 23);
-            this.FinishButon.TabIndex = 4;
-            this.FinishButon.Text = "Finish";
-            this.FinishButon.UseVisualStyleBackColor = true;
-            this.FinishButon.Click += new System.EventHandler(this.FinishButton_Click);
+            this.RadioReturn.AutoSize = true;
+            this.RadioReturn.Checked = true;
+            this.RadioReturn.Location = new System.Drawing.Point(17, 145);
+            this.RadioReturn.Name = "RadioReturn";
+            this.RadioReturn.Size = new System.Drawing.Size(100, 29);
+            this.RadioReturn.TabIndex = 5;
+            this.RadioReturn.TabStop = true;
+            this.RadioReturn.Text = "Return";
+            this.RadioReturn.UseVisualStyleBackColor = true;
+            this.RadioReturn.CheckedChanged += new System.EventHandler(this.RadioReturn_CheckedChanged);
+            // 
+            // radioLend
+            // 
+            this.radioLend.AutoSize = true;
+            this.radioLend.Location = new System.Drawing.Point(17, 175);
+            this.radioLend.Name = "radioLend";
+            this.radioLend.Size = new System.Drawing.Size(84, 29);
+            this.radioLend.TabIndex = 6;
+            this.radioLend.Text = "Lend";
+            this.radioLend.UseVisualStyleBackColor = true;
+            this.radioLend.CheckedChanged += new System.EventHandler(this.radioLend_CheckedChanged);
             // 
             // SäljaControll
             // 
@@ -197,5 +225,7 @@
         private System.Windows.Forms.ListBox listBox1;
         private System.Windows.Forms.SplitContainer splitContainer2;
         private System.Windows.Forms.Button FinishButon;
+        private System.Windows.Forms.RadioButton RadioReturn;
+        private System.Windows.Forms.RadioButton radioLend;
     }
 }
