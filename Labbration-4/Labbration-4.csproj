@@ -70,6 +70,7 @@
     <Compile Include="LagerBook.Designer.cs">
       <DependentUpon>LagerBook.cs</DependentUpon>
     </Compile>
+    <Compile Include="Library.cs" />
     <Compile Include="LäggTillBook.cs">
       <SubType>Form</SubType>
     </Compile>

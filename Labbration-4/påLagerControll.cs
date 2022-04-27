@@ -14,11 +14,14 @@ namespace Labbration_4
     {
         BindingSource BoookListSource;
         Book SelectedItem;
-        public påLagerControll(BindingSource bookListSource)
+        Library lib;
+        public påLagerControll(Library liB, BindingSource bookListSource)
         {
             InitializeComponent();
             this.BoookListSource = bookListSource;
             BookDataGrid.DataSource = bookListSource;
+            lib = new Library();
+            lib = liB;
         }
 
 

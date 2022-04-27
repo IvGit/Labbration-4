@@ -19,10 +19,13 @@ namespace Labbration_4
         BindingSource FilmSource;
         BindingSource DataSpelSource;
         BindingSource BookListSource;
+        Library lib;
         public LagerTabs()
         {
             InitializeComponent();
-            BookList = new BindingList<Book>() 
+            lib = new Library();
+           /* BookList = new BindingList<Book>() 
+            
             {
                 new Book()
                 {
@@ -34,7 +37,7 @@ namespace Labbration_4
                     Name = "Iv", Författare ="Heming", Format = "", Genre = "Horro", Pris = "250", Språk = ""
                 }
             };
-
+            */
             DataspelList = new BindingList<DataSpel>()
             {
                 new DataSpel() { Name = "Halo", Plattform = "PS3", Pris = "9000"},
@@ -43,7 +46,7 @@ namespace Labbration_4
 
 
             BookListSource = new BindingSource();
-            BookListSource.DataSource = BookList;
+            BookListSource.DataSource = lib.BookList;
 
             DataSpelSource = new BindingSource();
             DataSpelSource.DataSource = DataspelList;

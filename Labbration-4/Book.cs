@@ -1,6 +1,6 @@
 ﻿namespace Labbration_4
 {
-    internal class Book
+    public class Book
     {
         public string Språk { get; set; }
         public string Name { get; set; }

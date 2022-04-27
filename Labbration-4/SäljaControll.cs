@@ -17,13 +17,16 @@ namespace Labbration_4
 
 
         private BindingSource BookListS;
+        Library lib;
        
 
-        public SäljaControll(BindingSource bookListSource)
+        public SäljaControll(Library liB, BindingSource bookListSource)
         {
             InitializeComponent();
             BookListS = bookListSource;
              BookListDataGrid.DataSource = bookListSource;
+            lib = new Library();
+            lib = liB;
 
             
         }
@@ -58,6 +61,7 @@ namespace Labbration_4
                 if(book.Genre == textBox1.Text.Trim())
                 {
                     listBox1.Items.Add(book);
+                    lib.saveFile();
                 }
             }
         }
