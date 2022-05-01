@@ -10,14 +10,18 @@ using System.Windows.Forms;
 
 namespace Labbration_4
 {
-    public partial class UserControl1 : UserControl
+    public partial class DataSpelControl : UserControl
     {
-        BindingSource DataSpelSource;
-        public UserControl1(BindingSource dataSpelSource)
+        BindingSource FilmSource;
+        public DataSpelControl(BindingSource filmSource)
         {
             InitializeComponent();
-            this.DataSpelSource = dataSpelSource;
-            DataSpelDataGrid.DataSource = dataSpelSource;
+            this.FilmSource = filmSource;
+            FilmListDataGrid.DataSource = filmSource;
+        }
+
+        private void UserControl2_Load(object sender, EventArgs e)
+        {
 
         }
 

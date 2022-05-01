@@ -59,7 +59,7 @@ namespace Labbration_4
             {
                 new Filmer()
                 {
-                    Namn =" nycklen till frihet", Pris = "99",Format = "DVD", Speltid =" 142"
+                    Name =" nycklen till frihet", Pris = "99",Format = "DVD", Speltid =" 142"
                 }
             };
 
@@ -72,34 +72,20 @@ namespace Labbration_4
 
         private void Lager_Load(object sender, EventArgs e)
         {
-            påLagerControll pålager = new påLagerControll(BookListSource);
+            BöckerControll pålager = new BöckerControll(lib,BookListSource);
             pålager.Dock = DockStyle.Fill;
             BokTab.Controls.Add(pålager);
 
-            UserControl1 cl = new UserControl1(DataSpelSource);
+            FilmerControl cl = new FilmerControl(FilmSource);
             cl.Dock = DockStyle.Fill;   
-            DataSpelTab.Controls.Add(cl);
+            FilmTab.Controls.Add(cl);
 
-
-            UserControl2 control2 = new UserControl2(FilmSource);
+   /*
+            DataSpelControl control2 = new DataSpelControl(DataspelList);
             control2.Dock = DockStyle.Fill;
-            FilmTab.Controls.Add(control2);
-
+            DataSpelTab.Controls.Add(control2);
+   */
         }
 
-        private void BokTab_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void FilmTab_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void DataSpelTab_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }

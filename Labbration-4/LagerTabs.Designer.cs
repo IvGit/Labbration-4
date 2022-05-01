@@ -56,7 +56,7 @@
             this.BokTab.TabIndex = 2;
             this.BokTab.Text = "Bok";
             this.BokTab.UseVisualStyleBackColor = true;
-            this.BokTab.Click += new System.EventHandler(this.BokTab_Click);
+            
             // 
             // DataSpelTab
             // 
@@ -67,8 +67,7 @@
             this.DataSpelTab.TabIndex = 3;
             this.DataSpelTab.Text = "DataSpel";
             this.DataSpelTab.UseVisualStyleBackColor = true;
-            this.DataSpelTab.Click += new System.EventHandler(this.DataSpelTab_Click);
-            // 
+            
             // FilmTab
             // 
             this.FilmTab.Location = new System.Drawing.Point(4, 29);
@@ -77,7 +76,7 @@
             this.FilmTab.TabIndex = 4;
             this.FilmTab.Text = "Film";
             this.FilmTab.UseVisualStyleBackColor = true;
-            this.FilmTab.Click += new System.EventHandler(this.FilmTab_Click);
+          
             // 
             // LagerTabs
             // 

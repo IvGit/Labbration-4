@@ -64,11 +64,11 @@
     <Compile Include="Kassa.Designer.cs">
       <DependentUpon>Kassa.cs</DependentUpon>
     </Compile>
-    <Compile Include="LagerBook.cs">
+    <Compile Include="LagerTabs.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="LagerBook.Designer.cs">
-      <DependentUpon>LagerBook.cs</DependentUpon>
+    <Compile Include="LagerTabs.Designer.cs">
+      <DependentUpon>LagerTabs.cs</DependentUpon>
     </Compile>
     <Compile Include="Library.cs" />
     <Compile Include="LäggTillBook.cs">
@@ -77,13 +77,19 @@
     <Compile Include="LäggTillBook.Designer.cs">
       <DependentUpon>LäggTillBook.cs</DependentUpon>
     </Compile>
+    <Compile Include="LäggTillFilm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LäggTillFilm.Designer.cs">
+      <DependentUpon>LäggTillFilm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="påLagerControll.cs">
+    <Compile Include="BöckerControll.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="påLagerControll.Designer.cs">
-      <DependentUpon>påLagerControll.cs</DependentUpon>
+    <Compile Include="BöckerControll.Designer.cs">
+      <DependentUpon>BöckerControll.cs</DependentUpon>
     </Compile>
     <Compile Include="SäljaControll.cs">
       <SubType>UserControl</SubType>
@@ -91,23 +97,17 @@
     <Compile Include="SäljaControll.Designer.cs">
       <DependentUpon>SäljaControll.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserControl1.cs">
+    <Compile Include="FilmerControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserControl1.Designer.cs">
-      <DependentUpon>UserControl1.cs</DependentUpon>
+    <Compile Include="FilmerControl.Designer.cs">
+      <DependentUpon>FilmerControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserControl2.cs">
+    <Compile Include="DataSpelControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserControl2.Designer.cs">
-      <DependentUpon>UserControl2.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UserControl3.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UserControl3.Designer.cs">
-      <DependentUpon>UserControl3.cs</DependentUpon>
+    <Compile Include="DataSpelControl.Designer.cs">
+      <DependentUpon>DataSpelControl.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
@@ -115,11 +115,14 @@
     <EmbeddedResource Include="Kassa.resx">
       <DependentUpon>Kassa.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="LagerBook.resx">
-      <DependentUpon>LagerBook.cs</DependentUpon>
+    <EmbeddedResource Include="LagerTabs.resx">
+      <DependentUpon>LagerTabs.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LäggTillBook.resx">
       <DependentUpon>LäggTillBook.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LäggTillFilm.resx">
+      <DependentUpon>LäggTillFilm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -130,20 +133,17 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="påLagerControll.resx">
-      <DependentUpon>påLagerControll.cs</DependentUpon>
+    <EmbeddedResource Include="BöckerControll.resx">
+      <DependentUpon>BöckerControll.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SäljaControll.resx">
       <DependentUpon>SäljaControll.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControl1.resx">
-      <DependentUpon>UserControl1.cs</DependentUpon>
+    <EmbeddedResource Include="FilmerControl.resx">
+      <DependentUpon>FilmerControl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControl2.resx">
-      <DependentUpon>UserControl2.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UserControl3.resx">
-      <DependentUpon>UserControl3.cs</DependentUpon>
+    <EmbeddedResource Include="DataSpelControl.resx">
+      <DependentUpon>DataSpelControl.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

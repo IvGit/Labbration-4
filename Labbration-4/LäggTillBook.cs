@@ -42,6 +42,8 @@ namespace Labbration_4
             Close();
         }
 
+        
+
 
         //  private void Lägtill_load
     }

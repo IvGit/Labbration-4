@@ -1,10 +1,21 @@
 ﻿namespace Labbration_4
 {
-    internal class Filmer
+    public class Filmer
     {
-        public string Namn { get; set; }
+        public string Name { get; set; }
         public string Pris { get; set; }
         public string Format { get; set; }
         public string Speltid { get; set; }
+        public bool BoVale { get; private set; }
+
+        public Filmer()
+        {
+            BoVale = false;
+        }
+
+        public override string ToString()
+        {
+            return $"{Speltid} {Format}";
+        }
     }
 }

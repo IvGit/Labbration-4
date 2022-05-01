@@ -35,7 +35,7 @@ namespace Labbration_4
             };
              */
             BookListSource = new BindingSource();
-            BookListSource.DataSource = lib.BookList;
+            //BookListSource.DataSource = lib.BookList;
            
         }  
 

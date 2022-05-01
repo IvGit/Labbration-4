@@ -15,20 +15,20 @@ namespace Labbration_4
 
         public Button AcceptButton { get { return AddToTabelButton; } }
 
-
+        private BindingList<Book> BookList;
         private BindingSource BookListS;
         Library lib;
-       
+        private BindingList<DataSpel> DataspelList;
+        private BindingSource BookListSource;
+        private BindingSource DataSpelSource;
 
         public SäljaControll(Library liB, BindingSource bookListSource)
         {
             InitializeComponent();
             BookListS = bookListSource;
-             BookListDataGrid.DataSource = bookListSource;
-            lib = new Library();
-            lib = liB;
 
-            
+
+
         }
 
 
@@ -82,11 +82,41 @@ namespace Labbration_4
         private void radioLend_CheckedChanged(object sender, EventArgs e)
         {
             FinishButon.Text = "Lend ";
+
+            BookList = new BindingList<Book>()
+
+            {
+                new Book()
+                {
+                    Name = "Ivan", Författare ="Hemingway", Format = "CD", Genre = "Drama", Pris = "150", Språk = "Engelska"
+                },
+
+                new Book()
+                {
+                    Name = "Iv", Författare ="Heming", Format = "", Genre = "Horro", Pris = "250", Språk = ""
+                }
+            };
+
+
+           // BookListS = bookListSource;
+            BookListDataGrid.DataSource = BookList;
+            lib = new Library();
+           // lib = liB;
+
         }
 
         private void RadioReturn_CheckedChanged(object sender, EventArgs e)
         {
             FinishButon.Text = "Return ";
+            DataspelList = new BindingList<DataSpel>()
+            {
+                new DataSpel() { Name = "Halo", Plattform = "PS3", Pris = "9000"},
+                new DataSpel() { Name ="dota", Pris= "445", Plattform="XBOX"}
+            };
+
+
+            DataSpelSource = new BindingSource();
+            DataSpelSource.DataSource = DataspelList;
         }
     }
 }

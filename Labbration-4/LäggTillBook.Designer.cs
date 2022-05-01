@@ -41,8 +41,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.Titt = new System.Windows.Forms.Label();
-            this.CancelButton = new System.Windows.Forms.Button();
-            this.SparaButton = new System.Windows.Forms.Button();
+            this.SparaBocken = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label6
@@ -103,6 +102,7 @@
             this.NamnText.Name = "NamnText";
             this.NamnText.Size = new System.Drawing.Size(337, 31);
             this.NamnText.TabIndex = 1;
+            
             // 
             // label5
             // 
@@ -158,38 +158,23 @@
             this.Titt.TabIndex = 17;
             this.Titt.Text = "Namn";
             // 
-            // CancelButton
-            //
-            //
-            /*
-            this.CancelButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.CancelButton.Location = new System.Drawing.Point(107, 282);
-            this.CancelButton.Name = "CancelButton";
-            this.CancelButton.Size = new System.Drawing.Size(151, 54);
-            this.CancelButton.TabIndex = 7;
-            this.CancelButton.Text = "Avbryt";
-            this.CancelButton.UseVisualStyleBackColor = true;
-            this.CancelButton.Click += new System.EventHandler(this.CancelButton_Click);
-            */
+            // SparaBocken
             // 
-            // SparaButton
-            // 
-            this.SparaButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.SparaButton.Location = new System.Drawing.Point(299, 282);
-            this.SparaButton.Name = "SparaButton";
-            this.SparaButton.Size = new System.Drawing.Size(150, 54);
-            this.SparaButton.TabIndex = 8;
-            this.SparaButton.Text = "Spara Bocken";
-            this.SparaButton.UseVisualStyleBackColor = true;
-            this.SparaButton.Click += new System.EventHandler(this.SparaButton_Click);
+            this.SparaBocken.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.SparaBocken.Location = new System.Drawing.Point(299, 282);
+            this.SparaBocken.Name = "SparaBocken";
+            this.SparaBocken.Size = new System.Drawing.Size(150, 54);
+            this.SparaBocken.TabIndex = 8;
+            this.SparaBocken.Text = "Spara Bocken";
+            this.SparaBocken.UseVisualStyleBackColor = true;
+            this.SparaBocken.Click += new System.EventHandler(this.SparaButton_Click);
             // 
             // LäggTillBook
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(461, 348);
-            //this.Controls.Add(this.CancelButton);
-            this.Controls.Add(this.SparaButton);
+            this.Controls.Add(this.SparaBocken);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.SpråkText);
             this.Controls.Add(this.FormatText);
@@ -226,6 +211,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label Titt;
        // private System.Windows.Forms.Button CancelButton;
-        private System.Windows.Forms.Button SparaButton;
+        private System.Windows.Forms.Button SparaBocken;
     }
 }

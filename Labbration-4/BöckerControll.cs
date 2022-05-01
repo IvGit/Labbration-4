@@ -10,12 +10,14 @@ using System.Windows.Forms;
 
 namespace Labbration_4
 {
-    public partial class påLagerControll : UserControl
+    public partial class BöckerControll : UserControl
     {
         BindingSource BoookListSource;
         Book SelectedItem;
         Library lib;
-        public påLagerControll(Library liB, BindingSource bookListSource)
+        private BindingSource bookListSource;
+
+        public BöckerControll(Library liB, BindingSource bookListSource)
         {
             InitializeComponent();
             this.BoookListSource = bookListSource;
@@ -144,14 +146,5 @@ namespace Labbration_4
            // SetTextEnabled(false);
         }
 
-        private void BookDataGrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void MainSpliter_Panel2_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
     }
 }
