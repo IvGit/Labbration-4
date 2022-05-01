@@ -10,29 +10,24 @@ using System.Windows.Forms;
 
 namespace Labbration_4
 {
-    public partial class LäggTillFilm : Form
+    public partial class LäggTillSpel : Form
     {
-        internal Filmer film { get; private set; }
-        public LäggTillFilm()
+        internal DataSpel spel { get; private set; }
+        public LäggTillSpel()
         {
             InitializeComponent();
         }
 
         private void SparaFilm_Click(object sender, EventArgs e)
         {
-            film = new Filmer();
-            film.Name = NamnText.Text;
-            film.Pris = PrisText.Text;
-            film.Format = FormatText.Text;
-            film.Speltid = SpeltidText.Text;
+            spel = new DataSpel();
+            spel.Name = NamnTextSpel.Text;
+            spel.Pris = PrisTextSpel.Text;
+            spel.Plattform = PlattformTextSpel.Text;
+            
 
             DialogResult = DialogResult.OK;
             Close();
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

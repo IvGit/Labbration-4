@@ -102,7 +102,7 @@
             this.NamnText.Name = "NamnText";
             this.NamnText.Size = new System.Drawing.Size(337, 31);
             this.NamnText.TabIndex = 1;
-            
+    
             // 
             // label5
             // 

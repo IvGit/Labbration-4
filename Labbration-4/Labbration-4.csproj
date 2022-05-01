@@ -58,6 +58,12 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Form2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form2.Designer.cs">
+      <DependentUpon>Form2.cs</DependentUpon>
+    </Compile>
     <Compile Include="Kassa.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -82,6 +88,12 @@
     </Compile>
     <Compile Include="LäggTillFilm.Designer.cs">
       <DependentUpon>LäggTillFilm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LäggTillSpel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LäggTillSpel.Designer.cs">
+      <DependentUpon>LäggTillSpel.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -112,6 +124,9 @@
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Form2.resx">
+      <DependentUpon>Form2.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Kassa.resx">
       <DependentUpon>Kassa.cs</DependentUpon>
     </EmbeddedResource>
@@ -123,6 +138,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="LäggTillFilm.resx">
       <DependentUpon>LäggTillFilm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LäggTillSpel.resx">
+      <DependentUpon>LäggTillSpel.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

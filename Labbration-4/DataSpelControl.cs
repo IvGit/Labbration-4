@@ -12,22 +12,102 @@ namespace Labbration_4
 {
     public partial class DataSpelControl : UserControl
     {
-        BindingSource FilmSource;
-        public DataSpelControl(BindingSource filmSource)
+        BindingSource SpelSource;
+        DataSpel SelectedItem;
+        
+
+        public DataSpelControl(BindingSource spelSource)
         {
             InitializeComponent();
-            this.FilmSource = filmSource;
-            FilmListDataGrid.DataSource = filmSource;
+            this.SpelSource = spelSource;
+            SpelListDataGrid.DataSource = spelSource;
         }
 
-        private void UserControl2_Load(object sender, EventArgs e)
+        private void SpelListDataGrid_SelectionChanged(object sender, EventArgs e)
+
         {
+            if (SpelListDataGrid.SelectedRows.Count < 1)
+            {
+                SetTextEnabled(true);
+                return;
+            }
+
+            var spel = (DataSpel)SpelListDataGrid.SelectedRows[0].DataBoundItem;
+            NamnTextSpel.Text = spel.Name;
+            PlattformTextSpel.Text = spel.Plattform;
+            PrisTextSpel.Text = spel.Pris;
+            SelectedItem = spel;
+            SaveButton.Enabled = false;
+            CancelButton.Enabled = false;
+
 
         }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void SetTextEnabled(Boolean stat)
         {
+            PlattformTextSpel.Enabled = stat;
+            PrisTextSpel.Enabled = stat;
+            NamnTextSpel.Enabled = stat;
+        }
 
+        private void RaderaButtonSpel_Click(object sender, EventArgs e)
+        {
+            if (SpelListDataGrid.SelectedRows.Count < 1)
+                return;
+            var spel = (DataSpel)SpelListDataGrid.SelectedRows[0].DataBoundItem;
+            SpelSource.Remove(spel);
+            PlattformTextSpel.Text = "";
+            PrisTextSpel.Text = "";
+            NamnTextSpel.Text = "";
+            SaveButton.Enabled = false;
+            CancelButton.Enabled = false;
+            SpelListDataGrid_SelectionChanged(sender, null);
+            // SetTextEnabled(false);
+        }
+
+        private void NamnTextSpel_TextChanged(object sender, EventArgs e)
+        {
+            SaveButton.Enabled = true;
+            CancelButton.Enabled = true;
+        }
+
+        private void PrisTextSpel_TextChanged(object sender, EventArgs e)
+        {
+            SaveButton.Enabled = true;
+            CancelButton.Enabled = true;
+        }
+
+        private void PlattformTextSpel_TextChanged(object sender, EventArgs e)
+        {
+            SaveButton.Enabled = true;
+            CancelButton.Enabled = true;
+        }
+
+        private void SaveButtonSpel_Click(object sender, EventArgs e)
+        {
+            SelectedItem.Plattform = PlattformTextSpel.Text;
+            SelectedItem.Pris = PrisTextSpel.Text;
+            SelectedItem.Name = NamnTextSpel.Text;
+            SpelSource.ResetCurrentItem();
+            SpelListDataGrid_SelectionChanged(sender, null);
+        }
+
+        private void läggTuttonSpel_Click(object sender, EventArgs e)
+        {
+            LäggTillSpel tillSpel = new LäggTillSpel();
+            tillSpel.StartPosition = FormStartPosition.CenterParent;
+            if (tillSpel.ShowDialog() == DialogResult.OK)
+            {
+               SpelSource.Add(tillSpel.spel);
+            }
+            {
+
+            }
+        }
+
+        private void CancelButtonSpel_Click(object sender, EventArgs e)
+        {
+            SpelListDataGrid_SelectionChanged(sender, null);
         }
     }
 }

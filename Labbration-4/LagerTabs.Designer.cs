@@ -56,7 +56,6 @@
             this.BokTab.TabIndex = 2;
             this.BokTab.Text = "Bok";
             this.BokTab.UseVisualStyleBackColor = true;
-            
             // 
             // DataSpelTab
             // 
@@ -67,7 +66,8 @@
             this.DataSpelTab.TabIndex = 3;
             this.DataSpelTab.Text = "DataSpel";
             this.DataSpelTab.UseVisualStyleBackColor = true;
-            
+          
+            // 
             // FilmTab
             // 
             this.FilmTab.Location = new System.Drawing.Point(4, 29);
@@ -76,7 +76,6 @@
             this.FilmTab.TabIndex = 4;
             this.FilmTab.Text = "Film";
             this.FilmTab.UseVisualStyleBackColor = true;
-          
             // 
             // LagerTabs
             // 

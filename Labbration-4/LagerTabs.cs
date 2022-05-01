@@ -72,19 +72,19 @@ namespace Labbration_4
 
         private void Lager_Load(object sender, EventArgs e)
         {
-            BöckerControll pålager = new BöckerControll(lib,BookListSource);
-            pålager.Dock = DockStyle.Fill;
-            BokTab.Controls.Add(pålager);
+            BöckerControll c1= new BöckerControll(lib,BookListSource);
+            c1.Dock = DockStyle.Fill;
+            BokTab.Controls.Add(c1);
 
-            FilmerControl cl = new FilmerControl(FilmSource);
-            cl.Dock = DockStyle.Fill;   
-            FilmTab.Controls.Add(cl);
+            FilmerControl c2 = new FilmerControl(FilmSource);
+            c2.Dock = DockStyle.Fill;   
+            FilmTab.Controls.Add(c2);
 
-   /*
-            DataSpelControl control2 = new DataSpelControl(DataspelList);
-            control2.Dock = DockStyle.Fill;
-            DataSpelTab.Controls.Add(control2);
-   */
+   
+            DataSpelControl c3 = new DataSpelControl(DataSpelSource);
+            c3.Dock = DockStyle.Fill;
+            DataSpelTab.Controls.Add(c3);
+   
         }
 
     }

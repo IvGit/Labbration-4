@@ -69,7 +69,7 @@
             // 
             // PrisText
             // 
-            this.PrisText.Location = new System.Drawing.Point(81, 109);
+            this.PrisText.Location = new System.Drawing.Point(80, 109);
             this.PrisText.Multiline = true;
             this.PrisText.Name = "PrisText";
             this.PrisText.Size = new System.Drawing.Size(336, 32);
@@ -86,7 +86,7 @@
             // Titt
             // 
             this.Titt.AutoSize = true;
-            this.Titt.Location = new System.Drawing.Point(23, 75);
+            this.Titt.Location = new System.Drawing.Point(23, 83);
             this.Titt.Name = "Titt";
             this.Titt.Size = new System.Drawing.Size(51, 20);
             this.Titt.TabIndex = 35;
@@ -95,7 +95,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(39, 112);
+            this.label1.Location = new System.Drawing.Point(39, 121);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(35, 20);
             this.label1.TabIndex = 36;
@@ -104,7 +104,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(15, 150);
+            this.label4.Location = new System.Drawing.Point(15, 158);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(60, 20);
             this.label4.TabIndex = 37;
@@ -113,16 +113,17 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(12, 187);
+            this.label2.Location = new System.Drawing.Point(14, 196);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(74, 24);
+            this.label2.Size = new System.Drawing.Size(62, 20);
             this.label2.TabIndex = 38;
             this.label2.Text = "SpelTid";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // SparaFilm
             // 
             this.SparaFilm.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.SparaFilm.Location = new System.Drawing.Point(263, 228);
+            this.SparaFilm.Location = new System.Drawing.Point(287, 248);
             this.SparaFilm.Name = "SparaFilm";
             this.SparaFilm.Size = new System.Drawing.Size(150, 54);
             this.SparaFilm.TabIndex = 39;
@@ -134,7 +135,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(425, 294);
+            this.ClientSize = new System.Drawing.Size(449, 314);
             this.Controls.Add(this.SparaFilm);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label4);

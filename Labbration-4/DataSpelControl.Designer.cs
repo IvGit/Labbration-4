@@ -28,12 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.ButtonSpliter = new System.Windows.Forms.SplitContainer();
             this.läggTutton = new System.Windows.Forms.Button();
             this.RaderaButton = new System.Windows.Forms.Button();
@@ -55,15 +55,15 @@
             this.Titt = new System.Windows.Forms.Label();
             this.MainSpliter = new System.Windows.Forms.SplitContainer();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.FilmListDataGrid = new System.Windows.Forms.DataGridView();
+            this.läggTuttonSpel = new System.Windows.Forms.Button();
+            this.RaderaButtonSpel = new System.Windows.Forms.Button();
+            this.SpelListDataGrid = new System.Windows.Forms.DataGridView();
             this.label7 = new System.Windows.Forms.Label();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.CancelButtonSpel = new System.Windows.Forms.Button();
+            this.SaveButtonSpel = new System.Windows.Forms.Button();
+            this.PlattformTextSpel = new System.Windows.Forms.TextBox();
+            this.PrisTextSpel = new System.Windows.Forms.TextBox();
+            this.NamnTextSpel = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
@@ -80,7 +80,7 @@
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.FilmListDataGrid)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.SpelListDataGrid)).BeginInit();
             this.SuspendLayout();
             // 
             // ButtonSpliter
@@ -88,7 +88,7 @@
             this.ButtonSpliter.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.ButtonSpliter.IsSplitterFixed = true;
-            this.ButtonSpliter.Location = new System.Drawing.Point(124, 1191);
+            this.ButtonSpliter.Location = new System.Drawing.Point(310, 2508);
             this.ButtonSpliter.Name = "ButtonSpliter";
             // 
             // ButtonSpliter.Panel1
@@ -98,8 +98,8 @@
             // ButtonSpliter.Panel2
             // 
             this.ButtonSpliter.Panel2.Controls.Add(this.RaderaButton);
-            this.ButtonSpliter.Size = new System.Drawing.Size(1076, 84);
-            this.ButtonSpliter.SplitterDistance = 370;
+            this.ButtonSpliter.Size = new System.Drawing.Size(1951, 209);
+            this.ButtonSpliter.SplitterDistance = 670;
             this.ButtonSpliter.TabIndex = 32;
             // 
             // läggTutton
@@ -107,7 +107,7 @@
             this.läggTutton.Dock = System.Windows.Forms.DockStyle.Fill;
             this.läggTutton.Location = new System.Drawing.Point(0, 0);
             this.läggTutton.Name = "läggTutton";
-            this.läggTutton.Size = new System.Drawing.Size(370, 84);
+            this.läggTutton.Size = new System.Drawing.Size(670, 209);
             this.läggTutton.TabIndex = 0;
             this.läggTutton.Text = "Lägg Till";
             this.läggTutton.UseVisualStyleBackColor = true;
@@ -117,7 +117,7 @@
             this.RaderaButton.Dock = System.Windows.Forms.DockStyle.Fill;
             this.RaderaButton.Location = new System.Drawing.Point(0, 0);
             this.RaderaButton.Name = "RaderaButton";
-            this.RaderaButton.Size = new System.Drawing.Size(702, 84);
+            this.RaderaButton.Size = new System.Drawing.Size(1277, 209);
             this.RaderaButton.TabIndex = 14;
             this.RaderaButton.Text = "Ta Bort";
             this.RaderaButton.UseVisualStyleBackColor = true;
@@ -129,35 +129,35 @@
             this.BookDataGrid.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.BookDataGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.BookDataGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.BookDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.BookDataGrid.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.BookDataGrid.DefaultCellStyle = dataGridViewCellStyle2;
             this.BookDataGrid.Location = new System.Drawing.Point(3, 3);
             this.BookDataGrid.MultiSelect = false;
             this.BookDataGrid.Name = "BookDataGrid";
             this.BookDataGrid.ReadOnly = true;
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.BookDataGrid.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.BookDataGrid.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.BookDataGrid.RowHeadersWidth = 62;
             this.BookDataGrid.RowTemplate.Height = 28;
             this.BookDataGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -165,7 +165,7 @@
             this.BookDataGrid.ShowCellToolTips = false;
             this.BookDataGrid.ShowEditingIcon = false;
             this.BookDataGrid.ShowRowErrors = false;
-            this.BookDataGrid.Size = new System.Drawing.Size(1436, 1165);
+            this.BookDataGrid.Size = new System.Drawing.Size(2849, 2443);
             this.BookDataGrid.TabIndex = 17;
             // 
             // label6
@@ -182,7 +182,7 @@
             // CancelButton
             // 
             this.CancelButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.CancelButton.Location = new System.Drawing.Point(411, 608);
+            this.CancelButton.Location = new System.Drawing.Point(296, 1057);
             this.CancelButton.Name = "CancelButton";
             this.CancelButton.Size = new System.Drawing.Size(106, 54);
             this.CancelButton.TabIndex = 31;
@@ -192,7 +192,7 @@
             // SaveButton
             // 
             this.SaveButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.SaveButton.Location = new System.Drawing.Point(591, 608);
+            this.SaveButton.Location = new System.Drawing.Point(744, 1057);
             this.SaveButton.Name = "SaveButton";
             this.SaveButton.Size = new System.Drawing.Size(97, 54);
             this.SaveButton.TabIndex = 30;
@@ -311,22 +311,22 @@
             // MainSpliter.Panel1
             // 
             this.MainSpliter.Panel1.Controls.Add(this.splitContainer1);
-            this.MainSpliter.Panel1.Controls.Add(this.FilmListDataGrid);
+            this.MainSpliter.Panel1.Controls.Add(this.SpelListDataGrid);
             // 
             // MainSpliter.Panel2
             // 
             this.MainSpliter.Panel2.Controls.Add(this.label7);
-            this.MainSpliter.Panel2.Controls.Add(this.button3);
-            this.MainSpliter.Panel2.Controls.Add(this.button4);
-            this.MainSpliter.Panel2.Controls.Add(this.textBox4);
-            this.MainSpliter.Panel2.Controls.Add(this.textBox5);
-            this.MainSpliter.Panel2.Controls.Add(this.textBox6);
+            this.MainSpliter.Panel2.Controls.Add(this.CancelButtonSpel);
+            this.MainSpliter.Panel2.Controls.Add(this.SaveButtonSpel);
+            this.MainSpliter.Panel2.Controls.Add(this.PlattformTextSpel);
+            this.MainSpliter.Panel2.Controls.Add(this.PrisTextSpel);
+            this.MainSpliter.Panel2.Controls.Add(this.NamnTextSpel);
             this.MainSpliter.Panel2.Controls.Add(this.label11);
             this.MainSpliter.Panel2.Controls.Add(this.label12);
             this.MainSpliter.Panel2.Controls.Add(this.label13);
             this.MainSpliter.Panel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MainSpliter.Size = new System.Drawing.Size(1747, 1093);
-            this.MainSpliter.SplitterDistance = 1144;
+            this.MainSpliter.Size = new System.Drawing.Size(1455, 910);
+            this.MainSpliter.SplitterDistance = 952;
             this.MainSpliter.TabIndex = 34;
             // 
             // splitContainer1
@@ -334,86 +334,88 @@
             this.splitContainer1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.splitContainer1.IsSplitterFixed = true;
-            this.splitContainer1.Location = new System.Drawing.Point(97, 1023);
+            this.splitContainer1.Location = new System.Drawing.Point(97, 840);
             this.splitContainer1.Name = "splitContainer1";
             // 
             // splitContainer1.Panel1
             // 
-            this.splitContainer1.Panel1.Controls.Add(this.button1);
+            this.splitContainer1.Panel1.Controls.Add(this.läggTuttonSpel);
             // 
             // splitContainer1.Panel2
             // 
-            this.splitContainer1.Panel2.Controls.Add(this.button2);
-            this.splitContainer1.Size = new System.Drawing.Size(844, 70);
-            this.splitContainer1.SplitterDistance = 290;
+            this.splitContainer1.Panel2.Controls.Add(this.RaderaButtonSpel);
+            this.splitContainer1.Size = new System.Drawing.Size(652, 70);
+            this.splitContainer1.SplitterDistance = 223;
             this.splitContainer1.TabIndex = 15;
             // 
-            // button1
+            // läggTuttonSpel
             // 
-            this.button1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button1.Location = new System.Drawing.Point(0, 0);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(290, 70);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Lägg Till";
-            this.button1.UseVisualStyleBackColor = true;
+            this.läggTuttonSpel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.läggTuttonSpel.Location = new System.Drawing.Point(0, 0);
+            this.läggTuttonSpel.Name = "läggTuttonSpel";
+            this.läggTuttonSpel.Size = new System.Drawing.Size(223, 70);
+            this.läggTuttonSpel.TabIndex = 0;
+            this.läggTuttonSpel.Text = "Lägg Till";
+            this.läggTuttonSpel.UseVisualStyleBackColor = true;
+            this.läggTuttonSpel.Click += new System.EventHandler(this.läggTuttonSpel_Click);
             // 
-            // button2
+            // RaderaButtonSpel
             // 
-            this.button2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button2.Location = new System.Drawing.Point(0, 0);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(550, 70);
-            this.button2.TabIndex = 14;
-            this.button2.Text = "Ta Bort";
-            this.button2.UseVisualStyleBackColor = true;
+            this.RaderaButtonSpel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.RaderaButtonSpel.Location = new System.Drawing.Point(0, 0);
+            this.RaderaButtonSpel.Name = "RaderaButtonSpel";
+            this.RaderaButtonSpel.Size = new System.Drawing.Size(425, 70);
+            this.RaderaButtonSpel.TabIndex = 14;
+            this.RaderaButtonSpel.Text = "Ta Bort";
+            this.RaderaButtonSpel.UseVisualStyleBackColor = true;
+            this.RaderaButtonSpel.Click += new System.EventHandler(this.RaderaButtonSpel_Click);
             // 
-            // FilmListDataGrid
+            // SpelListDataGrid
             // 
-            this.FilmListDataGrid.AllowUserToAddRows = false;
-            this.FilmListDataGrid.AllowUserToDeleteRows = false;
-            this.FilmListDataGrid.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.SpelListDataGrid.AllowUserToAddRows = false;
+            this.SpelListDataGrid.AllowUserToDeleteRows = false;
+            this.SpelListDataGrid.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.FilmListDataGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle10;
-            this.FilmListDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.FilmListDataGrid.DefaultCellStyle = dataGridViewCellStyle11;
-            this.FilmListDataGrid.Location = new System.Drawing.Point(3, 3);
-            this.FilmListDataGrid.MultiSelect = false;
-            this.FilmListDataGrid.Name = "FilmListDataGrid";
-            this.FilmListDataGrid.ReadOnly = true;
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle12.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle12.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle12.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.FilmListDataGrid.RowHeadersDefaultCellStyle = dataGridViewCellStyle12;
-            this.FilmListDataGrid.RowHeadersWidth = 62;
-            this.FilmListDataGrid.RowTemplate.Height = 28;
-            this.FilmListDataGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.FilmListDataGrid.ShowCellErrors = false;
-            this.FilmListDataGrid.ShowCellToolTips = false;
-            this.FilmListDataGrid.ShowEditingIcon = false;
-            this.FilmListDataGrid.ShowRowErrors = false;
-            this.FilmListDataGrid.Size = new System.Drawing.Size(1138, 1014);
-            this.FilmListDataGrid.TabIndex = 0;
-            this.FilmListDataGrid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.SpelListDataGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            this.SpelListDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.SpelListDataGrid.DefaultCellStyle = dataGridViewCellStyle5;
+            this.SpelListDataGrid.Location = new System.Drawing.Point(3, 3);
+            this.SpelListDataGrid.MultiSelect = false;
+            this.SpelListDataGrid.Name = "SpelListDataGrid";
+            this.SpelListDataGrid.ReadOnly = true;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.SpelListDataGrid.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            this.SpelListDataGrid.RowHeadersWidth = 62;
+            this.SpelListDataGrid.RowTemplate.Height = 28;
+            this.SpelListDataGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.SpelListDataGrid.ShowCellErrors = false;
+            this.SpelListDataGrid.ShowCellToolTips = false;
+            this.SpelListDataGrid.ShowEditingIcon = false;
+            this.SpelListDataGrid.ShowRowErrors = false;
+            this.SpelListDataGrid.Size = new System.Drawing.Size(946, 831);
+            this.SpelListDataGrid.TabIndex = 0;
+            this.SpelListDataGrid.SelectionChanged += new System.EventHandler(this.SpelListDataGrid_SelectionChanged);
             // 
             // label7
             // 
@@ -422,60 +424,65 @@
             this.label7.ForeColor = System.Drawing.SystemColors.Highlight;
             this.label7.Location = new System.Drawing.Point(6, 7);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(239, 43);
+            this.label7.Size = new System.Drawing.Size(199, 36);
             this.label7.TabIndex = 16;
             this.label7.Text = "Update Spel:";
             // 
-            // button3
+            // CancelButtonSpel
             // 
-            this.button3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.button3.Location = new System.Drawing.Point(122, 275);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(106, 54);
-            this.button3.TabIndex = 15;
-            this.button3.Text = "Avbryt";
-            this.button3.UseVisualStyleBackColor = true;
+            this.CancelButtonSpel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.CancelButtonSpel.Location = new System.Drawing.Point(99, 188);
+            this.CancelButtonSpel.Name = "CancelButtonSpel";
+            this.CancelButtonSpel.Size = new System.Drawing.Size(106, 54);
+            this.CancelButtonSpel.TabIndex = 15;
+            this.CancelButtonSpel.Text = "Avbryt";
+            this.CancelButtonSpel.UseVisualStyleBackColor = true;
+            this.CancelButtonSpel.Click += new System.EventHandler(this.CancelButtonSpel_Click);
             // 
-            // button4
+            // SaveButtonSpel
             // 
-            this.button4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.button4.Location = new System.Drawing.Point(272, 275);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(97, 54);
-            this.button4.TabIndex = 14;
-            this.button4.Text = "Spara";
-            this.button4.UseVisualStyleBackColor = true;
+            this.SaveButtonSpel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.SaveButtonSpel.Location = new System.Drawing.Point(223, 188);
+            this.SaveButtonSpel.Name = "SaveButtonSpel";
+            this.SaveButtonSpel.Size = new System.Drawing.Size(97, 54);
+            this.SaveButtonSpel.TabIndex = 14;
+            this.SaveButtonSpel.Text = "Spara";
+            this.SaveButtonSpel.UseVisualStyleBackColor = true;
+            this.SaveButtonSpel.Click += new System.EventHandler(this.SaveButtonSpel_Click);
             // 
-            // textBox4
+            // PlattformTextSpel
             // 
-            this.textBox4.Location = new System.Drawing.Point(94, 137);
-            this.textBox4.Multiline = true;
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(337, 31);
-            this.textBox4.TabIndex = 9;
+            this.PlattformTextSpel.Location = new System.Drawing.Point(94, 137);
+            this.PlattformTextSpel.Multiline = true;
+            this.PlattformTextSpel.Name = "PlattformTextSpel";
+            this.PlattformTextSpel.Size = new System.Drawing.Size(337, 31);
+            this.PlattformTextSpel.TabIndex = 9;
+            this.PlattformTextSpel.TextChanged += new System.EventHandler(this.PlattformTextSpel_TextChanged);
             // 
-            // textBox5
+            // PrisTextSpel
             // 
-            this.textBox5.Location = new System.Drawing.Point(95, 103);
-            this.textBox5.Multiline = true;
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(336, 32);
-            this.textBox5.TabIndex = 8;
+            this.PrisTextSpel.Location = new System.Drawing.Point(95, 103);
+            this.PrisTextSpel.Multiline = true;
+            this.PrisTextSpel.Name = "PrisTextSpel";
+            this.PrisTextSpel.Size = new System.Drawing.Size(336, 32);
+            this.PrisTextSpel.TabIndex = 8;
+            this.PrisTextSpel.TextChanged += new System.EventHandler(this.PrisTextSpel_TextChanged);
             // 
-            // textBox6
+            // NamnTextSpel
             // 
-            this.textBox6.Location = new System.Drawing.Point(94, 70);
-            this.textBox6.Multiline = true;
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(337, 31);
-            this.textBox6.TabIndex = 7;
+            this.NamnTextSpel.Location = new System.Drawing.Point(94, 70);
+            this.NamnTextSpel.Multiline = true;
+            this.NamnTextSpel.Name = "NamnTextSpel";
+            this.NamnTextSpel.Size = new System.Drawing.Size(337, 31);
+            this.NamnTextSpel.TabIndex = 7;
+            this.NamnTextSpel.TextChanged += new System.EventHandler(this.NamnTextSpel_TextChanged);
             // 
             // label11
             // 
             this.label11.AutoSize = true;
             this.label11.Location = new System.Drawing.Point(8, 137);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(88, 24);
+            this.label11.Size = new System.Drawing.Size(73, 20);
             this.label11.TabIndex = 3;
             this.label11.Text = "Plattform";
             // 
@@ -520,8 +527,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.Titt);
             this.Name = "DataSpelControl";
-            this.Size = new System.Drawing.Size(1747, 1093);
-            this.Load += new System.EventHandler(this.UserControl2_Load);
+            this.Size = new System.Drawing.Size(1455, 910);
             this.ButtonSpliter.Panel1.ResumeLayout(false);
             this.ButtonSpliter.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.ButtonSpliter)).EndInit();
@@ -536,7 +542,7 @@
             this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.FilmListDataGrid)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.SpelListDataGrid)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -565,15 +571,15 @@
         private System.Windows.Forms.Label Titt;
         private System.Windows.Forms.SplitContainer MainSpliter;
         private System.Windows.Forms.SplitContainer splitContainer1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.DataGridView FilmListDataGrid;
+        private System.Windows.Forms.Button läggTuttonSpel;
+        private System.Windows.Forms.Button RaderaButtonSpel;
+        private System.Windows.Forms.DataGridView SpelListDataGrid;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.Button CancelButtonSpel;
+        private System.Windows.Forms.Button SaveButtonSpel;
+        private System.Windows.Forms.TextBox PlattformTextSpel;
+        private System.Windows.Forms.TextBox PrisTextSpel;
+        private System.Windows.Forms.TextBox NamnTextSpel;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label13;
