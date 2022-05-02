@@ -49,20 +49,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Book.cs" />
-    <Compile Include="DataSpel.cs" />
-    <Compile Include="Filmer.cs" />
-    <Compile Include="Form1.cs">
+    <Compile Include="Model\Book.cs" />
+    <Compile Include="Model\DataSpel.cs" />
+    <Compile Include="Model\Filmer.cs" />
+    <Compile Include="Affärssystem.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Form2.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form2.Designer.cs">
-      <DependentUpon>Form2.cs</DependentUpon>
+    <Compile Include="Affärssystem.Designer.cs">
+      <DependentUpon>Affärssystem.cs</DependentUpon>
     </Compile>
     <Compile Include="Kassa.cs">
       <SubType>Form</SubType>
@@ -76,7 +70,7 @@
     <Compile Include="LagerTabs.Designer.cs">
       <DependentUpon>LagerTabs.cs</DependentUpon>
     </Compile>
-    <Compile Include="Library.cs" />
+    <Compile Include="Model\Library.cs" />
     <Compile Include="LäggTillBook.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -121,11 +115,8 @@
     <Compile Include="DataSpelControl.Designer.cs">
       <DependentUpon>DataSpelControl.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Form2.resx">
-      <DependentUpon>Form2.cs</DependentUpon>
+    <EmbeddedResource Include="Affärssystem.resx">
+      <DependentUpon>Affärssystem.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Kassa.resx">
       <DependentUpon>Kassa.cs</DependentUpon>

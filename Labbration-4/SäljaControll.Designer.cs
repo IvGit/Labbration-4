@@ -33,13 +33,13 @@
             this.AddToTabelButton = new System.Windows.Forms.Button();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
-            this.radioLend = new System.Windows.Forms.RadioButton();
-            this.RadioReturn = new System.Windows.Forms.RadioButton();
+            this.radioFilm = new System.Windows.Forms.RadioButton();
+            this.RadioBock = new System.Windows.Forms.RadioButton();
             this.FinishButon = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.BookListDataGrid = new System.Windows.Forms.DataGridView();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.radioSpel = new System.Windows.Forms.RadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -54,22 +54,23 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(3, 72);
+            this.label1.Location = new System.Drawing.Point(49, 39);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(51, 20);
             this.label1.TabIndex = 0;
             this.label1.Text = "Namn";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(60, 72);
+            this.textBox1.Location = new System.Drawing.Point(110, 36);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(170, 26);
             this.textBox1.TabIndex = 1;
             // 
             // AddToTabelButton
             // 
-            this.AddToTabelButton.Location = new System.Drawing.Point(132, 105);
+            this.AddToTabelButton.Location = new System.Drawing.Point(193, 68);
             this.AddToTabelButton.Name = "AddToTabelButton";
             this.AddToTabelButton.Size = new System.Drawing.Size(87, 34);
             this.AddToTabelButton.TabIndex = 2;
@@ -102,9 +103,9 @@
             // 
             // splitContainer2.Panel1
             // 
-            this.splitContainer2.Panel1.Controls.Add(this.comboBox1);
-            this.splitContainer2.Panel1.Controls.Add(this.radioLend);
-            this.splitContainer2.Panel1.Controls.Add(this.RadioReturn);
+            this.splitContainer2.Panel1.Controls.Add(this.radioSpel);
+            this.splitContainer2.Panel1.Controls.Add(this.radioFilm);
+            this.splitContainer2.Panel1.Controls.Add(this.RadioBock);
             this.splitContainer2.Panel1.Controls.Add(this.FinishButon);
             this.splitContainer2.Panel1.Controls.Add(this.label2);
             this.splitContainer2.Panel1.Controls.Add(this.textBox1);
@@ -115,36 +116,34 @@
             // 
             this.splitContainer2.Panel2.Controls.Add(this.listBox1);
             this.splitContainer2.Size = new System.Drawing.Size(990, 230);
-            this.splitContainer2.SplitterDistance = 299;
+            this.splitContainer2.SplitterDistance = 336;
             this.splitContainer2.TabIndex = 5;
             // 
-            // radioLend
+            // radioFilm
             // 
-            this.radioLend.AutoSize = true;
-            this.radioLend.Location = new System.Drawing.Point(17, 175);
-            this.radioLend.Name = "radioLend";
-            this.radioLend.Size = new System.Drawing.Size(70, 24);
-            this.radioLend.TabIndex = 6;
-            this.radioLend.Text = "Lend";
-            this.radioLend.UseVisualStyleBackColor = true;
-            this.radioLend.CheckedChanged += new System.EventHandler(this.radioLend_CheckedChanged);
+            this.radioFilm.AutoSize = true;
+            this.radioFilm.Location = new System.Drawing.Point(93, 145);
+            this.radioFilm.Name = "radioFilm";
+            this.radioFilm.Size = new System.Drawing.Size(63, 24);
+            this.radioFilm.TabIndex = 6;
+            this.radioFilm.Text = "Film";
+            this.radioFilm.UseVisualStyleBackColor = true;
             // 
-            // RadioReturn
+            // RadioBock
             // 
-            this.RadioReturn.AutoSize = true;
-            this.RadioReturn.Checked = true;
-            this.RadioReturn.Location = new System.Drawing.Point(17, 145);
-            this.RadioReturn.Name = "RadioReturn";
-            this.RadioReturn.Size = new System.Drawing.Size(83, 24);
-            this.RadioReturn.TabIndex = 5;
-            this.RadioReturn.TabStop = true;
-            this.RadioReturn.Text = "Return";
-            this.RadioReturn.UseVisualStyleBackColor = true;
-            this.RadioReturn.CheckedChanged += new System.EventHandler(this.RadioReturn_CheckedChanged);
+            this.RadioBock.AutoSize = true;
+            this.RadioBock.Checked = true;
+            this.RadioBock.Location = new System.Drawing.Point(17, 145);
+            this.RadioBock.Name = "RadioBock";
+            this.RadioBock.Size = new System.Drawing.Size(70, 24);
+            this.RadioBock.TabIndex = 5;
+            this.RadioBock.TabStop = true;
+            this.RadioBock.Text = "Bock";
+            this.RadioBock.UseVisualStyleBackColor = true;
             // 
             // FinishButon
             // 
-            this.FinishButon.Location = new System.Drawing.Point(51, 105);
+            this.FinishButon.Location = new System.Drawing.Point(110, 68);
             this.FinishButon.Name = "FinishButon";
             this.FinishButon.Size = new System.Drawing.Size(75, 34);
             this.FinishButon.TabIndex = 4;
@@ -155,7 +154,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(3, 32);
+            this.label2.Location = new System.Drawing.Point(8, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(118, 20);
             this.label2.TabIndex = 3;
@@ -168,7 +167,7 @@
             this.listBox1.ItemHeight = 20;
             this.listBox1.Location = new System.Drawing.Point(0, 0);
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(687, 230);
+            this.listBox1.Size = new System.Drawing.Size(650, 230);
             this.listBox1.TabIndex = 4;
             // 
             // BookListDataGrid
@@ -194,13 +193,15 @@
             this.BookListDataGrid.TabIndex = 0;
             this.BookListDataGrid.SelectionChanged += new System.EventHandler(this.BookListDataGrid_selectionChanged);
             // 
-            // comboBox1
+            // radioSpel
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(132, 29);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(98, 28);
-            this.comboBox1.TabIndex = 7;
+            this.radioSpel.AutoSize = true;
+            this.radioSpel.Location = new System.Drawing.Point(162, 145);
+            this.radioSpel.Name = "radioSpel";
+            this.radioSpel.Size = new System.Drawing.Size(79, 29);
+            this.radioSpel.TabIndex = 7;
+            this.radioSpel.Text = "Spel";
+            this.radioSpel.UseVisualStyleBackColor = true;
             // 
             // SäljaControll
             // 
@@ -235,8 +236,8 @@
         private System.Windows.Forms.ListBox listBox1;
         private System.Windows.Forms.SplitContainer splitContainer2;
         private System.Windows.Forms.Button FinishButon;
-        private System.Windows.Forms.RadioButton RadioReturn;
-        private System.Windows.Forms.RadioButton radioLend;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.RadioButton RadioBock;
+        private System.Windows.Forms.RadioButton radioFilm;
+        private System.Windows.Forms.RadioButton radioSpel;
     }
 }

@@ -10,11 +10,11 @@ using System.Windows.Forms;
 
 namespace Labbration_4
 {
-    public partial class Form1 : Form
+    public partial class Affärssystem : Form
     {
       
 
-        public Form1()
+        public Affärssystem()
         {
             InitializeComponent();
            

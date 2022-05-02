@@ -28,18 +28,14 @@ namespace Labbration_4
             BookListS = bookListSource;
 
 
-
         }
 
 
         private void SäljaControll_Load(object sender, EventArgs e)
         {
             
-
             BookListDataGrid.ClearSelection();
             textBox1.Text = "";
-
-
 
         }
 
@@ -71,7 +67,7 @@ namespace Labbration_4
             foreach(var item in listBox1.Items)
             {
                 var book = (Book)item;
-                book.BoVale = radioLend.Checked;
+                book.BoVale = radioFilm.Checked;
             }
             BookListS.ResetBindings(false);
             listBox1.Items.Clear();
@@ -79,44 +75,36 @@ namespace Labbration_4
             textBox1.Focus();
         }
 
-        private void radioLend_CheckedChanged(object sender, EventArgs e)
+        private void label1_Click(object sender, EventArgs e)
         {
-            FinishButon.Text = "Lend ";
-
-            BookList = new BindingList<Book>()
-
-            {
-                new Book()
-                {
-                    Name = "Ivan", Författare ="Hemingway", Format = "CD", Genre = "Drama", Pris = "150", Språk = "Engelska"
-                },
-
-                new Book()
-                {
-                    Name = "Iv", Författare ="Heming", Format = "", Genre = "Horro", Pris = "250", Språk = ""
-                }
-            };
-
-
-           // BookListS = bookListSource;
-            BookListDataGrid.DataSource = BookList;
-            lib = new Library();
-           // lib = liB;
 
         }
+        /*
+private void radioLend_CheckedChanged(object sender, EventArgs e)
+{
+   FinishButon.Text = "Lend ";
 
-        private void RadioReturn_CheckedChanged(object sender, EventArgs e)
-        {
-            FinishButon.Text = "Return ";
-            DataspelList = new BindingList<DataSpel>()
-            {
-                new DataSpel() { Name = "Halo", Plattform = "PS3", Pris = "9000"},
-                new DataSpel() { Name ="dota", Pris= "445", Plattform="XBOX"}
-            };
+   BookList = new BindingList<Book>()
+
+   {
+       new Book()
+       {
+           Name = "Ivan", Författare ="Hemingway", Format = "CD", Genre = "Drama", Pris = "150", Språk = "Engelska"
+       },
+
+       new Book()
+       {
+           Name = "Iv", Författare ="Heming", Format = "", Genre = "Horro", Pris = "250", Språk = ""
+       }
+   };
 
 
-            DataSpelSource = new BindingSource();
-            DataSpelSource.DataSource = DataspelList;
-        }
+  // BookListS = bookListSource;
+   BookListDataGrid.DataSource = BookList;
+   lib = new Library();
+  // lib = liB;
+
+} */
+
     }
 }
