@@ -46,7 +46,7 @@ namespace Labbration_4
             var book = (Book)BookListDataGrid.SelectedRows[0].DataBoundItem;
             textBox1.Text = book.Genre;
             BookListDataGrid.ClearSelection();
-            textBox1.Focus();
+            //textBox1.Focus();
             textBox1.SelectAll();
         }
 
@@ -79,32 +79,23 @@ namespace Labbration_4
         {
 
         }
-        /*
-private void radioLend_CheckedChanged(object sender, EventArgs e)
-{
-   FinishButon.Text = "Lend ";
 
-   BookList = new BindingList<Book>()
+        private void RadioBock_CheckedChanged(object sender, EventArgs e)
+        {
+            BookList = new BindingList<Book>()
+            {
+                new Book()
+                {
+                    Name = "Ivan", Författare ="Hemingway", Format = "CD", Genre = "Drama", Pris = "150", Språk = "Engelska"
+                }
+            };
+            BookListDataGrid.DataSource = BookList;
 
-   {
-       new Book()
-       {
-           Name = "Ivan", Författare ="Hemingway", Format = "CD", Genre = "Drama", Pris = "150", Språk = "Engelska"
-       },
+        }
 
-       new Book()
-       {
-           Name = "Iv", Författare ="Heming", Format = "", Genre = "Horro", Pris = "250", Språk = ""
-       }
-   };
+        private void radioFilm_CheckedChanged(object sender, EventArgs e)
+        {
 
-
-  // BookListS = bookListSource;
-   BookListDataGrid.DataSource = BookList;
-   lib = new Library();
-  // lib = liB;
-
-} */
-
+        }
     }
 }

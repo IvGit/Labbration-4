@@ -33,13 +33,13 @@
             this.AddToTabelButton = new System.Windows.Forms.Button();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
+            this.radioSpel = new System.Windows.Forms.RadioButton();
             this.radioFilm = new System.Windows.Forms.RadioButton();
             this.RadioBock = new System.Windows.Forms.RadioButton();
             this.FinishButon = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.BookListDataGrid = new System.Windows.Forms.DataGridView();
-            this.radioSpel = new System.Windows.Forms.RadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -119,6 +119,16 @@
             this.splitContainer2.SplitterDistance = 336;
             this.splitContainer2.TabIndex = 5;
             // 
+            // radioSpel
+            // 
+            this.radioSpel.AutoSize = true;
+            this.radioSpel.Location = new System.Drawing.Point(162, 145);
+            this.radioSpel.Name = "radioSpel";
+            this.radioSpel.Size = new System.Drawing.Size(66, 24);
+            this.radioSpel.TabIndex = 7;
+            this.radioSpel.Text = "Spel";
+            this.radioSpel.UseVisualStyleBackColor = true;
+            // 
             // radioFilm
             // 
             this.radioFilm.AutoSize = true;
@@ -128,18 +138,18 @@
             this.radioFilm.TabIndex = 6;
             this.radioFilm.Text = "Film";
             this.radioFilm.UseVisualStyleBackColor = true;
+            this.radioFilm.CheckedChanged += new System.EventHandler(this.radioFilm_CheckedChanged);
             // 
             // RadioBock
             // 
             this.RadioBock.AutoSize = true;
-            this.RadioBock.Checked = true;
             this.RadioBock.Location = new System.Drawing.Point(17, 145);
             this.RadioBock.Name = "RadioBock";
             this.RadioBock.Size = new System.Drawing.Size(70, 24);
             this.RadioBock.TabIndex = 5;
-            this.RadioBock.TabStop = true;
             this.RadioBock.Text = "Bock";
             this.RadioBock.UseVisualStyleBackColor = true;
+            this.RadioBock.CheckedChanged += new System.EventHandler(this.RadioBock_CheckedChanged);
             // 
             // FinishButon
             // 
@@ -192,16 +202,6 @@
             this.BookListDataGrid.Size = new System.Drawing.Size(996, 516);
             this.BookListDataGrid.TabIndex = 0;
             this.BookListDataGrid.SelectionChanged += new System.EventHandler(this.BookListDataGrid_selectionChanged);
-            // 
-            // radioSpel
-            // 
-            this.radioSpel.AutoSize = true;
-            this.radioSpel.Location = new System.Drawing.Point(162, 145);
-            this.radioSpel.Name = "radioSpel";
-            this.radioSpel.Size = new System.Drawing.Size(79, 29);
-            this.radioSpel.TabIndex = 7;
-            this.radioSpel.Text = "Spel";
-            this.radioSpel.UseVisualStyleBackColor = true;
             // 
             // SäljaControll
             // 
