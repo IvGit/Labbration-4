@@ -60,7 +60,7 @@ namespace Labbration_4
             doc.Save("IvanDB.xml");
         }
 
-
+    
 
         public void LoadFile()
         {
@@ -74,21 +74,23 @@ namespace Labbration_4
                 {
                     if(elem.Name == "Name")
                         book.Name = elem.InnerText;
-                    if(elem.Name =="Författare")
-                        book.Språk = elem.InnerText;
-                    if( elem.Name =="Pris")
+                    if(elem.Name == "Författare")
+                        book.Författare = elem.InnerText;
+                    if( elem.Name == "Pris")
                         book.Pris = elem.InnerText;
-                    if(elem.Name=="Format")
+                    if(elem.Name == "Format")
                         book.Format = elem.InnerText;
-                    if(elem.Name== "Genre")
+                    if(elem.Name == "Genre")
                         book.Genre = elem.InnerText;
-                    //if(elem.Name="")
+                    if(elem.Name =="Språk")
+                        book.Språk = elem.InnerText;
 
                 }
                 BookList.Add(book); 
 
             }
         }
+       
     }
 
 }
