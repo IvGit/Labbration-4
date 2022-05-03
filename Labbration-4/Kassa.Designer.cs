@@ -52,7 +52,7 @@
             this.SäljaTab1.TabIndex = 0;
             this.SäljaTab1.Text = "Sälja";
             this.SäljaTab1.UseVisualStyleBackColor = true;
-            this.SäljaTab1.Click += new System.EventHandler(this.SäljaTab1_Click);
+          
             // 
             // Kassa
             // 

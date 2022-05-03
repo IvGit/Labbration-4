@@ -17,7 +17,7 @@
 
         public override string ToString()
         {
-            return $"{Genre} {Format}";
+            return $"{Språk} {Pris}";
         }
 
 

@@ -21,21 +21,7 @@ namespace Labbration_4
         public Kassa()
         {
             InitializeComponent();
-          /*  BookList = new BindingList<Book>()
-            {
-                new Book()
-                {
-                    Name = "Ivan", Författare ="Hemingway", Format = "CD", Genre = "Drama", Pris = "150", Språk = "Engelska"
-                },
-
-                new Book()
-                {
-                    Name = "Iv", Författare ="Heming", Format = "", Genre = "Horro", Pris = "250", Språk = ""
-                }
-            };
-             */
             BookListSource = new BindingSource();
-            //BookListSource.DataSource = lib.BookList;
            
         }  
 
@@ -49,9 +35,5 @@ namespace Labbration_4
 
         }
 
-        private void SäljaTab1_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }
