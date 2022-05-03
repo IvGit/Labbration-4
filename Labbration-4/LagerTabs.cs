@@ -13,7 +13,7 @@ namespace Labbration_4
     public partial class LagerTabs : Form
     {
         BindingList <Filmer> FilmerList;
-        BindingList<Book> BookList;
+        //BindingList<Book> BookList;
         BindingList<DataSpel> DataspelList;
 
         BindingSource FilmSource;
@@ -23,48 +23,10 @@ namespace Labbration_4
         public LagerTabs()
         {
             InitializeComponent();
-            lib = new Library();
-           /* BookList = new BindingList<Book>() 
-            
-            {
-                new Book()
-                {
-                    Name = "Ivan", Författare ="Hemingway", Format = "CD", Genre = "Drama", Pris = "150", Språk = "Engelska"
-                },
-
-                new Book()
-                {
-                    Name = "Iv", Författare ="Heming", Format = "", Genre = "Horro", Pris = "250", Språk = ""
-                }
-            };
-            */
-            DataspelList = new BindingList<DataSpel>()
-            {
-                new DataSpel() { Name = "Halo", Plattform = "PS3", Pris = "9000"},
-                new DataSpel() { Name ="dota", Pris= "445", Plattform="XBOX"}
-            };
-
-
             BookListSource = new BindingSource();
+            lib = new Library();
+            lib.LoadFile();
             BookListSource.DataSource = lib.BookList;
-
-            DataSpelSource = new BindingSource();
-            DataSpelSource.DataSource = DataspelList;
-
-          
-
-
-
-            FilmerList = new BindingList<Filmer>()
-            {
-                new Filmer()
-                {
-                    Name =" nycklen till frihet", Pris = "99",Format = "DVD", Speltid =" 142"
-                }
-            };
-
-            FilmSource = new BindingSource();
-            FilmSource.DataSource = FilmerList;
 
 
 

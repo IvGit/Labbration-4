@@ -16,7 +16,6 @@ namespace Labbration_4
         public Button AcceptButton { get { return AddToTabelButton; } }
 
         private BindingList<Book> BookList;
-        private BindingSource BookListS;
         Library lib;
         private BindingList<DataSpel> DataspelList;
         private BindingSource BookListSource;
@@ -25,7 +24,10 @@ namespace Labbration_4
         public SäljaControll(Library liB, BindingSource bookListSource)
         {
             InitializeComponent();
-            BookListS = bookListSource;
+            BookListSource = bookListSource;
+            BookListDataGrid.DataSource = bookListSource;
+            lib = new Library();
+            lib.LoadFile();
 
 
         }
@@ -52,12 +54,12 @@ namespace Labbration_4
 
         private void AddToTabelButton_Click(object sender, EventArgs e)
         {
-            foreach(var book in (BindingList<Book>)BookListS.DataSource)
+            foreach(var book in (BindingList<Book>)BookListSource.DataSource)
             {
                 if(book.Genre == textBox1.Text.Trim())
                 {
                     listBox1.Items.Add(book);
-                    lib.saveFile();
+                    lib.SaveFile();
                 }
             }
         }
@@ -69,10 +71,11 @@ namespace Labbration_4
                 var book = (Book)item;
                 book.BoVale = radioFilm.Checked;
             }
-            BookListS.ResetBindings(false);
+            BookListSource.ResetBindings(false);
             listBox1.Items.Clear();
             textBox1.Text = "";
             textBox1.Focus();
+            lib.SaveFile();
         }
 
         private void label1_Click(object sender, EventArgs e)

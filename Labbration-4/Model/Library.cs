@@ -18,16 +18,39 @@ namespace Labbration_4
             BookList = new BindingList<Book>();
         }
 
-        public void saveFile()
+        public void SaveFile()
         {
             XmlDocument doc = new XmlDocument();
             XmlElement root = doc.CreateElement("books");
             foreach(var book in BookList)
             {
                 XmlElement element = doc.CreateElement("book");
-                XmlElement Namn = doc.CreateElement("Namn");
-                Namn.InnerText = book.Name;
-                element.AppendChild(Namn);
+
+                XmlElement Name = doc.CreateElement("Name");
+                Name.InnerText = book.Name;
+                element.AppendChild(Name);
+
+                XmlElement Språk = doc.CreateElement("Språk");
+                Språk.InnerText = book.Språk;
+                element.AppendChild(Språk);
+
+                XmlElement Författare = doc.CreateElement("Författare");
+                Författare.InnerText = book.Författare;
+                element.AppendChild(Författare);
+
+                XmlElement Pris = doc.CreateElement("Pris");
+                Pris.InnerText = book.Pris;
+                element.AppendChild(Pris);
+
+                XmlElement Genre = doc.CreateElement("Genre");
+                Genre.InnerText = book.Genre;
+                element.AppendChild(Genre);
+
+                XmlElement Format = doc.CreateElement("Format");
+                Format.InnerText = book.Format;
+                element.AppendChild(Format);
+
+
 
                 root.AppendChild(element);
 
@@ -35,6 +58,36 @@ namespace Labbration_4
             }
             doc.AppendChild(root);
             doc.Save("IvanDB.xml");
+        }
+
+
+
+        public void LoadFile()
+        {
+            XmlDocument doc = new XmlDocument();
+            doc.Load("IvanDB.xml");
+            var root = doc.FirstChild;
+            foreach(XmlElement element in root.ChildNodes)
+            {
+                var book = new Book();  
+                foreach(XmlElement elem in element.ChildNodes)
+                {
+                    if(elem.Name == "Name")
+                        book.Name = elem.InnerText;
+                    if(elem.Name =="Författare")
+                        book.Språk = elem.InnerText;
+                    if( elem.Name =="Pris")
+                        book.Pris = elem.InnerText;
+                    if(elem.Name=="Format")
+                        book.Format = elem.InnerText;
+                    if(elem.Name== "Genre")
+                        book.Genre = elem.InnerText;
+                    //if(elem.Name="")
+
+                }
+                BookList.Add(book); 
+
+            }
         }
     }
 

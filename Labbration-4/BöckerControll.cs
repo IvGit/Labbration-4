@@ -21,10 +21,11 @@ namespace Labbration_4
         {
             InitializeComponent();
             this.BoookListSource = bookListSource;
-            BookDataGrid.DataSource = bookListSource;
-            lib = new Library();
             lib = liB;
-        }
+            BookDataGrid.DataSource = bookListSource;
+            
+           
+        } 
 
 
         private void BookDataGrid_SelectionChanged(object sender, EventArgs e)
@@ -110,6 +111,7 @@ namespace Labbration_4
            if(tillBook.ShowDialog() == DialogResult.OK)
             {
                 BoookListSource.Add(tillBook.Book);
+                lib.SaveFile();
             }
             {
                   
@@ -126,6 +128,7 @@ namespace Labbration_4
             SelectedItem.Name = NamnText.Text;
             BoookListSource.ResetCurrentItem();
             BookDataGrid_SelectionChanged(sender, null);
+            lib.SaveFile();
         }
 
         private void RaderaButton_Click(object sender, EventArgs e)
@@ -143,7 +146,7 @@ namespace Labbration_4
             SaveButton.Enabled = false;
             CancelButton.Enabled = false;
             BookDataGrid_SelectionChanged(sender, null);
-           // SetTextEnabled(false);
+            lib.SaveFile();
         }
 
     }
