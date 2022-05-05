@@ -84,6 +84,8 @@ namespace Labbration_4
                         book.Genre = elem.InnerText;
                     if(elem.Name =="Språk")
                         book.Språk = elem.InnerText;
+                    if (elem.Name == "BoValue")
+                        book.BoVale = bool.Parse(elem.InnerText);
 
                 }
                 BookList.Add(book); 

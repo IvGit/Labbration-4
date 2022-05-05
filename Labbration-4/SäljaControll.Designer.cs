@@ -40,6 +40,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.BookListDataGrid = new System.Windows.Forms.DataGridView();
+            this.BuyButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -59,7 +60,6 @@
             this.label1.Size = new System.Drawing.Size(51, 20);
             this.label1.TabIndex = 0;
             this.label1.Text = "Namn";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // textBox1
             // 
@@ -103,6 +103,7 @@
             // 
             // splitContainer2.Panel1
             // 
+            this.splitContainer2.Panel1.Controls.Add(this.BuyButton);
             this.splitContainer2.Panel1.Controls.Add(this.radioSpel);
             this.splitContainer2.Panel1.Controls.Add(this.radioFilm);
             this.splitContainer2.Panel1.Controls.Add(this.RadioBock);
@@ -203,6 +204,15 @@
             this.BookListDataGrid.TabIndex = 0;
             this.BookListDataGrid.SelectionChanged += new System.EventHandler(this.BookListDataGrid_selectionChanged);
             // 
+            // BuyButton
+            // 
+            this.BuyButton.Location = new System.Drawing.Point(17, 175);
+            this.BuyButton.Name = "BuyButton";
+            this.BuyButton.Size = new System.Drawing.Size(211, 34);
+            this.BuyButton.TabIndex = 8;
+            this.BuyButton.Text = "Buy";
+            this.BuyButton.UseVisualStyleBackColor = true;
+            // 
             // SäljaControll
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -239,5 +249,6 @@
         private System.Windows.Forms.RadioButton RadioBock;
         private System.Windows.Forms.RadioButton radioFilm;
         private System.Windows.Forms.RadioButton radioSpel;
+        private System.Windows.Forms.Button BuyButton;
     }
 }

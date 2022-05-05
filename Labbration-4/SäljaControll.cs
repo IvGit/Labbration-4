@@ -78,10 +78,6 @@ namespace Labbration_4
             lib.SaveFile();
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void RadioBock_CheckedChanged(object sender, EventArgs e)
         {
