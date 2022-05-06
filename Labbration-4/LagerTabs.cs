@@ -23,10 +23,15 @@ namespace Labbration_4
         public LagerTabs()
         {
             InitializeComponent();
-            BookListSource = new BindingSource();
             lib = new Library();
-            lib.LoadFile();
+
+            BookListSource = new BindingSource();
+            lib.LoadFileBook();
             BookListSource.DataSource = lib.BookList;
+
+            FilmSource = new BindingSource();
+            lib.LoadFileFilm();
+            FilmSource.DataSource = lib.FilmList;
 
 
 
@@ -34,7 +39,7 @@ namespace Labbration_4
 
         private void Lager_Load(object sender, EventArgs e)
         {
-            BöckerControll c1= new BöckerControll(lib,BookListSource);
+            BöckerControll c1= new BöckerControll(BookListSource);
             c1.Dock = DockStyle.Fill;
             BokTab.Controls.Add(c1);
 

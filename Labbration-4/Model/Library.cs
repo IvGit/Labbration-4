@@ -19,6 +19,8 @@ namespace Labbration_4
         {
             BookList = new BindingList<Book>();
             SpelList = new BindingList<DataSpel>();
+            FilmList = new BindingList<Filmer>();
+
 
     }
 
@@ -68,6 +70,38 @@ namespace Labbration_4
             doc.Save("IvanDB.xml");
         }
 
+
+        public void LoadFileBook()
+        {
+            XmlDocument doc = new XmlDocument();
+            doc.Load("IvanDB.xml");
+            var root = doc.FirstChild;
+            foreach (XmlElement element in root.ChildNodes)
+            {
+                var book = new Book();
+                foreach (XmlElement elem in element.ChildNodes)
+                {
+                    if (elem.Name == "Name")
+                        book.Name = elem.InnerText;
+                    if (elem.Name == "Författare")
+                        book.Författare = elem.InnerText;
+                    if (elem.Name == "Pris")
+                        book.Pris = elem.InnerText;
+                    if (elem.Name == "Format")
+                        book.Format = elem.InnerText;
+                    if (elem.Name == "Genre")
+                        book.Genre = elem.InnerText;
+                    if (elem.Name == "Språk")
+                        book.Språk = elem.InnerText;
+                    if (elem.Name == "BoVale")
+                        book.BoVale = bool.Parse(elem.InnerText);
+
+                }
+                BookList.Add(book);
+
+            }
+        }
+
         public void SaveFileSpel()
         {
             XmlDocument doc = new XmlDocument();
@@ -97,6 +131,7 @@ namespace Labbration_4
 
 
                 root.AppendChild(element);
+
 
 
             }
@@ -131,41 +166,71 @@ namespace Labbration_4
             
         }
 
-        public void LoadFile()
-        {
-            XmlDocument doc = new XmlDocument();
-            doc.Load("IvanDB.xml");
-            var root = doc.FirstChild;
-            foreach(XmlElement element in root.ChildNodes)
-            {
-                var book = new Book();  
-                foreach(XmlElement elem in element.ChildNodes)
-                {
-                    if(elem.Name == "Name")
-                        book.Name = elem.InnerText;
-                    if(elem.Name == "Författare")
-                        book.Författare = elem.InnerText;
-                    if( elem.Name == "Pris")
-                        book.Pris = elem.InnerText;
-                    if(elem.Name == "Format")
-                        book.Format = elem.InnerText;
-                    if(elem.Name == "Genre")
-                        book.Genre = elem.InnerText;
-                    if(elem.Name =="Språk")
-                        book.Språk = elem.InnerText;
-                    if (elem.Name == "BoVale")
-                        book.BoVale = bool.Parse(elem.InnerText);
-
-                }
-                BookList.Add(book); 
-
-            }
-        }
+        
 
 
         public void SaveFileFilm()
         {
+            XmlDocument doc = new XmlDocument();
+            XmlElement root = doc.CreateElement("Film");
+            foreach (var film in FilmList)
+            {
+                XmlElement element = doc.CreateElement("film");
 
+                XmlElement Name = doc.CreateElement("Name");
+                Name.InnerText = film.Name;
+                element.AppendChild(Name);
+
+
+                XmlElement Pris = doc.CreateElement("Pris");
+                Pris.InnerText = film.Pris;
+                element.AppendChild(Pris);
+
+                XmlElement Plattform = doc.CreateElement("Format");
+                Plattform.InnerText = film.Format;
+                element.AppendChild(Plattform);
+
+
+                XmlElement BoVale = doc.CreateElement("BoVale");
+                BoVale.InnerText = film.BoVale.ToString();
+                element.AppendChild(BoVale);
+
+
+
+                root.AppendChild(element);
+
+
+
+            }
+            doc.AppendChild(root);
+            doc.Save("IvanDB.xml");
+        }
+
+        public void LoadFileFilm()
+        {
+            XmlDocument doc = new XmlDocument();
+            doc.Load("IvanDB.xml");
+            var root = doc.FirstChild;
+            foreach (XmlElement element in root.ChildNodes)
+            {
+                var film = new Filmer();
+                foreach (XmlElement elem in element.ChildNodes)
+                {
+                    if (elem.Name == "Name")
+                        film.Name = elem.InnerText;
+                    if (elem.Name == "Pris")
+                        film.Pris = elem.InnerText;
+                    if (elem.Name == "Speltid")
+                        film.Speltid = elem.InnerText;
+                    if (elem.Name == "Format")
+                        film.Format = elem.InnerText;
+                    if (elem.Name == "BoVale")
+                        film.BoVale = bool.Parse(elem.InnerText);
+
+                }
+
+                FilmList.Add(film);
+            }
         }
 
 

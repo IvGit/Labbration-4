@@ -32,7 +32,7 @@ namespace Labbration_4
             lib = new Library();
             BookListSource = bookListSource;
             SäljaListDataGrid.DataSource = bookListSource;
-            lib.LoadFile();
+            lib.LoadFileBook();
 
 
             DataSpelSource = dataSpellistSource;
@@ -43,11 +43,6 @@ namespace Labbration_4
             FilmListSource = filmerlistSource;
             SäljaListDataGrid.DataSource = filmerlistSource;
             lib.SaveFileFilm();
-
-
-
-
-
 
         }
 
@@ -60,7 +55,7 @@ namespace Labbration_4
 
         }
 
-        private void BookListDataGrid_selectionChanged(object sender, EventArgs e)
+      /*  private void BookListDataGrid_selectionChanged(object sender, EventArgs e)
         {
             if (SäljaListDataGrid.SelectedRows.Count < 1)
                 return;
@@ -82,7 +77,7 @@ namespace Labbration_4
             textBox1.SelectAll();
         }
 
-
+*/
 
 
 
@@ -161,5 +156,33 @@ namespace Labbration_4
             textBox1.Focus();
             lib.SaveFileSpel();
         }
+
+        private void SäljaListDataGrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (SäljaListDataGrid.SelectedRows.Count < 1)
+            {
+
+           
+                return;
+            var book = (Book)SäljaListDataGrid.SelectedRows[0].DataBoundItem;
+            textBox1.Text = book.Pris;
+            SäljaListDataGrid.ClearSelection();
+            textBox1.Focus();
+            textBox1.SelectAll();
+           }
+            if (SäljaListDataGrid.SelectedRows.Count < 2)
+            {
+                return;
+                var spel = (DataSpel)SäljaListDataGrid.SelectedRows[0].DataBoundItem;
+                textBox1.Text = spel.Pris;
+                SäljaListDataGrid.ClearSelection();
+                textBox1.Focus();
+                textBox1.SelectAll();
+            }
+
+
+
+        }
+
     }
 }

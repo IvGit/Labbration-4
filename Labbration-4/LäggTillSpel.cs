@@ -29,5 +29,13 @@ namespace Labbration_4
             DialogResult = DialogResult.OK;
             Close();
         }
+
+        private void CancelButtonSpel_Click(object sender, EventArgs e)
+        {
+            DialogResult = DialogResult.Cancel;
+            Close();
+        }
+
+
     }
 }

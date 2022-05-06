@@ -143,7 +143,6 @@
             this.AddMovieToTabelButton.TabIndex = 11;
             this.AddMovieToTabelButton.Text = "Add";
             this.AddMovieToTabelButton.UseVisualStyleBackColor = true;
-            
             // 
             // FinishButonSpel
             // 
@@ -248,7 +247,8 @@
             this.SäljaListDataGrid.ShowRowErrors = false;
             this.SäljaListDataGrid.Size = new System.Drawing.Size(830, 430);
             this.SäljaListDataGrid.TabIndex = 0;
-            this.SäljaListDataGrid.SelectionChanged += new System.EventHandler(this.BookListDataGrid_selectionChanged);
+            this.SäljaListDataGrid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.SäljaListDataGrid_CellContentClick);
+            
             // 
             // SäljaControll
             // 

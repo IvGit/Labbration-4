@@ -17,12 +17,12 @@ namespace Labbration_4
         Library lib;
         private BindingSource bookListSource;
 
-        public BöckerControll(Library liB, BindingSource bookListSource)
+        public BöckerControll(BindingSource bookListSource)
         {
             InitializeComponent();
             this.BoookListSource = bookListSource;
-            lib = liB;
             BookDataGrid.DataSource = bookListSource;
+            lib = new Library();
             
            
         } 
