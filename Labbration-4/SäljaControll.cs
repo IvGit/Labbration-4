@@ -15,7 +15,7 @@ namespace Labbration_4
 
         public Button AcceptButton { get { return AddToTabelButton; } }
 
-        private BindingList<Book> BookList;
+         BindingList<Book> BookList;
         Library lib;
         private BindingList<DataSpel> DataspelList;
          BindingSource BookListSource;
@@ -69,7 +69,7 @@ namespace Labbration_4
             foreach(var item in listBox1.Items)
             {
                 var book = (Book)item;
-                book.BoVale = radioFilm.Checked;
+                book.BoVale = true;
             }
             BookListSource.ResetBindings(false);
             listBox1.Items.Clear();

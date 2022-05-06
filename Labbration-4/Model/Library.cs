@@ -50,6 +50,10 @@ namespace Labbration_4
                 Format.InnerText = book.Format;
                 element.AppendChild(Format);
 
+                XmlElement BoVale = doc.CreateElement("BoVale");
+                BoVale.InnerText = book.BoVale.ToString();
+                element.AppendChild(BoVale);
+
 
 
                 root.AppendChild(element);
@@ -84,7 +88,7 @@ namespace Labbration_4
                         book.Genre = elem.InnerText;
                     if(elem.Name =="Språk")
                         book.Språk = elem.InnerText;
-                    if (elem.Name == "BoValue")
+                    if (elem.Name == "BoVale")
                         book.BoVale = bool.Parse(elem.InnerText);
 
                 }

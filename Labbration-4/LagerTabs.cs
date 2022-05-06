@@ -13,7 +13,7 @@ namespace Labbration_4
     public partial class LagerTabs : Form
     {
         BindingList <Filmer> FilmerList;
-        //BindingList<Book> BookList;
+        BindingList<Book> BookList;
         BindingList<DataSpel> DataspelList;
 
         BindingSource FilmSource;

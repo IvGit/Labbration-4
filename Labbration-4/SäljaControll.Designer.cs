@@ -33,6 +33,7 @@
             this.AddToTabelButton = new System.Windows.Forms.Button();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
+            this.BuyButton = new System.Windows.Forms.Button();
             this.radioSpel = new System.Windows.Forms.RadioButton();
             this.radioFilm = new System.Windows.Forms.RadioButton();
             this.RadioBock = new System.Windows.Forms.RadioButton();
@@ -40,7 +41,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.BookListDataGrid = new System.Windows.Forms.DataGridView();
-            this.BuyButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -119,6 +119,15 @@
             this.splitContainer2.Size = new System.Drawing.Size(990, 230);
             this.splitContainer2.SplitterDistance = 336;
             this.splitContainer2.TabIndex = 5;
+            // 
+            // BuyButton
+            // 
+            this.BuyButton.Location = new System.Drawing.Point(17, 175);
+            this.BuyButton.Name = "BuyButton";
+            this.BuyButton.Size = new System.Drawing.Size(211, 34);
+            this.BuyButton.TabIndex = 8;
+            this.BuyButton.Text = "Buy";
+            this.BuyButton.UseVisualStyleBackColor = true;
             // 
             // radioSpel
             // 
@@ -203,15 +212,6 @@
             this.BookListDataGrid.Size = new System.Drawing.Size(996, 516);
             this.BookListDataGrid.TabIndex = 0;
             this.BookListDataGrid.SelectionChanged += new System.EventHandler(this.BookListDataGrid_selectionChanged);
-            // 
-            // BuyButton
-            // 
-            this.BuyButton.Location = new System.Drawing.Point(17, 175);
-            this.BuyButton.Name = "BuyButton";
-            this.BuyButton.Size = new System.Drawing.Size(211, 34);
-            this.BuyButton.TabIndex = 8;
-            this.BuyButton.Text = "Buy";
-            this.BuyButton.UseVisualStyleBackColor = true;
             // 
             // SäljaControll
             // 
