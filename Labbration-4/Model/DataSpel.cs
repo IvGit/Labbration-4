@@ -5,7 +5,7 @@
         public string Name { get; set; }
         public string Plattform { get; set; }
         public string Pris { get; set; }
-        public bool BoVale { get; private set; }
+        public bool BoVale { get; internal set; }
 
         public DataSpel()
         {
@@ -14,7 +14,7 @@
 
         public override string ToString()
         {
-            return $"{Plattform} {Name}";
+            return $"{Pris} {Name}";
         }
 
     }

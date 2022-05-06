@@ -14,7 +14,8 @@ namespace Labbration_4
     {
         BindingSource SpelSource;
         DataSpel SelectedItem;
-        
+        Library lib;
+
 
         public DataSpelControl(BindingSource spelSource)
         {
@@ -62,6 +63,7 @@ namespace Labbration_4
             SaveButton.Enabled = false;
             CancelButton.Enabled = false;
             SpelListDataGrid_SelectionChanged(sender, null);
+            lib.SaveFileSpel();
             // SetTextEnabled(false);
         }
 
@@ -90,6 +92,7 @@ namespace Labbration_4
             SelectedItem.Name = NamnTextSpel.Text;
             SpelSource.ResetCurrentItem();
             SpelListDataGrid_SelectionChanged(sender, null);
+            lib.SaveFileSpel();
         }
 
         private void läggTuttonSpel_Click(object sender, EventArgs e)
@@ -99,6 +102,7 @@ namespace Labbration_4
             if (tillSpel.ShowDialog() == DialogResult.OK)
             {
                SpelSource.Add(tillSpel.spel);
+                lib.SaveFileSpel();
             }
             {
 
@@ -108,6 +112,11 @@ namespace Labbration_4
         private void CancelButtonSpel_Click(object sender, EventArgs e)
         {
             SpelListDataGrid_SelectionChanged(sender, null);
+        }
+
+        private void SpelListDataGrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

@@ -13,21 +13,40 @@ namespace Labbration_4
     public partial class SäljaControll : UserControl
     {
 
-        public Button AcceptButton { get { return AddToTabelButton; } }
+        public Button AcceptButton { get { return AddBookToTabelButton; } }
 
-         BindingList<Book> BookList;
         Library lib;
-        private BindingList<DataSpel> DataspelList;
-         BindingSource BookListSource;
-        private BindingSource DataSpelSource;
 
-        public SäljaControll(Library liB, BindingSource bookListSource)
+        BindingList<Book> BookList;
+        BindingSource BookListSource;
+
+        BindingList<DataSpel> DataspelList;
+        BindingSource DataSpelSource;
+
+        BindingList<Filmer> FilmlList;
+        BindingSource FilmListSource;
+
+        public SäljaControll(BindingSource bookListSource, BindingSource dataSpellistSource, BindingSource filmerlistSource)
         {
             InitializeComponent();
-            BookListSource = bookListSource;
-            BookListDataGrid.DataSource = bookListSource;
             lib = new Library();
+            BookListSource = bookListSource;
+            SäljaListDataGrid.DataSource = bookListSource;
             lib.LoadFile();
+
+
+            DataSpelSource = dataSpellistSource;
+            SäljaListDataGrid.DataSource= dataSpellistSource;
+            lib.SaveFileSpel();
+
+
+            FilmListSource = filmerlistSource;
+            SäljaListDataGrid.DataSource = filmerlistSource;
+            lib.SaveFileFilm();
+
+
+
+
 
 
         }
@@ -36,21 +55,36 @@ namespace Labbration_4
         private void SäljaControll_Load(object sender, EventArgs e)
         {
             
-            BookListDataGrid.ClearSelection();
+            SäljaListDataGrid.ClearSelection();
             textBox1.Text = "";
 
         }
 
         private void BookListDataGrid_selectionChanged(object sender, EventArgs e)
         {
-            if (BookListDataGrid.SelectedRows.Count < 1)
+            if (SäljaListDataGrid.SelectedRows.Count < 1)
                 return;
-            var book = (Book)BookListDataGrid.SelectedRows[0].DataBoundItem;
+            var book = (Book)SäljaListDataGrid.SelectedRows[0].DataBoundItem;
             textBox1.Text = book.Pris;
-            BookListDataGrid.ClearSelection();
+            SäljaListDataGrid.ClearSelection();
             textBox1.Focus();
             textBox1.SelectAll();
         }
+
+        private void SpelListDataGrid_selectionChanged(object sender, EventArgs e)
+        {
+            if (SäljaListDataGrid.SelectedRows.Count < 1)
+                return;
+            var spel = (DataSpel)SäljaListDataGrid.SelectedRows[0].DataBoundItem;
+            textBox1.Text = spel.Pris;
+            SäljaListDataGrid.ClearSelection();
+            textBox1.Focus();
+            textBox1.SelectAll();
+        }
+
+
+
+
 
         private void AddToTabelButton_Click(object sender, EventArgs e)
         {
@@ -59,7 +93,7 @@ namespace Labbration_4
                 if(book.Pris == textBox1.Text.Trim())
                 {
                     listBox1.Items.Add(book);
-                    lib.SaveFile();
+                    lib.SaveFileBook();
                 }
             }
         }
@@ -75,19 +109,57 @@ namespace Labbration_4
             listBox1.Items.Clear();
             textBox1.Text = "";
             textBox1.Focus();
-            lib.SaveFile();
+            lib.SaveFileBook();
         }
 
 
         private void RadioBock_CheckedChanged(object sender, EventArgs e)
         {
-            BookListDataGrid.DataSource = lib.BookList;
+            SäljaListDataGrid.DataSource = lib.BookList;
 
         }
 
         private void radioFilm_CheckedChanged(object sender, EventArgs e)
         {
+            SäljaListDataGrid.DataSource = lib.FilmList;
+                
 
+        }
+
+        private void radioSpel_CheckedChanged(object sender, EventArgs e)
+        {
+            SäljaListDataGrid.DataSource = lib.SpelList;
+
+        }
+
+
+        private void FinishButonFilm_Click(object sender, EventArgs e)
+        {
+            foreach (var item in listBox1.Items)
+            {
+                var film = (Filmer)item;
+                film.BoVale = true;
+            }
+            FilmListSource.ResetBindings(false);
+            listBox1.Items.Clear();
+            textBox1.Text = "";
+            textBox1.Focus();
+            lib.SaveFileFilm();
+        }
+
+
+        private void FinishButonSpel_Click(object sender, EventArgs e)
+        {
+            foreach (var item in listBox1.Items)
+            {
+                var spel = (DataSpel)item;
+                spel.BoVale = true;
+            }
+            DataSpelSource.ResetBindings(false);
+            listBox1.Items.Clear();
+            textBox1.Text = "";
+            textBox1.Focus();
+            lib.SaveFileSpel();
         }
     }
 }

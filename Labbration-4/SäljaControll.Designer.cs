@@ -30,17 +30,20 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.AddToTabelButton = new System.Windows.Forms.Button();
+            this.AddBookToTabelButton = new System.Windows.Forms.Button();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
-            this.BuyButton = new System.Windows.Forms.Button();
+            this.AddSpelToTabelButton = new System.Windows.Forms.Button();
+            this.AddMovieToTabelButton = new System.Windows.Forms.Button();
+            this.FinishButonSpel = new System.Windows.Forms.Button();
+            this.FinishButonFilm = new System.Windows.Forms.Button();
             this.radioSpel = new System.Windows.Forms.RadioButton();
             this.radioFilm = new System.Windows.Forms.RadioButton();
             this.RadioBock = new System.Windows.Forms.RadioButton();
-            this.FinishButon = new System.Windows.Forms.Button();
+            this.FinishButonBook = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.listBox1 = new System.Windows.Forms.ListBox();
-            this.BookListDataGrid = new System.Windows.Forms.DataGridView();
+            this.SäljaListDataGrid = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -49,13 +52,13 @@
             this.splitContainer2.Panel1.SuspendLayout();
             this.splitContainer2.Panel2.SuspendLayout();
             this.splitContainer2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.BookListDataGrid)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.SäljaListDataGrid)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(49, 39);
+            this.label1.Location = new System.Drawing.Point(8, 42);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(51, 20);
             this.label1.TabIndex = 0;
@@ -63,20 +66,20 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(110, 36);
+            this.textBox1.Location = new System.Drawing.Point(65, 36);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(170, 26);
+            this.textBox1.Size = new System.Drawing.Size(215, 26);
             this.textBox1.TabIndex = 1;
             // 
-            // AddToTabelButton
+            // AddBookToTabelButton
             // 
-            this.AddToTabelButton.Location = new System.Drawing.Point(193, 68);
-            this.AddToTabelButton.Name = "AddToTabelButton";
-            this.AddToTabelButton.Size = new System.Drawing.Size(87, 34);
-            this.AddToTabelButton.TabIndex = 2;
-            this.AddToTabelButton.Text = "Add";
-            this.AddToTabelButton.UseVisualStyleBackColor = true;
-            this.AddToTabelButton.Click += new System.EventHandler(this.AddToTabelButton_Click);
+            this.AddBookToTabelButton.Location = new System.Drawing.Point(193, 68);
+            this.AddBookToTabelButton.Name = "AddBookToTabelButton";
+            this.AddBookToTabelButton.Size = new System.Drawing.Size(87, 34);
+            this.AddBookToTabelButton.TabIndex = 2;
+            this.AddBookToTabelButton.Text = "Add";
+            this.AddBookToTabelButton.UseVisualStyleBackColor = true;
+            this.AddBookToTabelButton.Click += new System.EventHandler(this.AddToTabelButton_Click);
             // 
             // splitContainer1
             // 
@@ -91,9 +94,9 @@
             // 
             // splitContainer1.Panel2
             // 
-            this.splitContainer1.Panel2.Controls.Add(this.BookListDataGrid);
-            this.splitContainer1.Size = new System.Drawing.Size(996, 756);
-            this.splitContainer1.SplitterDistance = 236;
+            this.splitContainer1.Panel2.Controls.Add(this.SäljaListDataGrid);
+            this.splitContainer1.Size = new System.Drawing.Size(830, 630);
+            this.splitContainer1.SplitterDistance = 196;
             this.splitContainer1.TabIndex = 3;
             // 
             // splitContainer2
@@ -103,15 +106,18 @@
             // 
             // splitContainer2.Panel1
             // 
-            this.splitContainer2.Panel1.Controls.Add(this.BuyButton);
+            this.splitContainer2.Panel1.Controls.Add(this.AddSpelToTabelButton);
+            this.splitContainer2.Panel1.Controls.Add(this.AddMovieToTabelButton);
+            this.splitContainer2.Panel1.Controls.Add(this.FinishButonSpel);
+            this.splitContainer2.Panel1.Controls.Add(this.FinishButonFilm);
             this.splitContainer2.Panel1.Controls.Add(this.radioSpel);
             this.splitContainer2.Panel1.Controls.Add(this.radioFilm);
             this.splitContainer2.Panel1.Controls.Add(this.RadioBock);
-            this.splitContainer2.Panel1.Controls.Add(this.FinishButon);
+            this.splitContainer2.Panel1.Controls.Add(this.FinishButonBook);
             this.splitContainer2.Panel1.Controls.Add(this.label2);
             this.splitContainer2.Panel1.Controls.Add(this.textBox1);
             this.splitContainer2.Panel1.Controls.Add(this.label1);
-            this.splitContainer2.Panel1.Controls.Add(this.AddToTabelButton);
+            this.splitContainer2.Panel1.Controls.Add(this.AddBookToTabelButton);
             // 
             // splitContainer2.Panel2
             // 
@@ -120,29 +126,60 @@
             this.splitContainer2.SplitterDistance = 336;
             this.splitContainer2.TabIndex = 5;
             // 
-            // BuyButton
+            // AddSpelToTabelButton
             // 
-            this.BuyButton.Location = new System.Drawing.Point(17, 175);
-            this.BuyButton.Name = "BuyButton";
-            this.BuyButton.Size = new System.Drawing.Size(211, 34);
-            this.BuyButton.TabIndex = 8;
-            this.BuyButton.Text = "Buy";
-            this.BuyButton.UseVisualStyleBackColor = true;
+            this.AddSpelToTabelButton.Location = new System.Drawing.Point(193, 171);
+            this.AddSpelToTabelButton.Name = "AddSpelToTabelButton";
+            this.AddSpelToTabelButton.Size = new System.Drawing.Size(87, 34);
+            this.AddSpelToTabelButton.TabIndex = 12;
+            this.AddSpelToTabelButton.Text = "Add";
+            this.AddSpelToTabelButton.UseVisualStyleBackColor = true;
+            // 
+            // AddMovieToTabelButton
+            // 
+            this.AddMovieToTabelButton.Location = new System.Drawing.Point(193, 117);
+            this.AddMovieToTabelButton.Name = "AddMovieToTabelButton";
+            this.AddMovieToTabelButton.Size = new System.Drawing.Size(87, 34);
+            this.AddMovieToTabelButton.TabIndex = 11;
+            this.AddMovieToTabelButton.Text = "Add";
+            this.AddMovieToTabelButton.UseVisualStyleBackColor = true;
+            
+            // 
+            // FinishButonSpel
+            // 
+            this.FinishButonSpel.Location = new System.Drawing.Point(110, 171);
+            this.FinishButonSpel.Name = "FinishButonSpel";
+            this.FinishButonSpel.Size = new System.Drawing.Size(75, 34);
+            this.FinishButonSpel.TabIndex = 10;
+            this.FinishButonSpel.Text = "Finish";
+            this.FinishButonSpel.UseVisualStyleBackColor = true;
+            this.FinishButonSpel.Click += new System.EventHandler(this.FinishButonSpel_Click);
+            // 
+            // FinishButonFilm
+            // 
+            this.FinishButonFilm.Location = new System.Drawing.Point(110, 117);
+            this.FinishButonFilm.Name = "FinishButonFilm";
+            this.FinishButonFilm.Size = new System.Drawing.Size(75, 34);
+            this.FinishButonFilm.TabIndex = 9;
+            this.FinishButonFilm.Text = "Finish";
+            this.FinishButonFilm.UseVisualStyleBackColor = true;
+            this.FinishButonFilm.Click += new System.EventHandler(this.FinishButonFilm_Click);
             // 
             // radioSpel
             // 
             this.radioSpel.AutoSize = true;
-            this.radioSpel.Location = new System.Drawing.Point(162, 145);
+            this.radioSpel.Location = new System.Drawing.Point(38, 176);
             this.radioSpel.Name = "radioSpel";
             this.radioSpel.Size = new System.Drawing.Size(66, 24);
             this.radioSpel.TabIndex = 7;
             this.radioSpel.Text = "Spel";
             this.radioSpel.UseVisualStyleBackColor = true;
+            this.radioSpel.CheckedChanged += new System.EventHandler(this.radioSpel_CheckedChanged);
             // 
             // radioFilm
             // 
             this.radioFilm.AutoSize = true;
-            this.radioFilm.Location = new System.Drawing.Point(93, 145);
+            this.radioFilm.Location = new System.Drawing.Point(34, 122);
             this.radioFilm.Name = "radioFilm";
             this.radioFilm.Size = new System.Drawing.Size(63, 24);
             this.radioFilm.TabIndex = 6;
@@ -153,7 +190,7 @@
             // RadioBock
             // 
             this.RadioBock.AutoSize = true;
-            this.RadioBock.Location = new System.Drawing.Point(17, 145);
+            this.RadioBock.Location = new System.Drawing.Point(34, 73);
             this.RadioBock.Name = "RadioBock";
             this.RadioBock.Size = new System.Drawing.Size(70, 24);
             this.RadioBock.TabIndex = 5;
@@ -161,15 +198,15 @@
             this.RadioBock.UseVisualStyleBackColor = true;
             this.RadioBock.CheckedChanged += new System.EventHandler(this.RadioBock_CheckedChanged);
             // 
-            // FinishButon
+            // FinishButonBook
             // 
-            this.FinishButon.Location = new System.Drawing.Point(110, 68);
-            this.FinishButon.Name = "FinishButon";
-            this.FinishButon.Size = new System.Drawing.Size(75, 34);
-            this.FinishButon.TabIndex = 4;
-            this.FinishButon.Text = "Finish";
-            this.FinishButon.UseVisualStyleBackColor = true;
-            this.FinishButon.Click += new System.EventHandler(this.FinishButton_Click);
+            this.FinishButonBook.Location = new System.Drawing.Point(110, 68);
+            this.FinishButonBook.Name = "FinishButonBook";
+            this.FinishButonBook.Size = new System.Drawing.Size(75, 34);
+            this.FinishButonBook.TabIndex = 4;
+            this.FinishButonBook.Text = "Finish";
+            this.FinishButonBook.UseVisualStyleBackColor = true;
+            this.FinishButonBook.Click += new System.EventHandler(this.FinishButton_Click);
             // 
             // label2
             // 
@@ -190,28 +227,28 @@
             this.listBox1.Size = new System.Drawing.Size(650, 230);
             this.listBox1.TabIndex = 4;
             // 
-            // BookListDataGrid
+            // SäljaListDataGrid
             // 
-            this.BookListDataGrid.AllowUserToAddRows = false;
-            this.BookListDataGrid.AllowUserToDeleteRows = false;
-            this.BookListDataGrid.AllowUserToResizeColumns = false;
-            this.BookListDataGrid.AllowUserToResizeRows = false;
-            this.BookListDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.BookListDataGrid.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.BookListDataGrid.Location = new System.Drawing.Point(0, 0);
-            this.BookListDataGrid.MultiSelect = false;
-            this.BookListDataGrid.Name = "BookListDataGrid";
-            this.BookListDataGrid.ReadOnly = true;
-            this.BookListDataGrid.RowHeadersWidth = 62;
-            this.BookListDataGrid.RowTemplate.Height = 28;
-            this.BookListDataGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.BookListDataGrid.ShowCellErrors = false;
-            this.BookListDataGrid.ShowCellToolTips = false;
-            this.BookListDataGrid.ShowEditingIcon = false;
-            this.BookListDataGrid.ShowRowErrors = false;
-            this.BookListDataGrid.Size = new System.Drawing.Size(996, 516);
-            this.BookListDataGrid.TabIndex = 0;
-            this.BookListDataGrid.SelectionChanged += new System.EventHandler(this.BookListDataGrid_selectionChanged);
+            this.SäljaListDataGrid.AllowUserToAddRows = false;
+            this.SäljaListDataGrid.AllowUserToDeleteRows = false;
+            this.SäljaListDataGrid.AllowUserToResizeColumns = false;
+            this.SäljaListDataGrid.AllowUserToResizeRows = false;
+            this.SäljaListDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.SäljaListDataGrid.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.SäljaListDataGrid.Location = new System.Drawing.Point(0, 0);
+            this.SäljaListDataGrid.MultiSelect = false;
+            this.SäljaListDataGrid.Name = "SäljaListDataGrid";
+            this.SäljaListDataGrid.ReadOnly = true;
+            this.SäljaListDataGrid.RowHeadersWidth = 62;
+            this.SäljaListDataGrid.RowTemplate.Height = 28;
+            this.SäljaListDataGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.SäljaListDataGrid.ShowCellErrors = false;
+            this.SäljaListDataGrid.ShowCellToolTips = false;
+            this.SäljaListDataGrid.ShowEditingIcon = false;
+            this.SäljaListDataGrid.ShowRowErrors = false;
+            this.SäljaListDataGrid.Size = new System.Drawing.Size(830, 430);
+            this.SäljaListDataGrid.TabIndex = 0;
+            this.SäljaListDataGrid.SelectionChanged += new System.EventHandler(this.BookListDataGrid_selectionChanged);
             // 
             // SäljaControll
             // 
@@ -219,7 +256,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.splitContainer1);
             this.Name = "SäljaControll";
-            this.Size = new System.Drawing.Size(996, 756);
+            this.Size = new System.Drawing.Size(830, 630);
             this.Load += new System.EventHandler(this.SäljaControll_Load);
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel2.ResumeLayout(false);
@@ -230,7 +267,7 @@
             this.splitContainer2.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).EndInit();
             this.splitContainer2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.BookListDataGrid)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.SäljaListDataGrid)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -239,16 +276,19 @@
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Button AddToTabelButton;
+        private System.Windows.Forms.Button AddBookToTabelButton;
         private System.Windows.Forms.SplitContainer splitContainer1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.DataGridView BookListDataGrid;
+        private System.Windows.Forms.DataGridView SäljaListDataGrid;
         private System.Windows.Forms.ListBox listBox1;
         private System.Windows.Forms.SplitContainer splitContainer2;
-        private System.Windows.Forms.Button FinishButon;
+        private System.Windows.Forms.Button FinishButonBook;
         private System.Windows.Forms.RadioButton RadioBock;
         private System.Windows.Forms.RadioButton radioFilm;
         private System.Windows.Forms.RadioButton radioSpel;
-        private System.Windows.Forms.Button BuyButton;
+        private System.Windows.Forms.Button AddSpelToTabelButton;
+        private System.Windows.Forms.Button AddMovieToTabelButton;
+        private System.Windows.Forms.Button FinishButonSpel;
+        private System.Windows.Forms.Button FinishButonFilm;
     }
 }

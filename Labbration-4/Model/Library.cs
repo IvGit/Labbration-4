@@ -12,13 +12,17 @@ namespace Labbration_4
     {
 
         public BindingList<Book> BookList { get; private set; }
+        public BindingList<DataSpel> SpelList { get; private set; }
+        public BindingList<Filmer> FilmList { get; private set; }
 
         public Library()
         {
             BookList = new BindingList<Book>();
-        }
+            SpelList = new BindingList<DataSpel>();
 
-        public void SaveFile()
+    }
+
+        public void SaveFileBook () 
         {
             XmlDocument doc = new XmlDocument();
             XmlElement root = doc.CreateElement("books");
@@ -64,7 +68,68 @@ namespace Labbration_4
             doc.Save("IvanDB.xml");
         }
 
-    
+        public void SaveFileSpel()
+        {
+            XmlDocument doc = new XmlDocument();
+            XmlElement root = doc.CreateElement("spellek");
+            foreach (var spel in SpelList)
+            {
+                XmlElement element = doc.CreateElement("spel");
+
+                XmlElement Name = doc.CreateElement("Name");
+                Name.InnerText = spel.Name;
+                element.AppendChild(Name);
+
+
+                XmlElement Pris = doc.CreateElement("Pris");
+                Pris.InnerText = spel.Pris;
+                element.AppendChild(Pris);
+
+                XmlElement Plattform = doc.CreateElement("Plattform ");
+                Plattform.InnerText = spel.Plattform;
+                element.AppendChild(Plattform);
+
+
+                XmlElement BoVale = doc.CreateElement("BoVale");
+                BoVale.InnerText = spel.BoVale.ToString();
+                element.AppendChild(BoVale);
+
+
+
+                root.AppendChild(element);
+
+
+            }
+            doc.AppendChild(root);
+            doc.Save("IvanDB.xml");
+
+        }
+
+        public void LoadFileSpel()
+        {
+            XmlDocument doc = new XmlDocument();
+            doc.Load("IvanDB.xml");
+            var root = doc.FirstChild;
+            foreach (XmlElement element in root.ChildNodes)
+            {
+                var spel = new DataSpel();
+                foreach (XmlElement elem in element.ChildNodes)
+                {
+                    if (elem.Name == "Name")
+                        spel.Name = elem.InnerText;
+                    if (elem.Name == "Pris")
+                        spel.Pris = elem.InnerText;
+                    if (elem.Name == "Plattform ")
+                        spel.Plattform = elem.InnerText;
+                    if (elem.Name == "BoVale")
+                        spel.BoVale = bool.Parse(elem.InnerText);
+
+                }
+               
+                   SpelList.Add(spel);
+            }
+            
+        }
 
         public void LoadFile()
         {
@@ -96,7 +161,14 @@ namespace Labbration_4
 
             }
         }
-       
+
+
+        public void SaveFileFilm()
+        {
+
+        }
+
+
     }
 
 }
