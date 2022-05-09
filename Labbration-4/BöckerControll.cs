@@ -17,39 +17,17 @@ namespace Labbration_4
         Library lib;
         private BindingSource bookListSource;
 
-        public BöckerControll(BindingSource bookListSource)
+        public BöckerControll(Library liB, BindingSource bookListSource)
         {
             InitializeComponent();
+            lib = liB;
             this.BoookListSource = bookListSource;
             BookDataGrid.DataSource = bookListSource;
-            lib = new Library();
+            
             
            
         } 
-
-
-        private void BookDataGrid_SelectionChanged(object sender, EventArgs e)
-
-        {
-            if (BookDataGrid.SelectedRows.Count < 1)
-            {
-                SetTextEnabled(true);
-                return;
-            }
-               
-            var book = (Book)BookDataGrid.SelectedRows[0].DataBoundItem;
-            NamnText.Text = book.Name;
-            GenreText.Text = book.Genre;
-            SpråkText.Text = book.Språk;
-            FormatText.Text = book.Format;
-            FörfattareText.Text = book.Författare;
-            PrisText.Text = book.Pris;
-            SelectedItem = book;
-            SaveButton.Enabled = false;
-            CancelButton.Enabled = false;
-
-
-        }
+         
 
         private void NamnText_TextChanged(object sender, EventArgs e)
         {
@@ -89,7 +67,7 @@ namespace Labbration_4
 
         private void CancelButton_Click(object sender, EventArgs e)
         {
-            BookDataGrid_SelectionChanged(sender, null);
+            BookDataGrid_Selectionchanged(sender, null);
         }
 
        
@@ -111,25 +89,15 @@ namespace Labbration_4
            if(tillBook.ShowDialog() == DialogResult.OK)
             {
                 BoookListSource.Add(tillBook.Book);
-                lib.SaveFileBook();
+                lib.SaveFile();
             }
+           else
             {
                   
             }
         }
 
-        private void SaveButton_Click(object sender, EventArgs e)
-        {
-            SelectedItem.Författare = FörfattareText.Text;
-            SelectedItem.Genre = GenreText.Text;
-            SelectedItem.Språk = SpråkText.Text;
-            SelectedItem.Format = FormatText.Text;
-            SelectedItem.Pris = PrisText.Text;
-            SelectedItem.Name = NamnText.Text;
-            BoookListSource.ResetCurrentItem();
-            BookDataGrid_SelectionChanged(sender, null);
-            lib.SaveFileBook();
-        }
+       
 
         private void RaderaButton_Click(object sender, EventArgs e)
         {
@@ -145,9 +113,41 @@ namespace Labbration_4
             NamnText.Text = "";
             SaveButton.Enabled = false;
             CancelButton.Enabled = false;
-            BookDataGrid_SelectionChanged(sender, null);
-            lib.SaveFileBook();
+            BookDataGrid_Selectionchanged(sender, null);
+            //lib.SaveFile();
         }
 
+        
+
+        private void SaveButton_Click(object sender, EventArgs e)
+        {
+            SelectedItem.Name = NamnText.Text;
+            SelectedItem.Genre = GenreText.Text;
+            SelectedItem.Språk = SpråkText.Text;
+            SelectedItem.Format = FormatText.Text;
+            SelectedItem.Författare = FörfattareText.Text;
+            SelectedItem.Pris = PrisText.Text;
+            BookDataGrid_Selectionchanged(sender, null);
+        }
+
+        private void BookDataGrid_Selectionchanged(object sender, EventArgs e)
+        {
+            if (BookDataGrid.SelectedRows.Count < 1)
+            {
+                SetTextEnabled(true);
+                return;
+            }
+
+            var book = (Book)BookDataGrid.SelectedRows[0].DataBoundItem;
+            NamnText.Text = book.Name;
+            GenreText.Text = book.Genre;
+            SpråkText.Text = book.Språk;
+            FormatText.Text = book.Format;
+            FörfattareText.Text = book.Författare;
+            PrisText.Text = book.Pris;
+            SelectedItem = book;
+            SaveButton.Enabled = false;
+            CancelButton.Enabled = false;
+        }
     }
 }

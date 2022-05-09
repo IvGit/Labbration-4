@@ -21,9 +21,9 @@ namespace Labbration_4
         private void SparaFilm_Click(object sender, EventArgs e)
         {
             spel = new DataSpel();
-            spel.Name = NamnTextSpel.Text;
-            spel.Pris = PrisTextSpel.Text;
-            spel.Plattform = PlattformTextSpel.Text;
+            spel.name = NamnTextSpel.Text;
+            spel.price = PrisTextSpel.Text;
+            spel.platform = PlattformTextSpel.Text;
             
 
             DialogResult = DialogResult.OK;

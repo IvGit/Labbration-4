@@ -15,7 +15,8 @@ namespace Labbration_4
         BindingSource BookListSource;
         BindingSource DataSpellistSource;
         BindingSource FilmerlistSource;
-        Library lib;
+     
+        
 
         public Kassa()
         {
@@ -23,7 +24,7 @@ namespace Labbration_4
             BookListSource = new BindingSource();
             DataSpellistSource = new BindingSource();
             FilmerlistSource = new BindingSource(); 
-
+           
 
         }  
 

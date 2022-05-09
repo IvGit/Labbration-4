@@ -37,6 +37,9 @@ namespace Labbration_4
             Book.Språk = SpråkText.Text;
             Book.Genre = GenreText.Text;
             Book.Författare = FörfattareText.Text;
+            Book.Format = FormatText.Text;
+            
+            
 
              DialogResult = DialogResult.OK;
             Close();

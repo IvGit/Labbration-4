@@ -361,7 +361,7 @@
             this.läggTuttonSpel.TabIndex = 0;
             this.läggTuttonSpel.Text = "Lägg Till";
             this.läggTuttonSpel.UseVisualStyleBackColor = true;
-            this.läggTuttonSpel.Click += new System.EventHandler(this.läggTuttonSpel_Click);
+           
             // 
             // RaderaButtonSpel
             // 
@@ -419,7 +419,6 @@
             this.SpelListDataGrid.ShowRowErrors = false;
             this.SpelListDataGrid.Size = new System.Drawing.Size(946, 831);
             this.SpelListDataGrid.TabIndex = 0;
-            this.SpelListDataGrid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.SpelListDataGrid_CellContentClick);
             this.SpelListDataGrid.SelectionChanged += new System.EventHandler(this.SpelListDataGrid_SelectionChanged);
             // 
             // label8

@@ -29,20 +29,22 @@ namespace Labbration_4
         public SäljaControll(BindingSource bookListSource, BindingSource dataSpellistSource, BindingSource filmerlistSource)
         {
             InitializeComponent();
-            lib = new Library();
+
             BookListSource = bookListSource;
-            SäljaListDataGrid.DataSource = bookListSource;
-            lib.LoadFileBook();
+            lib = new Library();
+            lib.LoadFile();
+           SäljaListDataGrid.DataSource = lib.BookList;
+            
 
 
             DataSpelSource = dataSpellistSource;
             SäljaListDataGrid.DataSource= dataSpellistSource;
-            lib.SaveFileSpel();
+           // lib.SaveFile();
 
 
             FilmListSource = filmerlistSource;
             SäljaListDataGrid.DataSource = filmerlistSource;
-            lib.SaveFileFilm();
+           //lib.SaveFile();
 
         }
 
@@ -54,8 +56,11 @@ namespace Labbration_4
             textBox1.Text = "";
 
         }
+        
+        
+        
 
-      /*  private void BookListDataGrid_selectionChanged(object sender, EventArgs e)
+        private void BookListDataGrid_selectionChanged(object sender, EventArgs e)
         {
             if (SäljaListDataGrid.SelectedRows.Count < 1)
                 return;
@@ -65,19 +70,20 @@ namespace Labbration_4
             textBox1.Focus();
             textBox1.SelectAll();
         }
-
+ /*
         private void SpelListDataGrid_selectionChanged(object sender, EventArgs e)
         {
             if (SäljaListDataGrid.SelectedRows.Count < 1)
                 return;
             var spel = (DataSpel)SäljaListDataGrid.SelectedRows[0].DataBoundItem;
-            textBox1.Text = spel.Pris;
+            textBox1.Text = spel.price;
             SäljaListDataGrid.ClearSelection();
             textBox1.Focus();
             textBox1.SelectAll();
         }
+        */
 
-*/
+
 
 
 
@@ -88,7 +94,7 @@ namespace Labbration_4
                 if(book.Pris == textBox1.Text.Trim())
                 {
                     listBox1.Items.Add(book);
-                    lib.SaveFileBook();
+                    //lib.SaveFile();
                 }
             }
         }
@@ -104,20 +110,16 @@ namespace Labbration_4
             listBox1.Items.Clear();
             textBox1.Text = "";
             textBox1.Focus();
-            lib.SaveFileBook();
+            //lib.SaveFile();
         }
 
-
-        private void RadioBock_CheckedChanged(object sender, EventArgs e)
-        {
-            SäljaListDataGrid.DataSource = lib.BookList;
-
-        }
-
+        
         private void radioFilm_CheckedChanged(object sender, EventArgs e)
         {
-            SäljaListDataGrid.DataSource = lib.FilmList;
-                
+            SäljaListDataGrid.DataSource = lib.MovieList;
+
+            
+            
 
         }
 
@@ -139,7 +141,7 @@ namespace Labbration_4
             listBox1.Items.Clear();
             textBox1.Text = "";
             textBox1.Focus();
-            lib.SaveFileFilm();
+          //  lib.SaveFileFilm();
         }
 
 
@@ -154,35 +156,25 @@ namespace Labbration_4
             listBox1.Items.Clear();
             textBox1.Text = "";
             textBox1.Focus();
-            lib.SaveFileSpel();
+           // lib.SaveFileSpel();
         }
 
-        private void SäljaListDataGrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void RadioBock_CheckedChanged_1(object sender, EventArgs e)
         {
+           SäljaListDataGrid.DataSource = lib.BookList;
             if (SäljaListDataGrid.SelectedRows.Count < 1)
-            {
-
-           
                 return;
             var book = (Book)SäljaListDataGrid.SelectedRows[0].DataBoundItem;
             textBox1.Text = book.Pris;
             SäljaListDataGrid.ClearSelection();
             textBox1.Focus();
             textBox1.SelectAll();
-           }
-            if (SäljaListDataGrid.SelectedRows.Count < 2)
-            {
-                return;
-                var spel = (DataSpel)SäljaListDataGrid.SelectedRows[0].DataBoundItem;
-                textBox1.Text = spel.Pris;
-                SäljaListDataGrid.ClearSelection();
-                textBox1.Focus();
-                textBox1.SelectAll();
-            }
-
-
 
         }
 
+        private void AddMovieToTabelButton_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

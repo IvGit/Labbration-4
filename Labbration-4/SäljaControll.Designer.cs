@@ -143,6 +143,7 @@
             this.AddMovieToTabelButton.TabIndex = 11;
             this.AddMovieToTabelButton.Text = "Add";
             this.AddMovieToTabelButton.UseVisualStyleBackColor = true;
+            this.AddMovieToTabelButton.Click += new System.EventHandler(this.AddMovieToTabelButton_Click);
             // 
             // FinishButonSpel
             // 
@@ -195,7 +196,7 @@
             this.RadioBock.TabIndex = 5;
             this.RadioBock.Text = "Bock";
             this.RadioBock.UseVisualStyleBackColor = true;
-            this.RadioBock.CheckedChanged += new System.EventHandler(this.RadioBock_CheckedChanged);
+            this.RadioBock.CheckedChanged += new System.EventHandler(this.RadioBock_CheckedChanged_1);
             // 
             // FinishButonBook
             // 
@@ -247,8 +248,6 @@
             this.SäljaListDataGrid.ShowRowErrors = false;
             this.SäljaListDataGrid.Size = new System.Drawing.Size(830, 430);
             this.SäljaListDataGrid.TabIndex = 0;
-            this.SäljaListDataGrid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.SäljaListDataGrid_CellContentClick);
-            
             // 
             // SäljaControll
             // 

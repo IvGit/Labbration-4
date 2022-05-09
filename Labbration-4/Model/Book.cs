@@ -17,6 +17,8 @@
 
         public override string ToString()
         {
+
+
             return $"{Språk} {Pris}";
         }
 

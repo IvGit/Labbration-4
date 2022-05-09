@@ -14,7 +14,7 @@ namespace Labbration_4
     {
         BindingSource FilmSource;
         Filmer SelectedItem;  
-        public FilmerControl(BindingSource filmSource)
+        public FilmerControl( BindingSource filmSource)
         {
             InitializeComponent();
             this.FilmSource = filmSource;
@@ -66,10 +66,10 @@ namespace Labbration_4
         private void SaveButton_Click(object sender, EventArgs e)
         {
            
-            SelectedItem.Format = FormatText.Text;
-            SelectedItem.Pris = PrisText.Text;
-            SelectedItem.Name = NamnText.Text;
-            SelectedItem.Speltid = SpeltidText.Text;
+            SelectedItem.format = FormatText.Text;
+            SelectedItem.price = PrisText.Text;
+            SelectedItem.name = NamnText.Text;
+            SelectedItem.playtime= SpeltidText.Text;
             FilmSource.ResetCurrentItem();
             FilmDataGrid_SelectionChangedd(sender, null);
         }
@@ -112,10 +112,10 @@ namespace Labbration_4
             }
 
             var film = (Filmer)FilmDataGrid.SelectedRows[0].DataBoundItem;
-            NamnText.Text = film.Name;
-            PrisText.Text = film.Pris;
-            SpeltidText.Text = film.Speltid;
-            FormatText.Text = film.Format;
+            NamnText.Text = film.name;
+            PrisText.Text = film.price;
+            SpeltidText.Text = film.playtime;
+            FormatText.Text = film.format;
 
             SelectedItem = film;
             SaveButton.Enabled = false;

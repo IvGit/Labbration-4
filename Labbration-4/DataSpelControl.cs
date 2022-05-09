@@ -34,9 +34,9 @@ namespace Labbration_4
             }
 
             var spel = (DataSpel)SpelListDataGrid.SelectedRows[0].DataBoundItem;
-            NamnTextSpel.Text = spel.Name;
-            PlattformTextSpel.Text = spel.Plattform;
-            PrisTextSpel.Text = spel.Pris;
+            NamnTextSpel.Text = spel.name;
+            PlattformTextSpel.Text = spel.platform;
+            PrisTextSpel.Text = spel.price;
             SelectedItem = spel;
             SaveButton.Enabled = false;
             CancelButton.Enabled = false;
@@ -63,7 +63,7 @@ namespace Labbration_4
             SaveButton.Enabled = false;
             CancelButton.Enabled = false;
             SpelListDataGrid_SelectionChanged(sender, null);
-            lib.SaveFileSpel();
+          //  lib.SaveFileSpel();
             // SetTextEnabled(false);
         }
 
@@ -87,22 +87,22 @@ namespace Labbration_4
 
         private void SaveButtonSpel_Click(object sender, EventArgs e)
         {
-            SelectedItem.Plattform = PlattformTextSpel.Text;
-            SelectedItem.Pris = PrisTextSpel.Text;
-            SelectedItem.Name = NamnTextSpel.Text;
+            SelectedItem.platform = PlattformTextSpel.Text;
+            SelectedItem.price = PrisTextSpel.Text;
+            SelectedItem.name = NamnTextSpel.Text;
             SpelSource.ResetCurrentItem();
             SpelListDataGrid_SelectionChanged(sender, null);
-            lib.SaveFileSpel();
+           // lib.SaveFileSpel();
         }
 
-        private void läggTuttonSpel_Click(object sender, EventArgs e)
+        private void LäggTuttonSpel_Click(object sender, EventArgs e)
         {
             LäggTillSpel tillSpel = new LäggTillSpel();
             tillSpel.StartPosition = FormStartPosition.CenterParent;
             if (tillSpel.ShowDialog() == DialogResult.OK)
             {
                SpelSource.Add(tillSpel.spel);
-                lib.SaveFileSpel();
+                //lib.SaveFileSpel();
             }
             {
 
@@ -114,9 +114,6 @@ namespace Labbration_4
             SpelListDataGrid_SelectionChanged(sender, null);
         }
 
-        private void SpelListDataGrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
+        
     }
 }

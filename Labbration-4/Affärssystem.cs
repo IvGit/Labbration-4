@@ -13,10 +13,10 @@ namespace Labbration_4
     public partial class Affärssystem : Form
     {
       
-
         public Affärssystem()
         {
             InitializeComponent();
+           
            
         }
 
