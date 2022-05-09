@@ -361,7 +361,7 @@
             this.läggTuttonSpel.TabIndex = 0;
             this.läggTuttonSpel.Text = "Lägg Till";
             this.läggTuttonSpel.UseVisualStyleBackColor = true;
-           
+            this.läggTuttonSpel.Click += new System.EventHandler(this.läggTuttonSpel_Click_1);
             // 
             // RaderaButtonSpel
             // 

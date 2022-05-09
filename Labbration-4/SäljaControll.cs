@@ -47,24 +47,6 @@ namespace Labbration_4
 
         }
         
-        
-        /*
-
-        private void BookListDataGrid_selectionChanged(object sender, EventArgs e)
-        {
-            if (SäljaListDataGrid.SelectedRows.Count < 1)
-                return;
-            var book = (Book)SäljaListDataGrid.SelectedRows[0].DataBoundItem;
-            textBox1.Text = book.Pris;
-            SäljaListDataGrid.ClearSelection();
-            textBox1.Focus();
-            textBox1.SelectAll();
-        }
- 
-        */
-
-
-
 
         private void AddToTabelButton_Click(object sender, EventArgs e)
         {

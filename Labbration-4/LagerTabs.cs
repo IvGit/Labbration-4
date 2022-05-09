@@ -56,7 +56,7 @@ namespace Labbration_4
             FilmTab.Controls.Add(c2);
 
    
-            DataSpelControl c3 = new DataSpelControl(DataSpelSource);
+            DataSpelControl c3 = new DataSpelControl(lib,DataSpelSource);
             c3.Dock = DockStyle.Fill;
             DataSpelTab.Controls.Add(c3);
 

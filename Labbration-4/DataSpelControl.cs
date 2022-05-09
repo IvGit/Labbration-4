@@ -12,16 +12,18 @@ namespace Labbration_4
 {
     public partial class DataSpelControl : UserControl
     {
-        BindingSource SpelSource;
+        BindingSource SpelListSource;
+        private BindingSource spelListSource;
         DataSpel SelectedItem;
         Library lib;
 
 
-        public DataSpelControl(BindingSource spelSource)
+        public DataSpelControl(Library liB,BindingSource spelListSource)
         {
             InitializeComponent();
-            this.SpelSource = spelSource;
-            SpelListDataGrid.DataSource = spelSource;
+            lib = liB;
+            this.SpelListSource = spelListSource;
+            SpelListDataGrid.DataSource = spelListSource;
         }
 
         private void SpelListDataGrid_SelectionChanged(object sender, EventArgs e)
@@ -34,9 +36,9 @@ namespace Labbration_4
             }
 
             var spel = (DataSpel)SpelListDataGrid.SelectedRows[0].DataBoundItem;
-            NamnTextSpel.Text = spel.name;
-            PlattformTextSpel.Text = spel.platform;
-            PrisTextSpel.Text = spel.price;
+            NamnTextSpel.Text = spel.Name;
+            PlattformTextSpel.Text = spel.Platform;
+            PrisTextSpel.Text = spel.Pris;
             SelectedItem = spel;
             SaveButton.Enabled = false;
             CancelButton.Enabled = false;
@@ -56,7 +58,7 @@ namespace Labbration_4
             if (SpelListDataGrid.SelectedRows.Count < 1)
                 return;
             var spel = (DataSpel)SpelListDataGrid.SelectedRows[0].DataBoundItem;
-            SpelSource.Remove(spel);
+            SpelListSource.Remove(spel);
             PlattformTextSpel.Text = "";
             PrisTextSpel.Text = "";
             NamnTextSpel.Text = "";
@@ -87,33 +89,33 @@ namespace Labbration_4
 
         private void SaveButtonSpel_Click(object sender, EventArgs e)
         {
-            SelectedItem.platform = PlattformTextSpel.Text;
-            SelectedItem.price = PrisTextSpel.Text;
-            SelectedItem.name = NamnTextSpel.Text;
-            SpelSource.ResetCurrentItem();
+            SelectedItem.Platform = PlattformTextSpel.Text;
+            SelectedItem.Pris = PrisTextSpel.Text;
+            SelectedItem.Name = NamnTextSpel.Text;
+            SpelListSource.ResetCurrentItem();
             SpelListDataGrid_SelectionChanged(sender, null);
            // lib.SaveFileSpel();
         }
 
-        private void LäggTuttonSpel_Click(object sender, EventArgs e)
-        {
-            LäggTillSpel tillSpel = new LäggTillSpel();
-            tillSpel.StartPosition = FormStartPosition.CenterParent;
-            if (tillSpel.ShowDialog() == DialogResult.OK)
-            {
-               SpelSource.Add(tillSpel.spel);
-                //lib.SaveFileSpel();
-            }
-            {
-
-            }
-        }
+        
 
         private void CancelButtonSpel_Click(object sender, EventArgs e)
         {
             SpelListDataGrid_SelectionChanged(sender, null);
         }
 
-        
+        private void läggTuttonSpel_Click_1(object sender, EventArgs e)
+        {
+            LäggTillSpel tillSpel = new LäggTillSpel();
+            tillSpel.StartPosition = FormStartPosition.CenterParent;
+            if (tillSpel.ShowDialog() == DialogResult.OK)
+            {
+                SpelListSource.Add(tillSpel.spel);
+                lib.SaveFileGame();
+            }
+            {
+
+            }
+        }
     }
 }
