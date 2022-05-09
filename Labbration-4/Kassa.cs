@@ -30,7 +30,7 @@ namespace Labbration_4
 
         private void Kassa_Load(object sender, EventArgs e)
         {
-            SäljaControll säljaControll = new SäljaControll(BookListSource, FilmerlistSource);
+            SäljaControll säljaControll = new SäljaControll(BookListSource, FilmerlistSource,DataSpellistSource);
             säljaControll.Dock = DockStyle.Fill;
             SäljaTab1.Controls.Add(säljaControll);
 

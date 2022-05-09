@@ -12,10 +12,6 @@ namespace Labbration_4
 {
     public partial class LagerTabs : Form
     {
-       // BindingList <Filmer> FilmerList;
-       // BindingList<Book> BookList;
-        BindingList<DataSpel> DataspelList;
-
         BindingSource MovieListSource;
         BindingSource DataSpelSource;
         BindingSource BookListSource;
@@ -30,7 +26,7 @@ namespace Labbration_4
             BookListSource = new BindingSource();
             lib.SaveFile();
             BookListSource.DataSource = lib.BookList;
-            //lib.LoadFile();
+           
 
 
             MovieListSource = new BindingSource();
@@ -40,13 +36,14 @@ namespace Labbration_4
 
 
             DataSpelSource = new BindingSource();
+            lib.SaveFileGame();
             DataSpelSource.DataSource = lib.SpelList;
 
         }
 
         private void Lager_Load(object sender, EventArgs e)
         {
-            //lib.SaveFile();
+         
             BöckerControll c1= new BöckerControll(lib,BookListSource);
             c1.Dock = DockStyle.Fill;
             BokTab.Controls.Add(c1);
@@ -59,14 +56,6 @@ namespace Labbration_4
             DataSpelControl c3 = new DataSpelControl(lib,DataSpelSource);
             c3.Dock = DockStyle.Fill;
             DataSpelTab.Controls.Add(c3);
-
-            
-
-          
-
-
-
-
 
         }
 

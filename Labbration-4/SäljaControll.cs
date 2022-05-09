@@ -21,7 +21,7 @@ namespace Labbration_4
         BindingSource DataSpelSource;
         BindingSource FilmListSource;
 
-        public SäljaControll(BindingSource bookListSource, BindingSource filmerlistSource)
+        public SäljaControll(BindingSource bookListSource, BindingSource filmerlistSource, BindingSource dataSpelSource)
         {
             InitializeComponent();
 
@@ -35,6 +35,11 @@ namespace Labbration_4
             lib.LoadFileMovie();
          //   SäljaListDataGrid.DataSource = lib.MovieList;
            //lib.SaveFile();
+
+            DataSpelSource = dataSpelSource;
+            lib.LoadFileGame();
+
+
 
         }
 
@@ -137,6 +142,18 @@ namespace Labbration_4
         private void AddMovieToTabelButton_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void radioSpel_CheckedChanged(object sender, EventArgs e)
+        {
+            SäljaListDataGrid.DataSource = lib.SpelList;
+            if (SäljaListDataGrid.SelectedRows.Count < 1)
+                return;
+            var spel = (DataSpel)SäljaListDataGrid.SelectedRows[0].DataBoundItem;
+            textBox1.Text = spel.Pris;
+            SäljaListDataGrid.ClearSelection();
+            textBox1.Focus();
+            textBox1.SelectAll();
         }
     }
 }
