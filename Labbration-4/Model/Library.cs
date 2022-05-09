@@ -106,7 +106,80 @@ namespace Labbration_4
             }
         }
 
-        
+
+
+
+        public void SaveFileMovie()
+        {
+            XmlDocument doc = new XmlDocument();
+            XmlElement root = doc.CreateElement("movies");
+            foreach (var movie in MovieList)
+            {
+                XmlElement element = doc.CreateElement("movie");
+
+                XmlElement Name = doc.CreateElement("Name");
+                Name.InnerText = movie.Name;
+                element.AppendChild(Name);
+
+                XmlElement Pris = doc.CreateElement("Pris");
+                Pris.InnerText = movie.Pris;
+                element.AppendChild(Pris);
+
+                XmlElement Format = doc.CreateElement("Format");
+                Format.InnerText = movie.Format;
+                element.AppendChild(Format);
+
+                XmlElement Playtime = doc.CreateElement("Playtime");
+                Playtime.InnerText = movie.Format;
+                element.AppendChild(Format);
+
+                XmlElement BoVale = doc.CreateElement("BoVale");
+                BoVale.InnerText = movie.BoVale.ToString();
+                element.AppendChild(BoVale);
+
+
+
+                root.AppendChild(element);
+
+
+            }
+            doc.AppendChild(root);
+            doc.Save("test.xml");
+        }
+
+
+
+
+
+        public void LoadFileMovie()
+        {
+            XmlDocument doc = new XmlDocument();
+            doc.Load("test.xml");
+            var root = doc.FirstChild;
+            foreach (XmlElement element in root.ChildNodes)
+            {
+                var movie = new Filmer();
+                foreach (XmlElement elem in element.ChildNodes)
+                {
+                    if (elem.Name == "Name")
+                        movie.Name = elem.InnerText;
+                    if (elem.Name == "Playtime")
+                        movie.Playtime = elem.InnerText;
+                    if (elem.Name == "Pris")
+                        movie.Pris = elem.InnerText;
+                    if (elem.Name == "Format")
+                        movie.Format = elem.InnerText;
+                    if (elem.Name == "BoVale")
+                        movie.BoVale = bool.Parse(elem.InnerText);
+
+                }
+                MovieList.Add(movie);
+
+            }
+        }
+
+
+
 
     }
 

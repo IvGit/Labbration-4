@@ -21,10 +21,10 @@ namespace Labbration_4
         private void SparaFilm_Click(object sender, EventArgs e)
         {
             film = new Filmer();
-            film.name = NamnText.Text;
-            film.price = PrisText.Text;
-            film.format = FormatText.Text;
-            film.playtime = SpeltidText.Text;
+            film.Name = NamnText.Text;
+            film.Pris = PrisText.Text;
+            film.Format = FormatText.Text;
+            film.Playtime = SpeltidText.Text;
 
             DialogResult = DialogResult.OK;
             Close();

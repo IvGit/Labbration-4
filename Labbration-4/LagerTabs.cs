@@ -12,11 +12,11 @@ namespace Labbration_4
 {
     public partial class LagerTabs : Form
     {
-        BindingList <Filmer> FilmerList;
+       // BindingList <Filmer> FilmerList;
        // BindingList<Book> BookList;
         BindingList<DataSpel> DataspelList;
 
-        BindingSource FilmSource;
+        BindingSource MovieListSource;
         BindingSource DataSpelSource;
         BindingSource BookListSource;
         Library lib;
@@ -25,27 +25,17 @@ namespace Labbration_4
         public LagerTabs()
         {
             InitializeComponent();
-            
-
-
             lib = new Library();
-            /*
-            BookList = new BindingList<Book>()
-            {
-               new Book() { Name = "Ivan", Författare = "Idam", Format = "CD", Genre ="Språk", Pris="4444"
-            }
-            };
-               */
-                
+
             BookListSource = new BindingSource();
-             lib.SaveFile();
+            lib.SaveFile();
             BookListSource.DataSource = lib.BookList;
             //lib.LoadFile();
 
 
-            FilmerList = new BindingList<Filmer>();
-            FilmSource = new BindingSource();
-            FilmSource.DataSource = FilmerList;
+            MovieListSource = new BindingSource();
+            lib.SaveFileMovie();
+            MovieListSource.DataSource = lib.MovieList;
 
 
 
@@ -61,7 +51,7 @@ namespace Labbration_4
             c1.Dock = DockStyle.Fill;
             BokTab.Controls.Add(c1);
 
-            FilmerControl c2 = new FilmerControl(FilmSource);
+            FilmerControl c2 = new FilmerControl(lib, MovieListSource);
             c2.Dock = DockStyle.Fill;   
             FilmTab.Controls.Add(c2);
 

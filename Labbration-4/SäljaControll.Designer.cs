@@ -174,7 +174,7 @@
             this.radioSpel.TabIndex = 7;
             this.radioSpel.Text = "Spel";
             this.radioSpel.UseVisualStyleBackColor = true;
-            this.radioSpel.CheckedChanged += new System.EventHandler(this.radioSpel_CheckedChanged);
+            
             // 
             // radioFilm
             // 

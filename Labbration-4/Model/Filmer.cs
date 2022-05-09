@@ -2,10 +2,10 @@
 {
     public class Filmer
     {
-        public string name { get; set; }
-        public string price { get; set; }
-        public string format { get; set; }
-        public string playtime { get; set; }
+        public string Name { get; set; }
+        public string Pris { get; set; }
+        public string Format { get; set; }
+        public string Playtime { get; set; }
         public bool BoVale { get; internal set; }
 
         public Filmer()
@@ -15,7 +15,7 @@
 
         public override string ToString()
         {
-            return $"{playtime} {format}";
+            return $"{Playtime} {Format}";
         }
     }
 }

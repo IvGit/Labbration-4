@@ -12,13 +12,16 @@ namespace Labbration_4
 {
     public partial class FilmerControl : UserControl
     {
-        BindingSource FilmSource;
-        Filmer SelectedItem;  
-        public FilmerControl( BindingSource filmSource)
+        BindingSource MovieListSource;
+        Filmer SelectedItem;
+        private BindingSource movieListSource;
+        Library lib;
+        public FilmerControl(Library liB, BindingSource movieListSource)
         {
             InitializeComponent();
-            this.FilmSource = filmSource;
-            FilmDataGrid.DataSource = FilmSource;
+            lib = liB;
+            this.MovieListSource = movieListSource;
+            FilmDataGrid.DataSource = movieListSource;
 
         }
 
@@ -39,7 +42,9 @@ namespace Labbration_4
             tillFilm.StartPosition = FormStartPosition.CenterParent;
             if (tillFilm.ShowDialog() == DialogResult.OK)
             {
-                FilmSource.Add(tillFilm.film);
+                MovieListSource.Add(tillFilm.film);
+                lib.SaveFileMovie();
+                
             }
             {
 
@@ -51,7 +56,7 @@ namespace Labbration_4
             if (FilmDataGrid.SelectedRows.Count < 1)
                 return;
             var film = (Filmer)FilmDataGrid.SelectedRows[0].DataBoundItem;
-            FilmSource.Remove(film);
+            MovieListSource.Remove(film);
             
             PrisText.Text = "";
             FormatText.Text = "";
@@ -66,11 +71,11 @@ namespace Labbration_4
         private void SaveButton_Click(object sender, EventArgs e)
         {
            
-            SelectedItem.format = FormatText.Text;
-            SelectedItem.price = PrisText.Text;
-            SelectedItem.name = NamnText.Text;
-            SelectedItem.playtime= SpeltidText.Text;
-            FilmSource.ResetCurrentItem();
+            SelectedItem.Format = FormatText.Text;
+            SelectedItem.Pris = PrisText.Text;
+            SelectedItem.Name = NamnText.Text;
+            SelectedItem.Playtime= SpeltidText.Text;
+            MovieListSource.ResetCurrentItem();
             FilmDataGrid_SelectionChangedd(sender, null);
         }
 
@@ -112,10 +117,10 @@ namespace Labbration_4
             }
 
             var film = (Filmer)FilmDataGrid.SelectedRows[0].DataBoundItem;
-            NamnText.Text = film.name;
-            PrisText.Text = film.price;
-            SpeltidText.Text = film.playtime;
-            FormatText.Text = film.format;
+            NamnText.Text = film.Name;
+            PrisText.Text = film.Pris;
+            SpeltidText.Text = film.Playtime;
+            FormatText.Text = film.Format;
 
             SelectedItem = film;
             SaveButton.Enabled = false;
