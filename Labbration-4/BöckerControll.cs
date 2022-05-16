@@ -15,17 +15,27 @@ namespace Labbration_4
         BindingSource BoookListSource;
         Book SelectedItem;
         Library lib;
-        private BindingSource bookListSource;
+        public int counter =0;
+       
+       
 
+
+        private BindingSource bookListSource;
+        private bool stat;
+
+        public BöckerControll() { }
         public BöckerControll(Library liB, BindingSource bookListSource)
         {
             InitializeComponent();
+           
+
             lib = liB;
             this.BoookListSource = bookListSource;
             BookDataGrid.DataSource = bookListSource;
-            
-            
-           
+
+          
+
+
         } 
          
 
@@ -70,8 +80,6 @@ namespace Labbration_4
             BookDataGrid_Selectionchanged(sender, null);
         }
 
-       
-
         private void SetTextEnabled(Boolean stat)
         {
             FormatText.Enabled = stat;
@@ -84,13 +92,30 @@ namespace Labbration_4
 
         private void läggTutton_Click(object sender, EventArgs e)
         {
-            LäggTillBook tillBook = new LäggTillBook();
+            LäggTillBook tillBook = new LäggTillBook(counter++, lib,true);
             tillBook.StartPosition = FormStartPosition.CenterParent;  
+
            if(tillBook.ShowDialog() == DialogResult.OK)
             {
-                BoookListSource.Add(tillBook.Book);
-                lib.SaveFile();
+                List<string> list = new List<string>();
+
+                foreach (var st in lib.BookList)
+                {
+                   if(tillBook.Book.Name == st.Name)
+                    {
+                        stat = true;
+                        tillBook.Book.Total=2;
+                    }
+                }
+
+                if(stat==false)
+                {
+                    BoookListSource.Add(tillBook.Book);
+                }
+                stat= false;
+
             }
+
            else
             {
                   
@@ -111,6 +136,7 @@ namespace Labbration_4
             FormatText.Text = "";
             SpråkText.Text = "";
             NamnText.Text = "";
+            
             SaveButton.Enabled = false;
             CancelButton.Enabled = false;
             BookDataGrid_Selectionchanged(sender, null);
@@ -149,5 +175,6 @@ namespace Labbration_4
             SaveButton.Enabled = false;
             CancelButton.Enabled = false;
         }
+
     }
 }

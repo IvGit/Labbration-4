@@ -12,10 +12,28 @@ namespace Labbration_4
 {
     public partial class LäggTillBook : Form
     {
+        
+
         internal Book Book { get; private set; }
-        public LäggTillBook()
+        private int Counter;
+        private int total;
+        public List<Book> boks;
+        Library lib;
+        public string str;
+        private List<string> tempList;
+        private bool Stat;
+
+        public LäggTillBook(int counter, Library liB,Boolean stat)
         {
             InitializeComponent();
+            boks = new List<Book>();
+            this.Counter=counter;
+            this.lib = liB;
+            tempList = new List<string>();
+            this.Stat=stat;
+            
+
+
         }
 
         private void CancelButton_Click(object sender, EventArgs e)
@@ -26,28 +44,31 @@ namespace Labbration_4
 
         private void Lägtill_load(object sender, EventArgs e)
         {
-            
+      
         }
 
         private void SparaButton_Click(object sender, EventArgs e)
         {
-            Book = new Book();
-            Book.Name = NamnText.Text;
-            Book.Pris = PrisText.Text;
-            Book.Språk = SpråkText.Text;
-            Book.Genre = GenreText.Text;
-            Book.Författare = FörfattareText.Text;
-            Book.Format = FormatText.Text;
-            
-            
+             
 
-             DialogResult = DialogResult.OK;
+                Book = new Book();
+
+
+            
+                Book.Name = NamnText.Text;
+                Book.Pris = PrisText.Text;
+                Book.Språk = SpråkText.Text;
+                Book.Genre = GenreText.Text;
+                Book.Författare = FörfattareText.Text;
+                Book.Format = FormatText.Text;
+                Book.Total++;
+                Book.ID = Counter;
+            
+            DialogResult = DialogResult.OK;
             Close();
         }
 
-        
+       
 
-
-        //  private void Lägtill_load
     }
 }

@@ -13,7 +13,6 @@ namespace Labbration_4
     {
 
         public BindingList<Book> BookList { get; private set; }
-        
         public BindingList<DataSpel> SpelList { get; private set; }
         public BindingList<Filmer> MovieList { get; private set; }
 
@@ -32,7 +31,7 @@ namespace Labbration_4
             foreach (var book in BookList)
             {
                 XmlElement element = doc.CreateElement("book");
-
+  
                 XmlElement Name = doc.CreateElement("Name");
                 Name.InnerText = book.Name;
                 element.AppendChild(Name);

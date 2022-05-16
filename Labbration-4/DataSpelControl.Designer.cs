@@ -58,8 +58,6 @@
             this.läggTuttonSpel = new System.Windows.Forms.Button();
             this.RaderaButtonSpel = new System.Windows.Forms.Button();
             this.SpelListDataGrid = new System.Windows.Forms.DataGridView();
-            this.label8 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.CancelButtonSpel = new System.Windows.Forms.Button();
             this.SaveButtonSpel = new System.Windows.Forms.Button();
@@ -317,8 +315,6 @@
             // 
             // MainSpliter.Panel2
             // 
-            this.MainSpliter.Panel2.Controls.Add(this.label8);
-            this.MainSpliter.Panel2.Controls.Add(this.textBox1);
             this.MainSpliter.Panel2.Controls.Add(this.label7);
             this.MainSpliter.Panel2.Controls.Add(this.CancelButtonSpel);
             this.MainSpliter.Panel2.Controls.Add(this.SaveButtonSpel);
@@ -420,23 +416,6 @@
             this.SpelListDataGrid.Size = new System.Drawing.Size(946, 831);
             this.SpelListDataGrid.TabIndex = 0;
             this.SpelListDataGrid.SelectionChanged += new System.EventHandler(this.SpelListDataGrid_SelectionChanged);
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(8, 177);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(58, 20);
-            this.label8.TabIndex = 18;
-            this.label8.Text = "Speltid";
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(94, 169);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(337, 31);
-            this.textBox1.TabIndex = 17;
             // 
             // label7
             // 
@@ -604,7 +583,5 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Label label8;
     }
 }
