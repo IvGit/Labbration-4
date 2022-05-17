@@ -31,7 +31,7 @@ namespace Labbration_4
             foreach (var book in BookList)
             {
                 XmlElement element = doc.CreateElement("book");
-  
+
                 XmlElement Name = doc.CreateElement("Name");
                 Name.InnerText = book.Name;
                 element.AppendChild(Name);
@@ -72,7 +72,7 @@ namespace Labbration_4
 
 
         
-
+        
 
         public void LoadFile()
         {
@@ -105,8 +105,8 @@ namespace Labbration_4
             }
         }
 
-
-
+        
+        
 
         public void SaveFileMovie()
         {
@@ -149,7 +149,7 @@ namespace Labbration_4
 
 
 
-
+    
         public void LoadFileMovie()
         {
             XmlDocument doc = new XmlDocument();
@@ -176,6 +176,7 @@ namespace Labbration_4
 
             }
         }
+        
 
 
 
@@ -219,7 +220,7 @@ namespace Labbration_4
 
 
 
-
+        
         public void LoadFileGame()
         {
             XmlDocument doc = new XmlDocument();
@@ -245,7 +246,7 @@ namespace Labbration_4
             }
         }
 
-
+        
 
 
     }

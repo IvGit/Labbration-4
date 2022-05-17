@@ -16,7 +16,8 @@ namespace Labbration_4
         private BindingSource spelListSource;
         DataSpel SelectedItem;
         Library lib;
-
+        private int counter=1;
+        private bool stat;
 
         public DataSpelControl(Library liB,BindingSource spelListSource)
         {
@@ -106,14 +107,25 @@ namespace Labbration_4
 
         private void läggTuttonSpel_Click_1(object sender, EventArgs e)
         {
-            LäggTillSpel tillSpel = new LäggTillSpel();
+            LäggTillSpel tillSpel = new LäggTillSpel(counter++);
             tillSpel.StartPosition = FormStartPosition.CenterParent;
             if (tillSpel.ShowDialog() == DialogResult.OK)
             {
-                SpelListSource.Add(tillSpel.spel);
-                lib.SaveFileGame();
-            }
-            {
+                foreach (var sp in lib.SpelList)
+                {
+                    if (tillSpel.spel.Name == sp.Name)
+                    {
+                        stat = true;
+
+                    }
+                }
+
+                if (stat == false)
+                {
+                    SpelListSource.Add(tillSpel.spel);
+                    lib.SaveFileGame();
+                }
+                stat = false;
 
             }
         }

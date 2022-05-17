@@ -2,6 +2,7 @@
 {
     public class Filmer
     {
+        public int ID { get; set; }
         public string Name { get; set; }
         public string Pris { get; set; }
         public string Format { get; set; }

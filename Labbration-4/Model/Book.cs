@@ -1,11 +1,10 @@
 ﻿using System;
-
 namespace Labbration_4
 {
     public class Book
     {
         public int ID { get; set; }
-        public int Total { get; set; }    
+        public int Total { get; set; }
         public string Name { get; set; }
         public string Pris { get; set; }
         public string Författare { get; set; }
@@ -17,7 +16,7 @@ namespace Labbration_4
         public Book()
         {
             BoVale = false;
-           
+
         }
 
 

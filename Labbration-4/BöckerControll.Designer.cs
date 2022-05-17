@@ -36,7 +36,6 @@
             this.ButtonSpliter = new System.Windows.Forms.SplitContainer();
             this.läggTutton = new System.Windows.Forms.Button();
             this.RaderaButton = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.CancelButton = new System.Windows.Forms.Button();
             this.SaveButton = new System.Windows.Forms.Button();
@@ -108,7 +107,6 @@
             this.BookDataGrid.ShowRowErrors = false;
             this.BookDataGrid.Size = new System.Drawing.Size(954, 819);
             this.BookDataGrid.TabIndex = 0;
-         
             this.BookDataGrid.SelectionChanged += new System.EventHandler(this.BookDataGrid_Selectionchanged);
             // 
             // MainSpliter
@@ -125,7 +123,6 @@
             // 
             // MainSpliter.Panel2
             // 
-            this.MainSpliter.Panel2.Controls.Add(this.textBox1);
             this.MainSpliter.Panel2.Controls.Add(this.label6);
             this.MainSpliter.Panel2.Controls.Add(this.CancelButton);
             this.MainSpliter.Panel2.Controls.Add(this.SaveButton);
@@ -186,14 +183,6 @@
             this.RaderaButton.Text = "Ta Bort";
             this.RaderaButton.UseVisualStyleBackColor = true;
             this.RaderaButton.Click += new System.EventHandler(this.RaderaButton_Click);
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(37, 478);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(419, 387);
-            this.textBox1.TabIndex = 17;
             // 
             // label6
             // 
@@ -381,6 +370,5 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button CancelButton;
         private System.Windows.Forms.Button SaveButton;
-        private System.Windows.Forms.TextBox textBox1;
     }
 }

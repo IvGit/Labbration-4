@@ -15,7 +15,7 @@ namespace Labbration_4
         BindingSource BoookListSource;
         Book SelectedItem;
         Library lib;
-        public int counter =0;
+        public int counter =1;
        
        
 
@@ -92,34 +92,30 @@ namespace Labbration_4
 
         private void läggTutton_Click(object sender, EventArgs e)
         {
-            LäggTillBook tillBook = new LäggTillBook(counter++, lib,true);
+            LäggTillBook tillBook = new LäggTillBook(counter++);
             tillBook.StartPosition = FormStartPosition.CenterParent;  
 
            if(tillBook.ShowDialog() == DialogResult.OK)
-            {
-                List<string> list = new List<string>();
-
+           {
                 foreach (var st in lib.BookList)
                 {
                    if(tillBook.Book.Name == st.Name)
                     {
                         stat = true;
-                        tillBook.Book.Total=2;
+                      
                     }
                 }
 
                 if(stat==false)
                 {
                     BoookListSource.Add(tillBook.Book);
+                    lib.SaveFile();
                 }
                 stat= false;
 
-            }
+           }
 
-           else
-            {
-                  
-            }
+           
         }
 
        
@@ -140,7 +136,7 @@ namespace Labbration_4
             SaveButton.Enabled = false;
             CancelButton.Enabled = false;
             BookDataGrid_Selectionchanged(sender, null);
-            //lib.SaveFile();
+            lib.SaveFile();
         }
 
         

@@ -28,13 +28,13 @@ namespace Labbration_4
             BookListSource = bookListSource;
             lib = new Library();
             lib.LoadFile();
-         //  SäljaListDataGrid.DataSource = lib.BookList;
+            SäljaListDataGrid.DataSource = lib.BookList;
             
 
             FilmListSource = filmerlistSource;
             lib.LoadFileMovie();
-         //   SäljaListDataGrid.DataSource = lib.MovieList;
-           //lib.SaveFile();
+            SäljaListDataGrid.DataSource = lib.MovieList;
+            lib.SaveFile();
 
             DataSpelSource = dataSpelSource;
             lib.LoadFileGame();
@@ -60,7 +60,7 @@ namespace Labbration_4
                 if(book.Pris == textBox1.Text.Trim())
                 {
                     listBox1.Items.Add(book);
-                    //lib.SaveFile();
+                    lib.SaveFile();
                 }
             }
         }
@@ -76,7 +76,7 @@ namespace Labbration_4
             listBox1.Items.Clear();
             textBox1.Text = "";
             textBox1.Focus();
-            //lib.SaveFile();
+            lib.SaveFile();
         }
 
         
@@ -108,7 +108,7 @@ namespace Labbration_4
             listBox1.Items.Clear();
             textBox1.Text = "";
             textBox1.Focus();
-          //  lib.SaveFileFilm();
+            lib.LoadFileMovie();
         }
 
 
@@ -123,7 +123,7 @@ namespace Labbration_4
             listBox1.Items.Clear();
             textBox1.Text = "";
             textBox1.Focus();
-           // lib.SaveFileSpel();
+            lib.SaveFileGame();
         }
 
         private void RadioBock_CheckedChanged_1(object sender, EventArgs e)

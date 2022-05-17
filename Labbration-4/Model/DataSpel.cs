@@ -2,6 +2,7 @@
 {
     public class DataSpel
     {
+        public int ID { get; set; }
         public string Name { get; set; }
         public string Platform { get; set; }
         public string Pris{ get; set; }
