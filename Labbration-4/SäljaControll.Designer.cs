@@ -134,6 +134,7 @@
             this.AddSpelToTabelButton.TabIndex = 12;
             this.AddSpelToTabelButton.Text = "Add";
             this.AddSpelToTabelButton.UseVisualStyleBackColor = true;
+            this.AddSpelToTabelButton.Click += new System.EventHandler(this.AddSpelToTabelButton_Click);
             // 
             // AddMovieToTabelButton
             // 

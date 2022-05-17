@@ -24,20 +24,21 @@ namespace Labbration_4
         public SäljaControll(BindingSource bookListSource, BindingSource filmerlistSource, BindingSource dataSpelSource)
         {
             InitializeComponent();
+            lib = new Library();
 
             BookListSource = bookListSource;
-            lib = new Library();
             lib.LoadFile();
-            SäljaListDataGrid.DataSource = lib.BookList;
+          //  SäljaListDataGrid.DataSource = lib.BookList;
             
 
             FilmListSource = filmerlistSource;
             lib.LoadFileMovie();
-            SäljaListDataGrid.DataSource = lib.MovieList;
-            lib.SaveFile();
+           // SäljaListDataGrid.DataSource = lib.MovieList;
+            
 
             DataSpelSource = dataSpelSource;
             lib.LoadFileGame();
+            //SäljaListDataGrid.DataSource = lib.SpelList;
 
 
 
@@ -141,7 +142,14 @@ namespace Labbration_4
 
         private void AddMovieToTabelButton_Click(object sender, EventArgs e)
         {
-
+            foreach (var film in lib.MovieList)
+            {
+                if (film.Pris == textBox1.Text.Trim())
+                {
+                    listBox1.Items.Add(film);
+                    lib.SaveFileMovie();
+                }
+            }
         }
 
         private void radioSpel_CheckedChanged(object sender, EventArgs e)
@@ -154,6 +162,18 @@ namespace Labbration_4
             SäljaListDataGrid.ClearSelection();
             textBox1.Focus();
             textBox1.SelectAll();
+        }
+
+        private void AddSpelToTabelButton_Click(object sender, EventArgs e)
+        {
+            foreach (var spel in lib.SpelList)
+            {
+                if (spel.Pris == textBox1.Text.Trim())
+                {
+                    listBox1.Items.Add(spel);
+                    lib.SaveFileGame();
+                }
+            }
         }
     }
 }

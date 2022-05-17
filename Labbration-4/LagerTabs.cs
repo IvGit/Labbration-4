@@ -24,19 +24,19 @@ namespace Labbration_4
             lib = new Library();
 
             BookListSource = new BindingSource();
-            lib.SaveFile();
+            lib.LoadFile();
             BookListSource.DataSource = lib.BookList;
            
 
 
             MovieListSource = new BindingSource();
-            lib.SaveFileMovie();
+            lib.LoadFileMovie();
             MovieListSource.DataSource = lib.MovieList;
 
 
 
             DataSpelSource = new BindingSource();
-            lib.SaveFileGame();
+            lib.LoadFileGame();
             DataSpelSource.DataSource = lib.SpelList;
 
         }

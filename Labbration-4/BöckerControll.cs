@@ -28,17 +28,12 @@ namespace Labbration_4
         {
             InitializeComponent();
            
-
             lib = liB;
             this.BoookListSource = bookListSource;
             BookDataGrid.DataSource = bookListSource;
 
-          
-
-
         } 
          
-
         private void NamnText_TextChanged(object sender, EventArgs e)
         {
             SaveButton.Enabled = true;
@@ -150,6 +145,7 @@ namespace Labbration_4
             SelectedItem.Författare = FörfattareText.Text;
             SelectedItem.Pris = PrisText.Text;
             BookDataGrid_Selectionchanged(sender, null);
+            lib.SaveFile();
         }
 
         private void BookDataGrid_Selectionchanged(object sender, EventArgs e)
