@@ -4,11 +4,9 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
-using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Xml;
 
 namespace Labbration_4
 {
@@ -18,28 +16,12 @@ namespace Labbration_4
         BindingSource DataSpelSource;
         BindingSource BookListSource;
         Library lib;
-        WebClient client;
-        XmlDocument doc;
-
 
       
         public LagerTabs()
         {
             InitializeComponent();
-            client = new WebClient();
-            var text = client.DownloadString("https://hex.cse.kau.se/~jonavest/csharp-api");
-            doc = new XmlDocument();
-
-            doc.LoadXml(text);
-            doc.Save("Backup.xml");
-
-
-
-
-
-
             lib = new Library();
-
 
             BookListSource = new BindingSource();
             lib.LoadFile();

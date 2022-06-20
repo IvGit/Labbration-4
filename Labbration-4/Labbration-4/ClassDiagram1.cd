@@ -1,0 +1,200 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Labbration_4.Affärssystem" Collapsed="true">
+    <Position X="8.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEAAQAAAACAIAAAACACAAAACAAAAAAAABAQAAAAAAIA=</HashCode>
+      <FileName>Affärssystem.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Labbration_4.BöckerControll" Collapsed="true">
+    <Position X="4" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BRAAAAAFAKEgAJEAiIiAAAgCAAACAgEEAJgABAIABAQ=</HashCode>
+      <FileName>BöckerControll.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="bookListSource" />
+      <Field Name="BoookListSource" />
+      <Field Name="lib" />
+      <Field Name="SelectedItem" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Labbration_4.DataSpelControl" Collapsed="true">
+    <Position X="15.75" Y="4.25" Width="2" />
+    <TypeIdentifier>
+      <HashCode>5QAEARABACAgEBEAiIiAAIgCAEAECxkEAJhABIJAQAA=</HashCode>
+      <FileName>DataSpelControl.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="SelectedItem" />
+      <Field Name="spelListSource" />
+      <Field Name="SpelListSource" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Labbration_4.FilmerControl" Collapsed="true">
+    <Position X="20.25" Y="7" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BRAAAgAAAKAgABEAgICAAAgKAAACAQAmAJAABAAgBAE=</HashCode>
+      <FileName>FilmerControl.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="movieListSource" />
+      <Field Name="lib" />
+      <Field Name="MovieListSource" />
+      <Field Name="SelectedItem" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Labbration_4.Kassa">
+    <Position X="22.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAgAAACAqAAAAAACAAAAKAAAAAAACAAAAAAAAAAA=</HashCode>
+      <FileName>Kassa.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="BookListSource" />
+      <Field Name="DataSpellistSource" />
+      <Field Name="FilmerlistSource" />
+      <Field Name="lib" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Labbration_4.LagerTabs">
+    <Position X="8.5" Y="2" Width="1.5" />
+    <AssociationLine Name="BookListSource" Type="System.Windows.Forms.BindingSource" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="10" Y="4.296" />
+        <Point X="15.5" Y="4.296" />
+        <Point X="15.5" Y="4" />
+        <Point X="15.812" Y="4" />
+        <Point X="15.812" Y="2.691" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAgIAQCAoAAAAAACAAAACAAABAAAAAAAAgAAAABA=</HashCode>
+      <FileName>LagerTabs.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="BookListSource" />
+      <Field Name="FilmTab" />
+      <Field Name="MovieListSource" />
+      <Field Name="lib" />
+      <Field Name="DataSpelSource" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Labbration_4.LäggTillBook" Collapsed="true">
+    <Position X="0.75" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAwAAAAACAAABBAAICAAAACAQAAAAAEAJgAAAIAAAA=</HashCode>
+      <FileName>LäggTillBook.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Book" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Labbration_4.LäggTillFilm" Collapsed="true">
+    <Position X="0.5" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAIAAQAACAAABAAAICAAAAKAAAAAAAAAJQAAAIAAAg=</HashCode>
+      <FileName>LäggTillFilm.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="film" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Labbration_4.LäggTillSpel" Collapsed="true">
+    <Position X="2.75" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAAIARAAACAAABAAAACAAAACAQAAABAAAAAAAAJAAAg=</HashCode>
+      <FileName>LäggTillSpel.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="spel" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Labbration_4.Book" Collapsed="true">
+    <Position X="1" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAIAAACAAAAgAAEAAIAAAQAAAgAQAACAAAAABAAAAA=</HashCode>
+      <FileName>Model\Book.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Labbration_4.DataSpel" Collapsed="true">
+    <Position X="3.5" Y="7.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAgAAEAAAAAAQAAAAAAAACCAAAABAAAAA=</HashCode>
+      <FileName>Model\DataSpel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Labbration_4.Filmer" Collapsed="true">
+    <Position X="4.75" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAACAgAAEAAAAAAQAAAgAAAACAAAAABAAAAA=</HashCode>
+      <FileName>Model\Filmer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Labbration_4.Library">
+    <Position X="6.75" Y="7" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEAEAAAAAAAAABAAAAAQAACAAAAABAQBAAAABAA=</HashCode>
+      <FileName>Model\Library.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="SpelList" />
+      <Property Name="BookList" />
+      <Property Name="MovieList" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="Labbration_4.Program">
+    <Position X="3.5" Y="10" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>Program.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Labbration_4.SäljaControll" Collapsed="true">
+    <Position X="6.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>SERAIAEAAKCoIBAIAQCAAAACAAoRAQAQkAAQAEAACAA=</HashCode>
+      <FileName>SäljaControll.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="lib" />
+      <Field Name="BookListSource" />
+      <Field Name="DataSpelSource" />
+      <Field Name="FilmListSource" />
+      <Property Name="AcceptButton" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Labbration_4.Properties.Resources" Collapsed="true">
+    <Position X="1.5" Y="10" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAABEAAAAQAAAAAAAAAAAAAAAIA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Labbration_4.Properties.Settings" Collapsed="true">
+    <Position X="0.5" Y="9" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAIAAAAAABAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="System.Windows.Forms.Button" Collapsed="true">
+    <Position X="11.25" Y="5" Width="1.5" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="System.Windows.Forms.BindingSource" Collapsed="true">
+    <Position X="15" Y="2" Width="1.5" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="System.Windows.Forms.TabPage" Collapsed="true">
+    <Position X="11" Y="3" Width="1.5" />
+    <NestedTypes>
+      <Class Name="System.Windows.Forms.TabPage.TabPageControlCollection" Collapsed="true">
+        <TypeIdentifier />
+      </Class>
+    </NestedTypes>
+    <TypeIdentifier />
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

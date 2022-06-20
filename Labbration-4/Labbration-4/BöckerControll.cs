@@ -94,7 +94,7 @@ namespace Labbration_4
            {
                 foreach (var st in lib.BookList)
                 {
-                   if(tillBook.Book.name == st.name)
+                   if(tillBook.Book.Name == st.Name)
                     {
                         stat = true;
                       
@@ -138,12 +138,12 @@ namespace Labbration_4
 
         private void SaveButton_Click(object sender, EventArgs e)
         {
-            SelectedItem.name = NamnText.Text;
-            SelectedItem.genre = GenreText.Text;
+            SelectedItem.Name = NamnText.Text;
+            SelectedItem.Genre = GenreText.Text;
             SelectedItem.Språk = SpråkText.Text;
-            SelectedItem.format = FormatText.Text;
+            SelectedItem.Format = FormatText.Text;
             SelectedItem.Författare = FörfattareText.Text;
-            SelectedItem.price = PrisText.Text;
+            SelectedItem.Pris = PrisText.Text;
             BookDataGrid_Selectionchanged(sender, null);
             lib.SaveFile();
         }
@@ -157,18 +157,16 @@ namespace Labbration_4
             }
 
             var book = (Book)BookDataGrid.SelectedRows[0].DataBoundItem;
-            NamnText.Text = book.name;
-            GenreText.Text = book.genre;
+            NamnText.Text = book.Name;
+            GenreText.Text = book.Genre;
             SpråkText.Text = book.Språk;
-            FormatText.Text = book.format;
+            FormatText.Text = book.Format;
             FörfattareText.Text = book.Författare;
-            PrisText.Text = book.price;
+            PrisText.Text = book.Pris;
             SelectedItem = book;
             SaveButton.Enabled = false;
             CancelButton.Enabled = false;
         }
 
-      
-       
     }
 }

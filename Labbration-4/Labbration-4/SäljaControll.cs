@@ -58,7 +58,7 @@ namespace Labbration_4
         {
             foreach(var book in lib.BookList)
             {
-                if(book.price == textBox1.Text.Trim())
+                if(book.Pris == textBox1.Text.Trim())
                 {
                     listBox1.Items.Add(book);
                     lib.SaveFile();
@@ -133,7 +133,7 @@ namespace Labbration_4
             if (SäljaListDataGrid.SelectedRows.Count < 1)
                 return;
             var book = (Book)SäljaListDataGrid.SelectedRows[0].DataBoundItem;
-            textBox1.Text = book.price;
+            textBox1.Text = book.Pris;
             SäljaListDataGrid.ClearSelection();
             textBox1.Focus();
             textBox1.SelectAll();

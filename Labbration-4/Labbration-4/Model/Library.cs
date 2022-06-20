@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
-using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml;
@@ -16,8 +15,6 @@ namespace Labbration_4
         public BindingList<Book> BookList { get; private set; }
         public BindingList<DataSpel> SpelList { get; private set; }
         public BindingList<Filmer> MovieList { get; private set; }
-        WebClient client;
-        XmlDocument doc;
 
 
         public Library()
@@ -25,17 +22,10 @@ namespace Labbration_4
             BookList = new BindingList<Book>();
             SpelList = new BindingList<DataSpel>();
             MovieList = new BindingList<Filmer>();
-           
-
-           
-
-
-
         }
 
         public void SaveFile()
         {
-          
             XmlDocument doc = new XmlDocument();
             XmlElement root = doc.CreateElement("books");
             foreach (var book in BookList)
@@ -43,7 +33,7 @@ namespace Labbration_4
                 XmlElement element = doc.CreateElement("book");
 
                 XmlElement Name = doc.CreateElement("Name");
-                Name.InnerText = book.name;
+                Name.InnerText = book.Name;
                 element.AppendChild(Name);
 
                 XmlElement Språk = doc.CreateElement("Språk");
@@ -55,15 +45,15 @@ namespace Labbration_4
                 element.AppendChild(Författare);
 
                 XmlElement Pris = doc.CreateElement("Pris");
-                Pris.InnerText = book.price;
+                Pris.InnerText = book.Pris;
                 element.AppendChild(Pris);
 
                 XmlElement Genre = doc.CreateElement("Genre");
-                Genre.InnerText = book.genre;
+                Genre.InnerText = book.Genre;
                 element.AppendChild(Genre);
 
                 XmlElement Format = doc.CreateElement("Format");
-                Format.InnerText = book.format;
+                Format.InnerText = book.Format;
                 element.AppendChild(Format);
 
                 XmlElement BoVale = doc.CreateElement("BoVale");
@@ -87,50 +77,31 @@ namespace Labbration_4
         public void LoadFile()
         {
             XmlDocument doc = new XmlDocument();
-            doc.Load("Backup.xml");
+            doc.Load("ivandb.xml");
             var root = doc.FirstChild;
-            foreach (XmlNode node in doc.DocumentElement.ChildNodes)
+            foreach (XmlElement element in root.ChildNodes)
             {
-                foreach (XmlElement el in node.ChildNodes)
+                var book = new Book();
+                foreach (XmlElement elem in element.ChildNodes)
                 {
-                    var book = new Book();
-                    // foreach (XmlElement elem in el.FirstChild)
-                    //   {
-                    /*
-                    foreach (XmlNode node in doc.DocumentElement.ChildNodes)
-                    {
-                        XmlNode node2 = node.ChildNodes.Item(1);
-
-                    }
-                    */
-
-                    if(el.Name == "book")
-                    {
-                        foreach (XmlElement elem in el.ChildNodes)
-                        {
-                            if (elem.Name == "name")
-                                book.name = elem.InnerText;
-                            if (elem.Name == "Författare")
-                                book.Författare = elem.InnerText;
-                            if (elem.FirstChild.Name == "price")
-                                book.price = elem.InnerText;
-                            if (elem.FirstChild.Name == "format")
-                                book.format = elem.InnerText;
-                            if (elem.FirstChild.Name == "genre")
-                                book.genre = elem.InnerText;
-                            if (elem.FirstChild.Name == "Språk")
-                                book.Språk = elem.InnerText;
-                            if (elem.FirstChild.Name == "BoVale")
-                                book.BoVale = bool.Parse(elem.InnerText);
-
-                            //  }
-                            BookList.Add(book);
-                        }
-
-                    }
-                   
+                    if (elem.Name == "Name")
+                        book.Name = elem.InnerText;
+                    if (elem.Name == "Författare")
+                        book.Författare = elem.InnerText;
+                    if (elem.Name == "Pris")
+                        book.Pris = elem.InnerText;
+                    if (elem.Name == "Format")
+                        book.Format = elem.InnerText;
+                    if (elem.Name == "Genre")
+                        book.Genre = elem.InnerText;
+                    if (elem.Name == "Språk")
+                        book.Språk = elem.InnerText;
+                    if (elem.Name == "BoVale")
+                        book.BoVale = bool.Parse(elem.InnerText);
 
                 }
+                BookList.Add(book);
+
             }
         }
 
