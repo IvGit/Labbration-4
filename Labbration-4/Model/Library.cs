@@ -1,10 +1,12 @@
-﻿using System;
+﻿
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
 using System.Net;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 using System.Xml;
 
 
@@ -86,52 +88,46 @@ namespace Labbration_4
 
         public void LoadFile()
         {
+           
             XmlDocument doc = new XmlDocument();
             doc.Load("Backup.xml");
-            var root = doc.FirstChild;
-            foreach (XmlNode node in doc.DocumentElement.ChildNodes)
-            {
-                foreach (XmlElement el in node.ChildNodes)
+
+            
+                foreach (XmlElement elemm in doc.FirstChild.ChildNodes)
                 {
-                    var book = new Book();
-                    // foreach (XmlElement elem in el.FirstChild)
-                    //   {
-                    /*
-                    foreach (XmlNode node in doc.DocumentElement.ChildNodes)
-                    {
-                        XmlNode node2 = node.ChildNodes.Item(1);
+               // MessageBox.Show(elemm.InnerText);
 
-                    }
-                    */
 
-                    if(el.Name == "book")
+
+                    foreach (XmlElement ell in elemm.ChildNodes)
                     {
-                        foreach (XmlElement elem in el.ChildNodes)
+
+                       if (ell.Name == "book")
                         {
-                            if (elem.Name == "name")
-                                book.name = elem.InnerText;
-                            if (elem.Name == "Författare")
-                                book.Författare = elem.InnerText;
-                            if (elem.FirstChild.Name == "price")
-                                book.price = elem.InnerText;
-                            if (elem.FirstChild.Name == "format")
-                                book.format = elem.InnerText;
-                            if (elem.FirstChild.Name == "genre")
-                                book.genre = elem.InnerText;
-                            if (elem.FirstChild.Name == "Språk")
-                                book.Språk = elem.InnerText;
-                            if (elem.FirstChild.Name == "BoVale")
-                                book.BoVale = bool.Parse(elem.InnerText);
+                        foreach (XmlElement el in ell.ChildNodes)
+                        {
+                           // MessageBox.Show(el.InnerXml);
+                            Book book = new Book();
 
-                            //  }
-                            BookList.Add(book);
+                            if (el.Name == "name")
+                            {
+                                //  MessageBox.Show(ell.Name);
+                                book.name = el.InnerText;
+                                BookList.Add(book);
+
+                            }
                         }
-
+                            
+                       }
+                        
                     }
-                   
-
+                    
                 }
-            }
+                       
+
+                       
+
+                    
         }
 
         
