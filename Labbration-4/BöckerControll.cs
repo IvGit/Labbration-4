@@ -140,9 +140,8 @@ namespace Labbration_4
         {
             SelectedItem.name = NamnText.Text;
             SelectedItem.genre = GenreText.Text;
-            SelectedItem.Språk = SpråkText.Text;
+            SelectedItem.language = SpråkText.Text;
             SelectedItem.format = FormatText.Text;
-            SelectedItem.Författare = FörfattareText.Text;
             SelectedItem.price = PrisText.Text;
             BookDataGrid_Selectionchanged(sender, null);
             lib.SaveFile();
@@ -159,9 +158,8 @@ namespace Labbration_4
             var book = (Book)BookDataGrid.SelectedRows[0].DataBoundItem;
             NamnText.Text = book.name;
             GenreText.Text = book.genre;
-            SpråkText.Text = book.Språk;
+            SpråkText.Text = book.language;
             FormatText.Text = book.format;
-            FörfattareText.Text = book.Författare;
             PrisText.Text = book.price;
             SelectedItem = book;
             SaveButton.Enabled = false;

@@ -38,11 +38,10 @@ namespace Labbration_4
 
                 Book.name = NamnText.Text;
                 Book.price = PrisText.Text;
-                Book.Språk = SpråkText.Text;
+                Book.language = SpråkText.Text;
                 Book.genre = GenreText.Text;
-                Book.Författare = FörfattareText.Text;
                 Book.format = FormatText.Text;
-                Book.ID = Counter;
+               // Book.id = Counter;
 
 
             DialogResult = DialogResult.OK;

@@ -76,24 +76,54 @@ namespace Labbration_4
 
                 foreach (XmlElement ell in elemm.ChildNodes)
                 {
+                    Book book = new Book();
+
 
                     if (ell.Name == "book")
                     {
                         foreach (XmlElement el in ell.ChildNodes)
                         {
                             // MessageBox.Show(el.InnerXml);
-                            Book book = new Book();
+                            if (el.Name == "id")
+                            {
+                                book.id = el.InnerText;
+                            }
 
                             if (el.Name == "name")
                             {
-                                //  MessageBox.Show(ell.Name);
                                 book.name = el.InnerText;
-                                BookList.Add(book);
-
                             }
+                            if (el.Name == "price")
+                            {
+                                book.price = el.InnerText;
+                            }
+                            if (el.Name == "genre")
+                            {
+                                book.genre = el.InnerText;
+                            }
+                            if (el.Name == "stock")
+                            {
+                                book.stock = el.InnerText;
+                            }
+                            if (el.Name == "format")
+                            {
+                                book.format = el.InnerText;
+                            }
+
+                            if (el.Name == "language")
+                            {
+                                book.language = el.InnerText;
+                            }
+
+
                         }
+                        BookList.Add(book);
 
                     }
+
+
+
+
 
                 }
             }
