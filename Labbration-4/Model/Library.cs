@@ -70,14 +70,9 @@ namespace Labbration_4
 
             foreach (XmlElement elemm in doc.FirstChild.ChildNodes)
             {
-                // MessageBox.Show(elemm.InnerText);
-
-
-
                 foreach (XmlElement ell in elemm.ChildNodes)
                 {
                     Book book = new Book();
-
 
                     if (ell.Name == "book")
                     {
@@ -114,16 +109,44 @@ namespace Labbration_4
                             {
                                 book.language = el.InnerText;
                             }
-
-
                         }
                         BookList.Add(book);
 
                     }
 
+                    DataSpel dataSpel = new DataSpel();
+                    if (ell.Name == "game")
+                    {
+                        foreach (XmlElement el in ell.ChildNodes)
+                        {
+                            // MessageBox.Show(el.InnerXml);
+                            if (el.Name == "id")
+                            {
+                                dataSpel.id = el.InnerText;
+                            }
 
+                            if (el.Name == "name")
+                            {
+                                dataSpel.name = el.InnerText;
+                            }
+                            if (el.Name == "price")
+                            {
+                                dataSpel.price = el.InnerText;
+                            }
+                            if (el.Name == "stock")
+                            {
+                                dataSpel.stock = el.InnerText;
+                            }
+                            if (el.Name == "platform")
+                            {
+                                dataSpel.platform = el.InnerText;
+                            }
 
+                           
+                        }
+                        SpelList.Add(dataSpel);
 
+                    }
 
                 }
             }
@@ -214,15 +237,15 @@ namespace Labbration_4
                 XmlElement element = doc.CreateElement("game");
 
                 XmlElement Name = doc.CreateElement("Name");
-                Name.InnerText = spel.Name;
+                Name.InnerText = spel.name;
                 element.AppendChild(Name);
 
                 XmlElement Pris = doc.CreateElement("Pris");
-                Pris.InnerText = spel.Pris;
+                Pris.InnerText = spel.price;
                 element.AppendChild(Pris);
 
                 XmlElement Platform = doc.CreateElement("Platform");
-                Platform.InnerText = spel.Platform;
+                Platform.InnerText = spel.platform;
                 element.AppendChild(Platform);
 
                 
@@ -255,12 +278,12 @@ namespace Labbration_4
                 var spel= new DataSpel();
                 foreach (XmlElement elem in element.ChildNodes)
                 {
-                    if (elem.Name == "Name")
-                        spel.Name = elem.InnerText;
-                    if (elem.Name == "Pris")
-                        spel.Pris = elem.InnerText;
-                    if (elem.Name == "Platform")
-                        spel.Platform = elem.InnerText;
+                    if (elem.Name == "name")
+                        spel.name = elem.InnerText;
+                    if (elem.Name == "price")
+                        spel.price = elem.InnerText;
+                    if (elem.Name == "platform")
+                        spel.platform = elem.InnerText;
                     if (elem.Name == "BoVale")
                         spel.BoVale = bool.Parse(elem.InnerText);
 

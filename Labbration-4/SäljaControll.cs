@@ -147,7 +147,7 @@ namespace Labbration_4
             if (SäljaListDataGrid.SelectedRows.Count < 1)
                 return;
             var spel = (DataSpel)SäljaListDataGrid.SelectedRows[0].DataBoundItem;
-            textBox1.Text = spel.Pris;
+            textBox1.Text = spel.price;
             SäljaListDataGrid.ClearSelection();
             textBox1.Focus();
             textBox1.SelectAll();
@@ -157,7 +157,7 @@ namespace Labbration_4
         {
             foreach (var spel in lib.SpelList)
             {
-                if (spel.Pris == textBox1.Text.Trim())
+                if (spel.price == textBox1.Text.Trim())
                 {
                     listBox1.Items.Add(spel);
                     lib.SaveFileGame();
