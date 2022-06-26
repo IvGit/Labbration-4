@@ -25,7 +25,7 @@ namespace Labbration_4
             SpelList = new BindingList<DataSpel>();
             MovieList = new BindingList<Filmer>();
         }
-        /*
+        
         
         public void SaveFile()
         {
@@ -36,7 +36,7 @@ namespace Labbration_4
                 XmlElement element = doc.CreateElement("book");
 
                 XmlElement price = doc.CreateElement("price");
-                price.InnerText = book.Pris;
+                price.InnerText = book.price;
                 element.AppendChild(price);
 
                 XmlElement BoVale = doc.CreateElement("BoVale");
@@ -54,7 +54,7 @@ namespace Labbration_4
         }
 
 
-        */
+        
         
 
         public void LoadFile()
@@ -63,39 +63,39 @@ namespace Labbration_4
             var text = client.DownloadString("https://hex.cse.kau.se/~jonavest/csharp-api");
             XmlDocument docC = new XmlDocument();
             docC.LoadXml(text);
-            docC.Save("ivandb.xml");
+            docC.Save("Backup.xml");
+            XmlDocument doc = new XmlDocument();
+            doc.Load("Backup.xml");
 
 
-           // XmlDocument doc = new XmlDocument();
-           // docC.LoadXml(ivandb);
-            foreach (XmlElement element in docC.FirstChild.ChildNodes)
+            foreach (XmlElement elemm in doc.FirstChild.ChildNodes)
             {
-               // MessageBox.Show(element.InnerXml);
-                var book = new Book();
-                foreach (XmlElement elem in element.ChildNodes)
-                    foreach (XmlElement el in elem.ChildNodes)
+                // MessageBox.Show(elemm.InnerText);
+
+
+
+                foreach (XmlElement ell in elemm.ChildNodes)
+                {
+
+                    if (ell.Name == "book")
                     {
-                    if(el.InnerText == "book")
-                    MessageBox.Show(el.InnerXml);
+                        foreach (XmlElement el in ell.ChildNodes)
+                        {
+                            // MessageBox.Show(el.InnerXml);
+                            Book book = new Book();
 
+                            if (el.Name == "name")
+                            {
+                                //  MessageBox.Show(ell.Name);
+                                book.name = el.InnerText;
+                                BookList.Add(book);
 
-                    if (elem.Name == "name")
-                        book.Författare = elem.InnerText;
-                    /*
-                    if (elem.Name == "price")
-                        book.Pris = elem.InnerText;
-                    if (elem.Name == "format")
-                        book.Format = elem.InnerText;
-                    if (elem.Name == "genre")
-                        book.Genre = elem.InnerText;
-                    if (elem.Name == "language")
-                        book.Språk = elem.InnerText;
-                    if (elem.Name == "BoVale")
-                        book.BoVale = bool.Parse(elem.InnerText);
-                    */
+                            }
+                        }
+
+                    }
+
                 }
-                BookList.Add(book);
-
             }
         }
 
