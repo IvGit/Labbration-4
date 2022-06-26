@@ -73,7 +73,6 @@ namespace Labbration_4
                 foreach (XmlElement ell in elemm.ChildNodes)
                 {
                     Book book = new Book();
-
                     if (ell.Name == "book")
                     {
                         foreach (XmlElement el in ell.ChildNodes)
@@ -145,7 +144,43 @@ namespace Labbration_4
                            
                         }
                         SpelList.Add(dataSpel);
+                    }
 
+                    Filmer filmer = new Filmer();
+                    if (ell.Name == "movie")
+                    {
+                        foreach (XmlElement el in ell.ChildNodes)
+                        {
+                            // MessageBox.Show(el.InnerXml);
+                            if (el.Name == "id")
+                            {
+                                filmer.id = el.InnerText;
+                            }
+
+                            if (el.Name == "name")
+                            {
+                                filmer.name = el.InnerText;
+                            }
+                            if (el.Name == "price")
+                            {
+                                filmer.price = el.InnerText;
+                            }
+                            if (el.Name == "stock")
+                            {
+                                filmer.stock = el.InnerText;
+                            }
+                            if (el.Name == "format")
+                            {
+                                filmer.format = el.InnerText;
+                            }
+                            if (el.Name == "playtime")
+                            {
+                                filmer.playtime = el.InnerText;
+                            }
+
+
+                        }
+                        MovieList.Add(filmer);
                     }
 
                 }
@@ -163,20 +198,20 @@ namespace Labbration_4
             {
                 XmlElement element = doc.CreateElement("movie");
 
-                XmlElement Name = doc.CreateElement("Name");
-                Name.InnerText = movie.Name;
+                XmlElement Name = doc.CreateElement("name");
+                Name.InnerText = movie.name;
                 element.AppendChild(Name);
 
-                XmlElement Pris = doc.CreateElement("Pris");
-                Pris.InnerText = movie.Pris;
+                XmlElement Pris = doc.CreateElement("price");
+                Pris.InnerText = movie.price;
                 element.AppendChild(Pris);
 
-                XmlElement Format = doc.CreateElement("Format");
-                Format.InnerText = movie.Format;
+                XmlElement Format = doc.CreateElement("format");
+                Format.InnerText = movie.format;
                 element.AppendChild(Format);
 
-                XmlElement Playtime = doc.CreateElement("Playtime");
-                Playtime.InnerText = movie.Format;
+                XmlElement Playtime = doc.CreateElement("playtime");
+                Playtime.InnerText = movie.format;
                 element.AppendChild(Format);
 
                 XmlElement BoVale = doc.CreateElement("BoVale");
@@ -207,14 +242,16 @@ namespace Labbration_4
                 var movie = new Filmer();
                 foreach (XmlElement elem in element.ChildNodes)
                 {
-                    if (elem.Name == "Name")
-                        movie.Name = elem.InnerText;
-                    if (elem.Name == "Playtime")
-                        movie.Playtime = elem.InnerText;
-                    if (elem.Name == "Pris")
-                        movie.Pris = elem.InnerText;
-                    if (elem.Name == "Format")
-                        movie.Format = elem.InnerText;
+                    if (elem.Name == "name")
+                        movie.name = elem.InnerText;
+                    if (elem.Name == "playtime")
+                        movie.playtime = elem.InnerText;
+                    if (elem.Name == "price")
+                        movie.price = elem.InnerText;
+                    if (elem.Name == "format")
+                        movie.format = elem.InnerText;
+                    if (elem.Name == "stock")
+                        movie.stock = elem.InnerText;
                     if (elem.Name == "BoVale")
                         movie.BoVale = bool.Parse(elem.InnerText);
 

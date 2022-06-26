@@ -76,7 +76,7 @@ namespace Labbration_4
             if (SäljaListDataGrid.SelectedRows.Count < 1)
                 return;
             var movie = (Filmer)SäljaListDataGrid.SelectedRows[0].DataBoundItem;
-            textBox1.Text = movie.Pris;
+            textBox1.Text = movie.price;
             SäljaListDataGrid.ClearSelection();
             textBox1.Focus();
             textBox1.SelectAll();
@@ -133,7 +133,7 @@ namespace Labbration_4
         {
             foreach (var film in lib.MovieList)
             {
-                if (film.Pris == textBox1.Text.Trim())
+                if (film.price == textBox1.Text.Trim())
                 {
                     listBox1.Items.Add(film);
                     lib.SaveFileMovie();
