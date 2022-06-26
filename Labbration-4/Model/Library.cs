@@ -2,8 +2,10 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 using System.Xml;
 
 
@@ -23,38 +25,19 @@ namespace Labbration_4
             SpelList = new BindingList<DataSpel>();
             MovieList = new BindingList<Filmer>();
         }
-
+        /*
+        
         public void SaveFile()
         {
             XmlDocument doc = new XmlDocument();
-            XmlElement root = doc.CreateElement("books");
+            XmlElement root = doc.CreateElement("products");
             foreach (var book in BookList)
             {
                 XmlElement element = doc.CreateElement("book");
 
-                XmlElement Name = doc.CreateElement("Name");
-                Name.InnerText = book.Name;
-                element.AppendChild(Name);
-
-                XmlElement Språk = doc.CreateElement("Språk");
-                Språk.InnerText = book.Språk;
-                element.AppendChild(Språk);
-
-                XmlElement Författare = doc.CreateElement("Författare");
-                Författare.InnerText = book.Författare;
-                element.AppendChild(Författare);
-
-                XmlElement Pris = doc.CreateElement("Pris");
-                Pris.InnerText = book.Pris;
-                element.AppendChild(Pris);
-
-                XmlElement Genre = doc.CreateElement("Genre");
-                Genre.InnerText = book.Genre;
-                element.AppendChild(Genre);
-
-                XmlElement Format = doc.CreateElement("Format");
-                Format.InnerText = book.Format;
-                element.AppendChild(Format);
+                XmlElement price = doc.CreateElement("price");
+                price.InnerText = book.Pris;
+                element.AppendChild(price);
 
                 XmlElement BoVale = doc.CreateElement("BoVale");
                 BoVale.InnerText = book.BoVale.ToString();
@@ -71,34 +54,45 @@ namespace Labbration_4
         }
 
 
-        
+        */
         
 
         public void LoadFile()
         {
-            XmlDocument doc = new XmlDocument();
-            doc.Load("ivandb.xml");
-            var root = doc.FirstChild;
-            foreach (XmlElement element in root.ChildNodes)
+            WebClient client = new WebClient();
+            var text = client.DownloadString("https://hex.cse.kau.se/~jonavest/csharp-api");
+            XmlDocument docC = new XmlDocument();
+            docC.LoadXml(text);
+            docC.Save("ivandb.xml");
+
+
+           // XmlDocument doc = new XmlDocument();
+           // docC.LoadXml(ivandb);
+            foreach (XmlElement element in docC.FirstChild.ChildNodes)
             {
+               // MessageBox.Show(element.InnerXml);
                 var book = new Book();
                 foreach (XmlElement elem in element.ChildNodes)
-                {
-                    if (elem.Name == "Name")
-                        book.Name = elem.InnerText;
-                    if (elem.Name == "Författare")
+                    foreach (XmlElement el in elem.ChildNodes)
+                    {
+                    if(el.InnerText == "book")
+                    MessageBox.Show(el.InnerXml);
+
+
+                    if (elem.Name == "name")
                         book.Författare = elem.InnerText;
-                    if (elem.Name == "Pris")
+                    /*
+                    if (elem.Name == "price")
                         book.Pris = elem.InnerText;
-                    if (elem.Name == "Format")
+                    if (elem.Name == "format")
                         book.Format = elem.InnerText;
-                    if (elem.Name == "Genre")
+                    if (elem.Name == "genre")
                         book.Genre = elem.InnerText;
-                    if (elem.Name == "Språk")
+                    if (elem.Name == "language")
                         book.Språk = elem.InnerText;
                     if (elem.Name == "BoVale")
                         book.BoVale = bool.Parse(elem.InnerText);
-
+                    */
                 }
                 BookList.Add(book);
 

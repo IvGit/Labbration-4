@@ -79,7 +79,7 @@
             this.AddBookToTabelButton.TabIndex = 2;
             this.AddBookToTabelButton.Text = "Add";
             this.AddBookToTabelButton.UseVisualStyleBackColor = true;
-            this.AddBookToTabelButton.Click += new System.EventHandler(this.AddToTabelButton_Click);
+            
             // 
             // splitContainer1
             // 

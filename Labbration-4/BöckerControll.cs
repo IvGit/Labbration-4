@@ -85,33 +85,6 @@ namespace Labbration_4
             FörfattareText.Enabled=stat;
         }
 
-        private void läggTutton_Click(object sender, EventArgs e)
-        {
-            LäggTillBook tillBook = new LäggTillBook(counter++);
-            tillBook.StartPosition = FormStartPosition.CenterParent;  
-
-           if(tillBook.ShowDialog() == DialogResult.OK)
-           {
-                foreach (var st in lib.BookList)
-                {
-                   if(tillBook.Book.Name == st.Name)
-                    {
-                        stat = true;
-                      
-                    }
-                }
-
-                if(stat==false)
-                {
-                    BoookListSource.Add(tillBook.Book);
-                    lib.SaveFile();
-                }
-                stat= false;
-
-           }
-
-           
-        }
 
        
 
@@ -131,7 +104,7 @@ namespace Labbration_4
             SaveButton.Enabled = false;
             CancelButton.Enabled = false;
             BookDataGrid_Selectionchanged(sender, null);
-            lib.SaveFile();
+            //lib.SaveFile();
         }
 
         
@@ -145,7 +118,7 @@ namespace Labbration_4
             SelectedItem.Författare = FörfattareText.Text;
             SelectedItem.Pris = PrisText.Text;
             BookDataGrid_Selectionchanged(sender, null);
-            lib.SaveFile();
+           // lib.SaveFile();
         }
 
         private void BookDataGrid_Selectionchanged(object sender, EventArgs e)

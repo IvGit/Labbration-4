@@ -54,17 +54,6 @@ namespace Labbration_4
         }
         
 
-        private void AddToTabelButton_Click(object sender, EventArgs e)
-        {
-            foreach(var book in lib.BookList)
-            {
-                if(book.Pris == textBox1.Text.Trim())
-                {
-                    listBox1.Items.Add(book);
-                    lib.SaveFile();
-                }
-            }
-        }
 
         private void FinishButton_Click(object sender, EventArgs e)
         {
@@ -77,7 +66,7 @@ namespace Labbration_4
             listBox1.Items.Clear();
             textBox1.Text = "";
             textBox1.Focus();
-            lib.SaveFile();
+            //lib.SaveFile();
         }
 
         
