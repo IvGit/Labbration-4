@@ -210,6 +210,11 @@ namespace Labbration_4
                 Format.InnerText = movie.format;
                 element.AppendChild(Format);
 
+                XmlElement stock = doc.CreateElement("stock");
+                stock.InnerText = movie.format;
+                element.AppendChild(stock);
+
+
                 XmlElement Playtime = doc.CreateElement("playtime");
                 Playtime.InnerText = movie.format;
                 element.AppendChild(Format);
@@ -273,19 +278,22 @@ namespace Labbration_4
             {
                 XmlElement element = doc.CreateElement("game");
 
-                XmlElement Name = doc.CreateElement("Name");
+                XmlElement Name = doc.CreateElement("name");
                 Name.InnerText = spel.name;
                 element.AppendChild(Name);
 
-                XmlElement Pris = doc.CreateElement("Pris");
+                XmlElement stock = doc.CreateElement("stock");
+                stock.InnerText = spel.stock;
+                element.AppendChild(stock);
+
+                XmlElement Pris = doc.CreateElement("price");
                 Pris.InnerText = spel.price;
                 element.AppendChild(Pris);
 
-                XmlElement Platform = doc.CreateElement("Platform");
+                XmlElement Platform = doc.CreateElement("platform");
                 Platform.InnerText = spel.platform;
                 element.AppendChild(Platform);
 
-                
 
                 XmlElement BoVale = doc.CreateElement("BoVale");
                 BoVale.InnerText = spel.BoVale.ToString();
