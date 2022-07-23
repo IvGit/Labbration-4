@@ -129,5 +129,15 @@ namespace Labbration_4
 
             }
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            
+            SelectedItem.platform = PlattformTextSpel.Text;
+            SelectedItem.price = "0";
+            SelectedItem.name = NamnTextSpel.Text;
+            SpelListSource.ResetCurrentItem();
+            SpelListDataGrid_SelectionChanged(sender, null);
+        }
     }
 }

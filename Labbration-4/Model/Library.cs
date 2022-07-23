@@ -14,9 +14,9 @@ namespace Labbration_4
     public class Library
     {
 
-        public BindingList<Book> BookList { get; private set; }
-        public BindingList<DataSpel> SpelList { get; private set; }
-        public BindingList<Filmer> MovieList { get; private set; }
+        public BindingList<Book> BookList { get;  set; }
+        public BindingList<DataSpel> SpelList { get; set; }
+        public BindingList<Filmer> MovieList { get;  set; }
 
 
         public Library()
@@ -187,8 +187,108 @@ namespace Labbration_4
             }
         }
 
-        
-        
+        internal void UpdateGame()
+        {
+            WebClient client = new WebClient();
+            var text = client.DownloadString("https://hex.cse.kau.se/~jonavest/csharp-api");
+            XmlDocument docC = new XmlDocument();
+            docC.LoadXml(text);
+            docC.Save("Backup2.xml");
+            XmlDocument doc = new XmlDocument();
+            doc.Load("Backup2.xml");
+
+            foreach (XmlElement elemm in doc.FirstChild.ChildNodes)
+            {
+                foreach (XmlElement ell in elemm.ChildNodes)
+                {
+                    /*
+                    Book book = new Book();
+                    if (ell.Name == "book")
+                    {
+                        foreach (XmlElement el in ell.ChildNodes)
+                        {
+
+                            if (el.Name == "price")
+                            {
+                                book.price = el.InnerText;
+                                MessageBox.Show(el.InnerXml);
+
+                            }
+
+                            if (el.Name == "stock")
+                            {
+                                book.stock = el.InnerText;
+                            }
+                            
+                        }
+                        BookList.Add(book);
+
+                    }
+                    */
+
+                    DataSpel dataSpelreload = new DataSpel();
+                    if (ell.Name == "game")
+                    {
+                        foreach (XmlElement el in ell.ChildNodes)
+                        {
+                            // MessageBox.Show(el.InnerXml);
+                           
+                            if (el.Name == "price")
+                            {
+                                dataSpelreload.price = el.InnerText;
+                            }
+                            if (el.Name == "stock")
+                            {
+                                dataSpelreload.stock = el.InnerText;
+                            }
+                            
+
+                        }
+                        SpelList.Add(dataSpelreload);
+                    }
+                    /*
+
+                    Filmer filmer = new Filmer();
+                    if (ell.Name == "movie")
+                    {
+                        foreach (XmlElement el in ell.ChildNodes)
+                        {
+                            // MessageBox.Show(el.InnerXml);
+                            if (el.Name == "id")
+                            {
+                                filmer.id = el.InnerText;
+                            }
+
+                            if (el.Name == "name")
+                            {
+                                filmer.name = el.InnerText;
+                            }
+                            if (el.Name == "price")
+                            {
+                                filmer.price = el.InnerText;
+                            }
+                            if (el.Name == "stock")
+                            {
+                                filmer.stock = el.InnerText;
+                            }
+                            if (el.Name == "format")
+                            {
+                                filmer.format = el.InnerText;
+                            }
+                            if (el.Name == "playtime")
+                            {
+                                filmer.playtime = el.InnerText;
+                            }
+
+
+                        }
+                        MovieList.Add(filmer);
+                    }
+                    */
+
+                }
+            }
+        }
 
         public void SaveFileMovie()
         {
@@ -198,26 +298,26 @@ namespace Labbration_4
             {
                 XmlElement element = doc.CreateElement("movie");
 
-                XmlElement Name = doc.CreateElement("name");
-                Name.InnerText = movie.name;
-                element.AppendChild(Name);
+                XmlElement name = doc.CreateElement("name");
+                name.InnerText = movie.name;
+                element.AppendChild(name);
 
-                XmlElement Pris = doc.CreateElement("price");
-                Pris.InnerText = movie.price;
-                element.AppendChild(Pris);
+                XmlElement price = doc.CreateElement("price");
+                price.InnerText = movie.price;
+                element.AppendChild(price);
 
-                XmlElement Format = doc.CreateElement("format");
-                Format.InnerText = movie.format;
-                element.AppendChild(Format);
+                XmlElement format = doc.CreateElement("format");
+                format.InnerText = movie.format;
+                element.AppendChild(format);
 
                 XmlElement stock = doc.CreateElement("stock");
                 stock.InnerText = movie.format;
                 element.AppendChild(stock);
 
 
-                XmlElement Playtime = doc.CreateElement("playtime");
-                Playtime.InnerText = movie.format;
-                element.AppendChild(Format);
+                XmlElement playtime = doc.CreateElement("playtime");
+                playtime.InnerText = movie.format;
+                element.AppendChild(playtime);
 
                 XmlElement BoVale = doc.CreateElement("BoVale");
                 BoVale.InnerText = movie.BoVale.ToString();
@@ -278,21 +378,21 @@ namespace Labbration_4
             {
                 XmlElement element = doc.CreateElement("game");
 
-                XmlElement Name = doc.CreateElement("name");
-                Name.InnerText = spel.name;
-                element.AppendChild(Name);
+                XmlElement name = doc.CreateElement("name");
+                name.InnerText = spel.name;
+                element.AppendChild(name);
 
                 XmlElement stock = doc.CreateElement("stock");
                 stock.InnerText = spel.stock;
                 element.AppendChild(stock);
 
-                XmlElement Pris = doc.CreateElement("price");
-                Pris.InnerText = spel.price;
-                element.AppendChild(Pris);
+                XmlElement price = doc.CreateElement("price");
+                price.InnerText = spel.price;
+                element.AppendChild(price);
 
-                XmlElement Platform = doc.CreateElement("platform");
-                Platform.InnerText = spel.platform;
-                element.AppendChild(Platform);
+                XmlElement platform = doc.CreateElement("platform");
+                platform.InnerText = spel.platform;
+                element.AppendChild(platform);
 
 
                 XmlElement BoVale = doc.CreateElement("BoVale");
