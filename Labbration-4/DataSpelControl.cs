@@ -94,6 +94,8 @@ namespace Labbration_4
             SelectedItem.price = PrisTextSpel.Text;
             SelectedItem.name = NamnTextSpel.Text;
             SpelListSource.ResetCurrentItem();
+            lib.SaveFileGame();
+
             SpelListDataGrid_SelectionChanged(sender, null);
            // lib.SaveFileSpel();
         }
@@ -107,7 +109,7 @@ namespace Labbration_4
 
         private void läggTuttonSpel_Click_1(object sender, EventArgs e)
         {
-            LäggTillSpel tillSpel = new LäggTillSpel(counter++);
+            LäggTillSpel tillSpel = new LäggTillSpel();
             tillSpel.StartPosition = FormStartPosition.CenterParent;
             if (tillSpel.ShowDialog() == DialogResult.OK)
             {
