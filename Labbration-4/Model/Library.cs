@@ -24,9 +24,10 @@ namespace Labbration_4
             BookList = new BindingList<Book>();
             SpelList = new BindingList<DataSpel>();
             MovieList = new BindingList<Filmer>();
+
         }
-        
-        
+
+        /*
         public void SaveFile()
         {
             XmlDocument doc = new XmlDocument();
@@ -53,7 +54,7 @@ namespace Labbration_4
             doc.Save("ivandb.xml");
         }
 
-
+        */
         
         
 
@@ -187,6 +188,7 @@ namespace Labbration_4
             }
         }
 
+        /*
         internal void UpdateGame()
         {
             WebClient client = new WebClient();
@@ -224,7 +226,7 @@ namespace Labbration_4
                         BookList.Add(book);
 
                     }
-                    */
+                    
 
                     DataSpel dataSpelreload = new DataSpel();
                     if (ell.Name == "game")
@@ -235,6 +237,7 @@ namespace Labbration_4
                            
                             if (el.Name == "price")
                             {
+                                SpelList.Contains("price") = el.InnerText;
                                 dataSpelreload.price = el.InnerText;
                             }
                             if (el.Name == "stock")
@@ -246,7 +249,7 @@ namespace Labbration_4
                         }
                         SpelList.Add(dataSpelreload);
                     }
-                    /*
+                    
 
                     Filmer filmer = new Filmer();
                     if (ell.Name == "movie")
@@ -284,11 +287,14 @@ namespace Labbration_4
                         }
                         MovieList.Add(filmer);
                     }
-                    */
+                    
 
                 }
             }
         }
+         */
+
+        /*
 
         public void SaveFileMovie()
         {
@@ -412,11 +418,13 @@ namespace Labbration_4
 
 
 
-        
+         /*
         public void LoadFileGame()
         {
             XmlDocument doc = new XmlDocument();
-            doc.Load("ivandbGame.xml");
+            // doc.Load("ivandbGame.xml");
+            doc.Load("Backup2.xml");
+
             var root = doc.FirstChild;
             foreach (XmlElement element in root.ChildNodes)
             {
@@ -437,10 +445,21 @@ namespace Labbration_4
 
             }
         }
+       
+        public void DwonloadFromServer()
+        {
 
-        
+            client = new WebClient();
+            var text = client.DownloadString("https://hex.cse.kau.se/~jonavest/csharp-api");
+            doc = new XmlDocument();
+
+            doc.LoadXml(text);
+            doc.Save("Backup.xml");
 
 
+        }
+        */
+*/
     }
 
 }

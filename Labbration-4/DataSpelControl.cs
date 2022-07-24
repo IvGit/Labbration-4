@@ -125,7 +125,7 @@ namespace Labbration_4
                 if (stat == false)
                 {
                     SpelListSource.Add(tillSpel.spel);
-                    lib.SaveFileGame();
+                    lib.LoadFile();
                 }
                 stat = false;
 
@@ -134,12 +134,11 @@ namespace Labbration_4
 
         private void button1_Click(object sender, EventArgs e)
         {
-            
-            SelectedItem.platform = PlattformTextSpel.Text;
-            SelectedItem.price = "0";
-            SelectedItem.name = NamnTextSpel.Text;
-            SpelListSource.ResetCurrentItem();
-            SpelListDataGrid_SelectionChanged(sender, null);
+            SpelListSource = new BindingSource();
+
+
+            lib.LoadFile();
+            SpelListSource.DataSource = lib.SpelList;
         }
     }
 }

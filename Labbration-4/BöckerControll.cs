@@ -104,7 +104,7 @@ namespace Labbration_4
                 if(stat==false)
                 {
                     BoookListSource.Add(tillBook.Book);
-                    lib.SaveFile();
+                   // lib.SaveFile();
                 }
                 stat= false;
 
@@ -131,7 +131,8 @@ namespace Labbration_4
             SaveButton.Enabled = false;
             CancelButton.Enabled = false;
             BookDataGrid_Selectionchanged(sender, null);
-            lib.SaveFile();
+            //lib.SaveFile();
+            lib.LoadFile();
         }
 
         

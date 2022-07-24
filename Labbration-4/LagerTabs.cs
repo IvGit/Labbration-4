@@ -26,35 +26,26 @@ namespace Labbration_4
         public LagerTabs()
         {
             InitializeComponent();
-            client = new WebClient();
-            var text = client.DownloadString("https://hex.cse.kau.se/~jonavest/csharp-api");
-            doc = new XmlDocument();
-
-            doc.LoadXml(text);
-            doc.Save("Backup.xml");
-
-
-
-
 
 
             lib = new Library();
+            lib.LoadFile();
 
 
             BookListSource = new BindingSource();
-            lib.LoadFile();
+           // lib.LoadFile();
             BookListSource.DataSource = lib.BookList;
            
 
 
             MovieListSource = new BindingSource();
-            lib.LoadFileMovie();
+            //lib.LoadFileMovie();
             MovieListSource.DataSource = lib.MovieList;
 
 
 
             DataSpelSource = new BindingSource();
-            lib.LoadFileGame();
+           // lib.LoadFileGame();
             DataSpelSource.DataSource = lib.SpelList;
 
         }
