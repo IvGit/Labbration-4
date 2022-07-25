@@ -312,6 +312,58 @@ namespace Labbration_4
             }
         }
 
+        public void LoadFileMovie()
+        {
+            XmlDocument doc = new XmlDocument();
+            doc.Load("test.xml");
+            var root = doc.FirstChild;
+            foreach (XmlElement element in root.ChildNodes)
+            {
+                var movie = new Filmer();
+                foreach (XmlElement elem in element.ChildNodes)
+                {
+                    if (elem.Name == "name")
+                        movie.name = elem.InnerText;
+                    if (elem.Name == "playtime")
+                        movie.playtime = elem.InnerText;
+                    if (elem.Name == "price")
+                        movie.price = elem.InnerText;
+                    if (elem.Name == "format")
+                        movie.format = elem.InnerText;
+                    if (elem.Name == "BoVale")
+                        movie.BoVale = bool.Parse(elem.InnerText);
+
+                }
+                MovieList.Add(movie);
+
+            }
+        }
+
+        public void LoadFileGame()
+        {
+            XmlDocument doc = new XmlDocument();
+            doc.Load("ivandbGame.xml");
+            var root = doc.FirstChild;
+            foreach (XmlElement element in root.ChildNodes)
+            {
+                var spel = new DataSpel();
+                foreach (XmlElement elem in element.ChildNodes)
+                {
+                    if (elem.Name == "name")
+                        spel.name = elem.InnerText;
+                    if (elem.Name == "price")
+                        spel.price = elem.InnerText;
+                    if (elem.Name == "platform")
+                        spel.platform = elem.InnerText;
+                    if (elem.Name == "BoVale")
+                        spel.BoVale = bool.Parse(elem.InnerText);
+
+                }
+                SpelList.Add(spel);
+
+            }
+        }
+
 
 
 

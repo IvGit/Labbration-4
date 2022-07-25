@@ -32,12 +32,12 @@ namespace Labbration_4
 
 
             FilmListSource = filmerlistSource;
-           // lib.LoadFileMovie();
+            lib.LoadFileMovie();
            // SäljaListDataGrid.DataSource = lib.MovieList;
             
 
             DataSpelSource = dataSpelSource;
-           //lib.LoadFileGame();
+           lib.LoadFileGame();
             //SäljaListDataGrid.DataSource = lib.SpelList;
 
 
