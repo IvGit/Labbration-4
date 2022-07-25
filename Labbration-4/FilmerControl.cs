@@ -70,7 +70,10 @@ namespace Labbration_4
 
         private void SaveButton_Click(object sender, EventArgs e)
         {
-           
+            SelectedItem.name = NamnText.Text;
+            SelectedItem.format = FormatText.Text;
+            SelectedItem.playtime = SpeltidText.Text;
+            SelectedItem.price = PrisText.Text;
             MovieListSource.ResetCurrentItem();
             FilmDataGrid_SelectionChangedd(sender, null);
             lib.SaveFileMovie();

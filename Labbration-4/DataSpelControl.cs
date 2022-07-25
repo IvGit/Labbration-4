@@ -90,7 +90,9 @@ namespace Labbration_4
 
         private void SaveButtonSpel_Click(object sender, EventArgs e)
         {
-
+            SelectedItem.name = NamnText.Text;
+            SelectedItem.platform = GenreText.Text;
+            SelectedItem.price = PlattformTextSpel.Text;
             SpelListSource.ResetCurrentItem();
             SpelListDataGrid_SelectionChanged(sender, null);
            lib.SaveFileGame();
