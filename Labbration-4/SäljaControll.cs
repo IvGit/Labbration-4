@@ -54,17 +54,6 @@ namespace Labbration_4
         }
         
 
-        private void AddToTabelButton_Click(object sender, EventArgs e)
-        {
-            foreach(var book in lib.BookList)
-            {
-                if(book.Pris == textBox1.Text.Trim())
-                {
-                    listBox1.Items.Add(book);
-                    lib.SaveFile();
-                }
-            }
-        }
 
         private void FinishButton_Click(object sender, EventArgs e)
         {
@@ -77,7 +66,7 @@ namespace Labbration_4
             listBox1.Items.Clear();
             textBox1.Text = "";
             textBox1.Focus();
-            lib.SaveFile();
+            //lib.SaveFile();
         }
 
         
@@ -87,7 +76,7 @@ namespace Labbration_4
             if (SäljaListDataGrid.SelectedRows.Count < 1)
                 return;
             var movie = (Filmer)SäljaListDataGrid.SelectedRows[0].DataBoundItem;
-            textBox1.Text = movie.Pris;
+            textBox1.Text = movie.price;
             SäljaListDataGrid.ClearSelection();
             textBox1.Focus();
             textBox1.SelectAll();
@@ -133,7 +122,7 @@ namespace Labbration_4
             if (SäljaListDataGrid.SelectedRows.Count < 1)
                 return;
             var book = (Book)SäljaListDataGrid.SelectedRows[0].DataBoundItem;
-            textBox1.Text = book.Pris;
+            textBox1.Text = book.price;
             SäljaListDataGrid.ClearSelection();
             textBox1.Focus();
             textBox1.SelectAll();
@@ -144,7 +133,7 @@ namespace Labbration_4
         {
             foreach (var film in lib.MovieList)
             {
-                if (film.Pris == textBox1.Text.Trim())
+                if (film.price == textBox1.Text.Trim())
                 {
                     listBox1.Items.Add(film);
                     lib.SaveFileMovie();
@@ -158,7 +147,7 @@ namespace Labbration_4
             if (SäljaListDataGrid.SelectedRows.Count < 1)
                 return;
             var spel = (DataSpel)SäljaListDataGrid.SelectedRows[0].DataBoundItem;
-            textBox1.Text = spel.Pris;
+            textBox1.Text = spel.price;
             SäljaListDataGrid.ClearSelection();
             textBox1.Focus();
             textBox1.SelectAll();
@@ -168,7 +157,7 @@ namespace Labbration_4
         {
             foreach (var spel in lib.SpelList)
             {
-                if (spel.Pris == textBox1.Text.Trim())
+                if (spel.price == textBox1.Text.Trim())
                 {
                     listBox1.Items.Add(spel);
                     lib.SaveFileGame();

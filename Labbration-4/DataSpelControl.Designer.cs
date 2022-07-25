@@ -67,6 +67,7 @@
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.ButtonSpliter)).BeginInit();
             this.ButtonSpliter.Panel1.SuspendLayout();
             this.ButtonSpliter.Panel2.SuspendLayout();
@@ -315,6 +316,7 @@
             // 
             // MainSpliter.Panel2
             // 
+            this.MainSpliter.Panel2.Controls.Add(this.button1);
             this.MainSpliter.Panel2.Controls.Add(this.label7);
             this.MainSpliter.Panel2.Controls.Add(this.CancelButtonSpel);
             this.MainSpliter.Panel2.Controls.Add(this.SaveButtonSpel);
@@ -504,6 +506,17 @@
             this.label13.TabIndex = 1;
             this.label13.Text = "Namn";
             // 
+            // button1
+            // 
+            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.button1.Location = new System.Drawing.Point(196, 428);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(106, 54);
+            this.button1.TabIndex = 17;
+            this.button1.Text = "Update";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // DataSpelControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -583,5 +596,6 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Button button1;
     }
 }

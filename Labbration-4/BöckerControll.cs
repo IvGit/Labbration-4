@@ -94,7 +94,7 @@ namespace Labbration_4
            {
                 foreach (var st in lib.BookList)
                 {
-                   if(tillBook.Book.Name == st.Name)
+                   if(tillBook.Book.name == st.name)
                     {
                         stat = true;
                       
@@ -104,7 +104,7 @@ namespace Labbration_4
                 if(stat==false)
                 {
                     BoookListSource.Add(tillBook.Book);
-                    lib.SaveFile();
+                   // lib.SaveFile();
                 }
                 stat= false;
 
@@ -131,20 +131,19 @@ namespace Labbration_4
             SaveButton.Enabled = false;
             CancelButton.Enabled = false;
             BookDataGrid_Selectionchanged(sender, null);
-            lib.SaveFile();
+            //lib.SaveFile();
+            lib.LoadFile();
         }
 
         
 
         private void SaveButton_Click(object sender, EventArgs e)
         {
-            SelectedItem.Name = NamnText.Text;
-            SelectedItem.Genre = GenreText.Text;
-            SelectedItem.Språk = SpråkText.Text;
-            SelectedItem.Format = FormatText.Text;
-            SelectedItem.Författare = FörfattareText.Text;
-            SelectedItem.Pris = PrisText.Text;
-            BoookListSource.ResetCurrentItem();
+            SelectedItem.name = NamnText.Text;
+            SelectedItem.genre = GenreText.Text;
+            SelectedItem.language = SpråkText.Text;
+            SelectedItem.format = FormatText.Text;
+            SelectedItem.price = PrisText.Text;
             BookDataGrid_Selectionchanged(sender, null);
             lib.SaveFile();
         }
@@ -158,16 +157,17 @@ namespace Labbration_4
             }
 
             var book = (Book)BookDataGrid.SelectedRows[0].DataBoundItem;
-            NamnText.Text = book.Name;
-            GenreText.Text = book.Genre;
-            SpråkText.Text = book.Språk;
-            FormatText.Text = book.Format;
-            FörfattareText.Text = book.Författare;
-            PrisText.Text = book.Pris;
+            NamnText.Text = book.name;
+            GenreText.Text = book.genre;
+            SpråkText.Text = book.language;
+            FormatText.Text = book.format;
+            PrisText.Text = book.price;
             SelectedItem = book;
             SaveButton.Enabled = false;
             CancelButton.Enabled = false;
         }
 
+      
+       
     }
 }

@@ -4,9 +4,11 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml;
 
 namespace Labbration_4
 {
@@ -16,27 +18,34 @@ namespace Labbration_4
         BindingSource DataSpelSource;
         BindingSource BookListSource;
         Library lib;
+        WebClient client;
+        XmlDocument doc;
+
 
       
         public LagerTabs()
         {
             InitializeComponent();
+
+
             lib = new Library();
+            lib.LoadFile();
+
 
             BookListSource = new BindingSource();
-            lib.LoadFile();
+           // lib.LoadFile();
             BookListSource.DataSource = lib.BookList;
            
 
 
             MovieListSource = new BindingSource();
-            lib.LoadFileMovie();
+            //lib.LoadFileMovie();
             MovieListSource.DataSource = lib.MovieList;
 
 
 
             DataSpelSource = new BindingSource();
-            lib.LoadFileGame();
+           // lib.LoadFileGame();
             DataSpelSource.DataSource = lib.SpelList;
 
         }

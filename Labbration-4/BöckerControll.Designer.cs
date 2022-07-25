@@ -171,7 +171,7 @@
             this.läggTutton.TabIndex = 0;
             this.läggTutton.Text = "Lägg Till";
             this.läggTutton.UseVisualStyleBackColor = true;
-            this.läggTutton.Click += new System.EventHandler(this.läggTutton_Click);
+           
             // 
             // RaderaButton
             // 

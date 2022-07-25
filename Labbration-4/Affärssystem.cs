@@ -41,6 +41,7 @@ namespace Labbration_4
         {
             LagerTabs lager = new LagerTabs();
             lager.ShowDialog();
+            
         }
 
         

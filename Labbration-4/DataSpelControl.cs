@@ -37,9 +37,9 @@ namespace Labbration_4
             }
 
             var spel = (DataSpel)SpelListDataGrid.SelectedRows[0].DataBoundItem;
-            NamnTextSpel.Text = spel.Name;
-            PlattformTextSpel.Text = spel.Platform;
-            PrisTextSpel.Text = spel.Pris;
+            NamnTextSpel.Text = spel.name;
+            PlattformTextSpel.Text = spel.platform;
+            PrisTextSpel.Text = spel.price;
             SelectedItem = spel;
             SaveButton.Enabled = false;
             CancelButton.Enabled = false;
@@ -90,10 +90,12 @@ namespace Labbration_4
 
         private void SaveButtonSpel_Click(object sender, EventArgs e)
         {
-            SelectedItem.Platform = PlattformTextSpel.Text;
-            SelectedItem.Pris = PrisTextSpel.Text;
-            SelectedItem.Name = NamnTextSpel.Text;
+            SelectedItem.platform = PlattformTextSpel.Text;
+            SelectedItem.price = PrisTextSpel.Text;
+            SelectedItem.name = NamnTextSpel.Text;
             SpelListSource.ResetCurrentItem();
+            lib.SaveFileGame();
+
             SpelListDataGrid_SelectionChanged(sender, null);
             lib.SaveFileGame();
         }
@@ -107,13 +109,13 @@ namespace Labbration_4
 
         private void läggTuttonSpel_Click_1(object sender, EventArgs e)
         {
-            LäggTillSpel tillSpel = new LäggTillSpel(counter++);
+            LäggTillSpel tillSpel = new LäggTillSpel();
             tillSpel.StartPosition = FormStartPosition.CenterParent;
             if (tillSpel.ShowDialog() == DialogResult.OK)
             {
                 foreach (var sp in lib.SpelList)
                 {
-                    if (tillSpel.spel.Name == sp.Name)
+                    if (tillSpel.spel.name == sp.name)
                     {
                         stat = true;
 
@@ -123,11 +125,20 @@ namespace Labbration_4
                 if (stat == false)
                 {
                     SpelListSource.Add(tillSpel.spel);
-                    lib.SaveFileGame();
+                    lib.LoadFile();
                 }
                 stat = false;
 
             }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            SpelListSource = new BindingSource();
+
+
+            lib.LoadFile();
+            SpelListSource.DataSource = lib.SpelList;
         }
     }
 }

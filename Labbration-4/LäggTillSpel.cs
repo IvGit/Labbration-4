@@ -13,21 +13,18 @@ namespace Labbration_4
     public partial class LäggTillSpel : Form
     {
         internal DataSpel spel { get; private set; }
-        private int Counter;
 
-        public LäggTillSpel(int counter)
+        public LäggTillSpel()
         {
             InitializeComponent();
-            this.Counter = counter;
         }
 
         private void SparaFilm_Click(object sender, EventArgs e)
         {
             spel = new DataSpel();
-            spel.Name = NamnTextSpel.Text;
-            spel.Pris = PrisTextSpel.Text;
-            spel.Platform = PlattformTextSpel.Text;
-            spel.ID = Counter;
+            spel.name = NamnTextSpel.Text;
+            spel.price = PrisTextSpel.Text;
+            spel.platform = PlattformTextSpel.Text;
             
 
             DialogResult = DialogResult.OK;
