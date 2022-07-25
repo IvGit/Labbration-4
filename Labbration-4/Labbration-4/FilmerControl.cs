@@ -77,7 +77,6 @@ namespace Labbration_4
             SelectedItem.Playtime= SpeltidText.Text;
             MovieListSource.ResetCurrentItem();
             FilmDataGrid_SelectionChangedd(sender, null);
-            lib.SaveFileMovie();
         }
 
         private void CancelButton_Click(object sender, EventArgs e)

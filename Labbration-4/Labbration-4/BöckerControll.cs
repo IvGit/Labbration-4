@@ -144,7 +144,6 @@ namespace Labbration_4
             SelectedItem.Format = FormatText.Text;
             SelectedItem.Författare = FörfattareText.Text;
             SelectedItem.Pris = PrisText.Text;
-            BoookListSource.ResetCurrentItem();
             BookDataGrid_Selectionchanged(sender, null);
             lib.SaveFile();
         }

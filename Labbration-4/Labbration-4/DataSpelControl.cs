@@ -95,7 +95,7 @@ namespace Labbration_4
             SelectedItem.Name = NamnTextSpel.Text;
             SpelListSource.ResetCurrentItem();
             SpelListDataGrid_SelectionChanged(sender, null);
-            lib.SaveFileGame();
+           // lib.SaveFileSpel();
         }
 
         
