@@ -36,12 +36,13 @@ namespace Labbration_4
         {
                 Book = new Book();
 
-                Book.name = NamnText.Text;
-                Book.price = PrisText.Text;
-                Book.language = SpråkText.Text;
-                Book.genre = GenreText.Text;
+                Book.Name = NamnText.Text;
+                Book.Pris = PrisText.Text;
+                Book.Språk = SpråkText.Text;
+                Book.Genre = GenreText.Text;
                 Book.Författare = FörfattareText.Text;
-                Book.format = FormatText.Text;
+                Book.Format = FormatText.Text;
+                Book.ID = Counter;
 
 
             DialogResult = DialogResult.OK;

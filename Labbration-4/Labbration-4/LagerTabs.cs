@@ -22,23 +22,21 @@ namespace Labbration_4
         {
             InitializeComponent();
             lib = new Library();
-            lib.LoadFile();
-
 
             BookListSource = new BindingSource();
-
+            lib.LoadFile();
             BookListSource.DataSource = lib.BookList;
            
 
 
             MovieListSource = new BindingSource();
-            //lib.LoadFileMovie();
+            lib.LoadFileMovie();
             MovieListSource.DataSource = lib.MovieList;
 
 
 
             DataSpelSource = new BindingSource();
-            //lib.LoadFileGame();
+            lib.LoadFileGame();
             DataSpelSource.DataSource = lib.SpelList;
 
         }

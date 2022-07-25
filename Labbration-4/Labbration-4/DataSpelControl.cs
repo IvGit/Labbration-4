@@ -37,9 +37,9 @@ namespace Labbration_4
             }
 
             var spel = (DataSpel)SpelListDataGrid.SelectedRows[0].DataBoundItem;
-            NamnTextSpel.Text = spel.name;
-            PlattformTextSpel.Text = spel.platform;
-            PrisTextSpel.Text = spel.price;
+            NamnTextSpel.Text = spel.Name;
+            PlattformTextSpel.Text = spel.Platform;
+            PrisTextSpel.Text = spel.Pris;
             SelectedItem = spel;
             SaveButton.Enabled = false;
             CancelButton.Enabled = false;
@@ -90,10 +90,12 @@ namespace Labbration_4
 
         private void SaveButtonSpel_Click(object sender, EventArgs e)
         {
-
+            SelectedItem.Platform = PlattformTextSpel.Text;
+            SelectedItem.Pris = PrisTextSpel.Text;
+            SelectedItem.Name = NamnTextSpel.Text;
             SpelListSource.ResetCurrentItem();
             SpelListDataGrid_SelectionChanged(sender, null);
-           lib.SaveFileGame();
+           // lib.SaveFileSpel();
         }
 
         
@@ -111,7 +113,7 @@ namespace Labbration_4
             {
                 foreach (var sp in lib.SpelList)
                 {
-                    if (tillSpel.spel.name == sp.name)
+                    if (tillSpel.spel.Name == sp.Name)
                     {
                         stat = true;
 

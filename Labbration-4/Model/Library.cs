@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml;
@@ -32,29 +33,29 @@ namespace Labbration_4
             {
                 XmlElement element = doc.CreateElement("book");
 
-                XmlElement Name = doc.CreateElement("Name");
-                Name.InnerText = book.Name;
-                element.AppendChild(Name);
+                XmlElement name = doc.CreateElement("name");
+                name.InnerText = book.name;
+                element.AppendChild(name);
 
-                XmlElement Språk = doc.CreateElement("Språk");
-                Språk.InnerText = book.Språk;
-                element.AppendChild(Språk);
+                XmlElement language = doc.CreateElement("language");
+                language.InnerText = book.language;
+                element.AppendChild(language);
 
-                XmlElement Författare = doc.CreateElement("Författare");
-                Författare.InnerText = book.Författare;
-                element.AppendChild(Författare);
+                XmlElement stock = doc.CreateElement("stock");
+                stock.InnerText = book.stock;
+                element.AppendChild(stock);
 
-                XmlElement Pris = doc.CreateElement("Pris");
-                Pris.InnerText = book.Pris;
-                element.AppendChild(Pris);
+                XmlElement price = doc.CreateElement("price");
+                price.InnerText = book.price;
+                element.AppendChild(price);
 
-                XmlElement Genre = doc.CreateElement("Genre");
-                Genre.InnerText = book.Genre;
-                element.AppendChild(Genre);
+                XmlElement genre = doc.CreateElement("genre");
+                genre.InnerText = book.genre;
+                element.AppendChild(genre);
 
-                XmlElement Format = doc.CreateElement("Format");
-                Format.InnerText = book.Format;
-                element.AppendChild(Format);
+                XmlElement format = doc.CreateElement("format");
+                format.InnerText = book.format;
+                element.AppendChild(format);
 
                 XmlElement BoVale = doc.CreateElement("BoVale");
                 BoVale.InnerText = book.BoVale.ToString();
@@ -70,44 +71,6 @@ namespace Labbration_4
             doc.Save("ivandb.xml");
         }
 
-
-        
-        
-
-        public void LoadFile()
-        {
-            XmlDocument doc = new XmlDocument();
-            doc.Load("ivandb.xml");
-            var root = doc.FirstChild;
-            foreach (XmlElement element in root.ChildNodes)
-            {
-                var book = new Book();
-                foreach (XmlElement elem in element.ChildNodes)
-                {
-                    if (elem.Name == "Name")
-                        book.Name = elem.InnerText;
-                    if (elem.Name == "Författare")
-                        book.Författare = elem.InnerText;
-                    if (elem.Name == "Pris")
-                        book.Pris = elem.InnerText;
-                    if (elem.Name == "Format")
-                        book.Format = elem.InnerText;
-                    if (elem.Name == "Genre")
-                        book.Genre = elem.InnerText;
-                    if (elem.Name == "Språk")
-                        book.Språk = elem.InnerText;
-                    if (elem.Name == "BoVale")
-                        book.BoVale = bool.Parse(elem.InnerText);
-
-                }
-                BookList.Add(book);
-
-            }
-        }
-
-        
-        
-
         public void SaveFileMovie()
         {
             XmlDocument doc = new XmlDocument();
@@ -116,21 +79,21 @@ namespace Labbration_4
             {
                 XmlElement element = doc.CreateElement("movie");
 
-                XmlElement Name = doc.CreateElement("Name");
-                Name.InnerText = movie.Name;
-                element.AppendChild(Name);
+                XmlElement name = doc.CreateElement("name");
+                name.InnerText = movie.name;
+                element.AppendChild(name);
 
-                XmlElement Pris = doc.CreateElement("Pris");
-                Pris.InnerText = movie.Pris;
-                element.AppendChild(Pris);
+                XmlElement price = doc.CreateElement("price");
+                price.InnerText = movie.price;
+                element.AppendChild(price);
 
-                XmlElement Format = doc.CreateElement("Format");
-                Format.InnerText = movie.Format;
-                element.AppendChild(Format);
+                XmlElement format = doc.CreateElement("format");
+                format.InnerText = movie.format;
+                element.AppendChild(format);
 
-                XmlElement Playtime = doc.CreateElement("Playtime");
-                Playtime.InnerText = movie.Format;
-                element.AppendChild(Format);
+                XmlElement playtime = doc.CreateElement("playtime");
+                playtime.InnerText = movie.playtime;
+                element.AppendChild(playtime);
 
                 XmlElement BoVale = doc.CreateElement("BoVale");
                 BoVale.InnerText = movie.BoVale.ToString();
@@ -147,40 +110,6 @@ namespace Labbration_4
         }
 
 
-
-
-    
-        public void LoadFileMovie()
-        {
-            XmlDocument doc = new XmlDocument();
-            doc.Load("test.xml");
-            var root = doc.FirstChild;
-            foreach (XmlElement element in root.ChildNodes)
-            {
-                var movie = new Filmer();
-                foreach (XmlElement elem in element.ChildNodes)
-                {
-                    if (elem.Name == "Name")
-                        movie.Name = elem.InnerText;
-                    if (elem.Name == "Playtime")
-                        movie.Playtime = elem.InnerText;
-                    if (elem.Name == "Pris")
-                        movie.Pris = elem.InnerText;
-                    if (elem.Name == "Format")
-                        movie.Format = elem.InnerText;
-                    if (elem.Name == "BoVale")
-                        movie.BoVale = bool.Parse(elem.InnerText);
-
-                }
-                MovieList.Add(movie);
-
-            }
-        }
-        
-
-
-
-
         public void SaveFileGame()
         {
             XmlDocument doc = new XmlDocument();
@@ -189,17 +118,17 @@ namespace Labbration_4
             {
                 XmlElement element = doc.CreateElement("game");
 
-                XmlElement Name = doc.CreateElement("Name");
-                Name.InnerText = spel.Name;
-                element.AppendChild(Name);
+                XmlElement name = doc.CreateElement("name");
+                name.InnerText = spel.name;
+                element.AppendChild(name);
 
-                XmlElement Pris = doc.CreateElement("Pris");
-                Pris.InnerText = spel.Pris;
-                element.AppendChild(Pris);
+                XmlElement price = doc.CreateElement("price");
+                price.InnerText = spel.price;
+                element.AppendChild(price);
 
-                XmlElement Platform = doc.CreateElement("Platform");
-                Platform.InnerText = spel.Platform;
-                element.AppendChild(Platform);
+                XmlElement platform = doc.CreateElement("platform");
+                platform.InnerText = spel.platform;
+                element.AppendChild(platform);
 
                 
 
@@ -218,35 +147,173 @@ namespace Labbration_4
         }
 
 
+        public void LoadFile()
+        {
+            WebClient client = new WebClient();
+            var text = client.DownloadString("https://hex.cse.kau.se/~jonavest/csharp-api");
+            XmlDocument docC = new XmlDocument();
+            docC.LoadXml(text);
+            docC.Save("Backup.xml");
+            XmlDocument doc = new XmlDocument();
+            doc.Load("Backup.xml");
 
 
-        
-        public void LoadFileGame()
+            foreach (XmlElement elemm in doc.FirstChild.ChildNodes)
+            {
+                foreach (XmlElement ell in elemm.ChildNodes)
+                {
+                    Book book = new Book();
+                    if (ell.Name == "book")
+                    {
+                        foreach (XmlElement el in ell.ChildNodes)
+                        {
+                            // MessageBox.Show(el.InnerXml);
+                            if (el.Name == "id")
+                            {
+                                book.id = el.InnerText;
+                            }
+
+                            if (el.Name == "name")
+                            {
+                                book.name = el.InnerText;
+                            }
+                            if (el.Name == "price")
+                            {
+                                book.price = el.InnerText;
+                            }
+                            if (el.Name == "genre")
+                            {
+                                book.genre = el.InnerText;
+                            }
+                            if (el.Name == "stock")
+                            {
+                                book.stock = el.InnerText;
+                            }
+                            if (el.Name == "format")
+                            {
+                                book.format = el.InnerText;
+                            }
+
+                            if (el.Name == "language")
+                            {
+                                book.language = el.InnerText;
+                            }
+                        }
+                        BookList.Add(book);
+
+                    }
+
+                    DataSpel dataSpel = new DataSpel();
+                    if (ell.Name == "game")
+                    {
+                        foreach (XmlElement el in ell.ChildNodes)
+                        {
+                            // MessageBox.Show(el.InnerXml);
+                            if (el.Name == "id")
+                            {
+                                dataSpel.id = el.InnerText;
+                            }
+
+                            if (el.Name == "name")
+                            {
+                                dataSpel.name = el.InnerText;
+                            }
+                            if (el.Name == "price")
+                            {
+                                dataSpel.price = el.InnerText;
+                            }
+                            if (el.Name == "stock")
+                            {
+                                dataSpel.stock = el.InnerText;
+                            }
+                            if (el.Name == "platform")
+                            {
+                                dataSpel.platform = el.InnerText;
+                            }
+
+
+                        }
+                        SpelList.Add(dataSpel);
+                    }
+
+                    Filmer filmer = new Filmer();
+                    if (ell.Name == "movie")
+                    {
+                        foreach (XmlElement el in ell.ChildNodes)
+                        {
+                            // MessageBox.Show(el.InnerXml);
+                            if (el.Name == "id")
+                            {
+                                filmer.id = el.InnerText;
+                            }
+
+                            if (el.Name == "name")
+                            {
+                                filmer.name = el.InnerText;
+                            }
+                            if (el.Name == "price")
+                            {
+                                filmer.price = el.InnerText;
+                            }
+                            if (el.Name == "stock")
+                            {
+                                filmer.stock = el.InnerText;
+                            }
+                            if (el.Name == "format")
+                            {
+                                filmer.format = el.InnerText;
+                            }
+                            if (el.Name == "playtime")
+                            {
+                                filmer.playtime = el.InnerText;
+                            }
+
+
+                        }
+                        MovieList.Add(filmer);
+                    }
+
+                }
+            }
+        }
+
+        public void LoadFileBooks()
         {
             XmlDocument doc = new XmlDocument();
-            doc.Load("ivandbGame.xml");
+            doc.Load("ivandb.xml");
             var root = doc.FirstChild;
             foreach (XmlElement element in root.ChildNodes)
             {
-                var spel= new DataSpel();
+                var book = new Book();
                 foreach (XmlElement elem in element.ChildNodes)
                 {
-                    if (elem.Name == "Name")
-                        spel.Name = elem.InnerText;
-                    if (elem.Name == "Pris")
-                        spel.Pris = elem.InnerText;
-                    if (elem.Name == "Platform")
-                        spel.Platform = elem.InnerText;
+                    if (elem.Name == "id")
+                        book.id = elem.InnerText;
+                    if (elem.Name == "stock")
+                        book.stock = elem.InnerText;
+                    if (elem.Name == "name")
+                        book.name = elem.InnerText;
+                    if (elem.Name == "Författare")
+                        book.Författare = elem.InnerText;
+                    if (elem.Name == "price")
+                        book.price = elem.InnerText;
+                    if (elem.Name == "format")
+                        book.format = elem.InnerText;
+                    if (elem.Name == "genre")
+                        book.genre = elem.InnerText;
+                    if (elem.Name == "language")
+                        book.language = elem.InnerText;
                     if (elem.Name == "BoVale")
-                        spel.BoVale = bool.Parse(elem.InnerText);
+                        book.BoVale = bool.Parse(elem.InnerText);
 
                 }
-                SpelList.Add(spel);
+                BookList.Add(book);
 
             }
         }
 
-        
+
+
 
 
     }
