@@ -123,7 +123,7 @@ namespace Labbration_4
                 element.AppendChild(name);
 
                 XmlElement price = doc.CreateElement("price");
-                price.InnerText = spel.price;
+                price.InnerText = spel.price.ToString();
                 element.AppendChild(price);
 
                 XmlElement platform = doc.CreateElement("platform");
@@ -220,7 +220,7 @@ namespace Labbration_4
                             }
                             if (el.Name == "price")
                             {
-                                dataSpel.price = el.InnerText;
+                                dataSpel.price = int.Parse( el.InnerText);
                             }
                             if (el.Name == "stock")
                             {
@@ -352,7 +352,7 @@ namespace Labbration_4
                     if (elem.Name == "name")
                         spel.name = elem.InnerText;
                     if (elem.Name == "price")
-                        spel.price = elem.InnerText;
+                        spel.price = int.Parse(elem.InnerText);
                     if (elem.Name == "platform")
                         spel.platform = elem.InnerText;
                     if (elem.Name == "BoVale")

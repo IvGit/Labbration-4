@@ -24,8 +24,6 @@ namespace Labbration_4
             FilmDataGrid.DataSource = movieListSource;
 
         }
-
-
         private void SetTextEnabled(Boolean stat)
         {
             FormatText.Enabled = stat;
@@ -33,9 +31,7 @@ namespace Labbration_4
             NamnText.Enabled = stat;
             SpeltidText.Enabled = stat;
 
-
         }
-
         private void läggTutton_Click(object sender, EventArgs e)
         {
             LäggTillFilm tillFilm = new LäggTillFilm();
@@ -46,11 +42,8 @@ namespace Labbration_4
                 lib.SaveFileMovie();
                 
             }
-            {
-
-            }
-        }
-
+             
+        } 
         private void RaderaButton_Click(object sender, EventArgs e)
         {
             if (FilmDataGrid.SelectedRows.Count < 1)

@@ -6,7 +6,7 @@
         public string stock { get; set; }
         public string name { get; set; }
         public string platform { get; set; }
-        public string price { get; set; }
+        public int price { get; set; }
         public bool BoVale { get; internal set; }
 
         public DataSpel()

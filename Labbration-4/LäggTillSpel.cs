@@ -23,16 +23,33 @@ namespace Labbration_4
 
         private void SparaFilm_Click(object sender, EventArgs e)
         {
-            spel = new DataSpel();
-            spel.name = NamnTextSpel.Text;
-            spel.price = PrisTextSpel.Text;
-            spel.platform = PlattformTextSpel.Text;
-         
-            
+            int number;
+           
+                spel = new DataSpel();
+            try
+            {
+                
+                    spel.name = NamnTextSpel.Text;
 
-            DialogResult = DialogResult.OK;
-            Close();
+                  int strPrice = int.Parse(PrisTextSpel.Text);
+                  spel.price = strPrice;
+
+               
+                    spel.platform = PlattformTextSpel.Text;
+
+                DialogResult = DialogResult.OK;
+                Close();
+
+
+
+            }
+
+            catch ( Exception) { MessageBox.Show("Input is invalid"); }
+
+
         }
+
+       
 
         private void CancelButtonSpel_Click(object sender, EventArgs e)
         {

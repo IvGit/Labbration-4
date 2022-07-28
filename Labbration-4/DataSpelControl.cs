@@ -39,7 +39,7 @@ namespace Labbration_4
             var spel = (DataSpel)SpelListDataGrid.SelectedRows[0].DataBoundItem;
             NamnTextSpel.Text = spel.name;
             PlattformTextSpel.Text = spel.platform;
-            PrisTextSpel.Text = spel.price;
+            PrisTextSpel.Text = spel.name;
             SelectedItem = spel;
             SaveButton.Enabled = false;
             CancelButton.Enabled = false;
@@ -92,7 +92,7 @@ namespace Labbration_4
         {
             SelectedItem.name = NamnText.Text;
             SelectedItem.platform = GenreText.Text;
-            SelectedItem.price = PlattformTextSpel.Text;
+            SelectedItem.price = int.Parse( PlattformTextSpel.Text);
             SpelListSource.ResetCurrentItem();
             SpelListDataGrid_SelectionChanged(sender, null);
            lib.SaveFileGame();
