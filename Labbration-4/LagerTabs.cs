@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml;
 
 namespace Labbration_4
 {
@@ -22,23 +23,23 @@ namespace Labbration_4
         {
             InitializeComponent();
             lib = new Library();
-            lib.LoadFile();
+            //lib.LoadFile();
 
 
             BookListSource = new BindingSource();
-
+            lib.LoadFileBooks();
             BookListSource.DataSource = lib.BookList;
            
 
 
             MovieListSource = new BindingSource();
-            //lib.LoadFileMovie();
+            lib.LoadFileMovie();
             MovieListSource.DataSource = lib.MovieList;
 
 
 
             DataSpelSource = new BindingSource();
-            //lib.LoadFileGame();
+            lib.LoadFileGame();
             DataSpelSource.DataSource = lib.SpelList;
 
         }

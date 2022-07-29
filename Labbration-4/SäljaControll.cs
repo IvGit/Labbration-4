@@ -95,7 +95,7 @@ namespace Labbration_4
             listBox1.Items.Clear();
             textBox1.Text = "";
             textBox1.Focus();
-            lib.LoadFile();
+            lib.SaveFileMovie();
         }
         private void FinishButonSpel_Click(object sender, EventArgs e)
         {

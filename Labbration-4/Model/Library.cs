@@ -23,6 +23,7 @@ namespace Labbration_4
             BookList = new BindingList<Book>();
             SpelList = new BindingList<DataSpel>();
             MovieList = new BindingList<Filmer>();
+           
         }
 
         public void SaveFile()
@@ -68,7 +69,7 @@ namespace Labbration_4
 
             }
             doc.AppendChild(root);
-            doc.Save("ivandb.xml");
+            doc.Save("Book.xml");
         }
 
         public void SaveFileMovie()
@@ -106,7 +107,7 @@ namespace Labbration_4
 
             }
             doc.AppendChild(root);
-            doc.Save("test.xml");
+            doc.Save("Movie.xml");
         }
 
 
@@ -143,10 +144,11 @@ namespace Labbration_4
 
             }
             doc.AppendChild(root);
-            doc.Save("ivandbGame.xml");
+            doc.Save("Game.xml");
         }
-
-
+        /*
+        /*
+         * This is for Assignment-5
         public void LoadFile()
         {
             WebClient client = new WebClient();
@@ -276,11 +278,13 @@ namespace Labbration_4
                 }
             }
         }
-
+        */
+       
         public void LoadFileBooks()
         {
+
             XmlDocument doc = new XmlDocument();
-            doc.Load("ivandb.xml");
+            doc.Load("Book.xml");
             var root = doc.FirstChild;
             foreach (XmlElement element in root.ChildNodes)
             {
@@ -308,6 +312,8 @@ namespace Labbration_4
 
                 }
                 BookList.Add(book);
+                doc.AppendChild(root);
+                doc.Save("Book.xml");
 
             }
         }
@@ -315,7 +321,7 @@ namespace Labbration_4
         public void LoadFileMovie()
         {
             XmlDocument doc = new XmlDocument();
-            doc.Load("test.xml");
+            doc.Load("Movie.xml");
             var root = doc.FirstChild;
             foreach (XmlElement element in root.ChildNodes)
             {
@@ -335,14 +341,17 @@ namespace Labbration_4
 
                 }
                 MovieList.Add(movie);
+                doc.AppendChild(root);
+                doc.Save("Movie.xml");
 
             }
         }
 
         public void LoadFileGame()
         {
+  
             XmlDocument doc = new XmlDocument();
-            doc.Load("ivandbGame.xml");
+            doc.Load("Game.xml");
             var root = doc.FirstChild;
             foreach (XmlElement element in root.ChildNodes)
             {
@@ -360,6 +369,8 @@ namespace Labbration_4
 
                 }
                 SpelList.Add(spel);
+                doc.AppendChild(root);
+                doc.Save("Game.xml");
 
             }
         }

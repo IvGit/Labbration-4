@@ -12,10 +12,11 @@ namespace Labbration_4
 {
     public partial class Affärssystem : Form
     {
-      
+       // Library lib;
         public Affärssystem()
         {
             InitializeComponent();
+           // lib = new Library();
            
            
         }
@@ -39,7 +40,13 @@ namespace Labbration_4
 
         private void BookButton_Click(object sender, EventArgs e)
         {
+            /* I create once my XML files and then comment them
+            lib.SaveFileGame();
+            lib.SaveFileMovie();
+            lib.SaveFile();
+            */
             LagerTabs lager = new LagerTabs();
+            
             lager.ShowDialog();
         }
 
