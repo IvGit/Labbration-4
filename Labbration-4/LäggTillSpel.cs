@@ -13,15 +13,23 @@ namespace Labbration_4
     public partial class LäggTillSpel : Form
     {
         internal DataSpel spel { get; private set; }
-        private int Counter;
+       
 
         public LäggTillSpel(int counter)
         {
             InitializeComponent();
-            this.Counter = counter;
+           
         }
 
-        private void SparaFilm_Click(object sender, EventArgs e)
+
+
+        private void CancelButtonSpel_Click(object sender, EventArgs e)
+        {
+            DialogResult = DialogResult.Cancel;
+            Close();
+        }
+
+        private void SparaSpel_Click(object sender, EventArgs e)
         {
             try
             {
@@ -43,26 +51,17 @@ namespace Labbration_4
                 }
                 else
                 {
-                    MessageBox.Show("Invalid input!!");
+                    MessageBox.Show("Invalid game input!!");
 
                 }
 
-            } catch
-            {
-                MessageBox.Show("Samthing happend");
-              
             }
-            
+            catch
+            {
+                MessageBox.Show("Samthing happend to our Game input");
+
+            }
+
         }
-
-       
-
-        private void CancelButtonSpel_Click(object sender, EventArgs e)
-        {
-            DialogResult = DialogResult.Cancel;
-            Close();
-        }
-
-
     }
 }

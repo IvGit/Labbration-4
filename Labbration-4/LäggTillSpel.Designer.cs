@@ -47,7 +47,7 @@
             this.SparaFilm.TabIndex = 47;
             this.SparaFilm.Text = "Spara Spelet";
             this.SparaFilm.UseVisualStyleBackColor = true;
-            this.SparaFilm.Click += new System.EventHandler(this.SparaFilm_Click);
+            this.SparaFilm.Click += new System.EventHandler(this.SparaSpel_Click);
             // 
             // label4
             // 

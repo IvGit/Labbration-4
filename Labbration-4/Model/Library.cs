@@ -46,7 +46,7 @@ namespace Labbration_4
                 element.AppendChild(stock);
 
                 XmlElement price = doc.CreateElement("price");
-                price.InnerText = book.price;
+                price.InnerText = book.price.ToString();
                 element.AppendChild(price);
 
                 XmlElement genre = doc.CreateElement("genre");
@@ -84,7 +84,7 @@ namespace Labbration_4
                 element.AppendChild(name);
 
                 XmlElement price = doc.CreateElement("price");
-                price.InnerText = movie.price;
+                price.InnerText = movie.price.ToString();
                 element.AppendChild(price);
 
                 XmlElement format = doc.CreateElement("format");
@@ -92,7 +92,7 @@ namespace Labbration_4
                 element.AppendChild(format);
 
                 XmlElement playtime = doc.CreateElement("playtime");
-                playtime.InnerText = movie.playtime;
+                playtime.InnerText = movie.playtime.ToString();
                 element.AppendChild(playtime);
 
                 XmlElement BoVale = doc.CreateElement("BoVale");
@@ -179,7 +179,7 @@ namespace Labbration_4
                             }
                             if (el.Name == "price")
                             {
-                                book.price = el.InnerText;
+                                book.price =int.Parse(el.InnerText);
                             }
                             if (el.Name == "genre")
                             {
@@ -253,7 +253,7 @@ namespace Labbration_4
                             }
                             if (el.Name == "price")
                             {
-                                filmer.price = el.InnerText;
+                                filmer.price = int.Parse(el.InnerText);
                             }
                             if (el.Name == "stock")
                             {
@@ -265,7 +265,7 @@ namespace Labbration_4
                             }
                             if (el.Name == "playtime")
                             {
-                                filmer.playtime = el.InnerText;
+                                filmer.playtime = int.Parse(el.InnerText);
                             }
 
 
@@ -296,7 +296,7 @@ namespace Labbration_4
                     if (elem.Name == "Författare")
                         book.Författare = elem.InnerText;
                     if (elem.Name == "price")
-                        book.price = elem.InnerText;
+                        book.price = int.Parse(elem.InnerText);
                     if (elem.Name == "format")
                         book.format = elem.InnerText;
                     if (elem.Name == "genre")
@@ -325,9 +325,9 @@ namespace Labbration_4
                     if (elem.Name == "name")
                         movie.name = elem.InnerText;
                     if (elem.Name == "playtime")
-                        movie.playtime = elem.InnerText;
+                        movie.playtime = int.Parse(elem.InnerText);
                     if (elem.Name == "price")
-                        movie.price = elem.InnerText;
+                        movie.price = int.Parse(elem.InnerText);
                     if (elem.Name == "format")
                         movie.format = elem.InnerText;
                     if (elem.Name == "BoVale")

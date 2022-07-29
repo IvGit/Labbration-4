@@ -52,7 +52,7 @@ namespace Labbration_4
         {
             foreach(var book in lib.BookList)
             {
-                if(book.price == textBox1.Text.Trim())
+                if(book.name == textBox1.Text.Trim())
                 {
                     listBox1.Items.Add(book);
                     lib.SaveFile();
@@ -79,7 +79,7 @@ namespace Labbration_4
             if (SäljaListDataGrid.SelectedRows.Count < 1)
                 return;
             var movie = (Filmer)SäljaListDataGrid.SelectedRows[0].DataBoundItem;
-            textBox1.Text = movie.price;
+            textBox1.Text = movie.name;
             SäljaListDataGrid.ClearSelection();
             textBox1.Focus();
             textBox1.SelectAll();
@@ -117,7 +117,7 @@ namespace Labbration_4
             if (SäljaListDataGrid.SelectedRows.Count < 1)
                 return;
             var book = (Book)SäljaListDataGrid.SelectedRows[0].DataBoundItem;
-            textBox1.Text = book.price;
+            textBox1.Text = book.price.ToString();
             SäljaListDataGrid.ClearSelection();
             textBox1.Focus();
             textBox1.SelectAll();
@@ -128,7 +128,7 @@ namespace Labbration_4
         {
             foreach (var film in lib.MovieList)
             {
-                if (film.price == textBox1.Text.Trim())
+                if (film.name== textBox1.Text.Trim())
                 {
                     listBox1.Items.Add(film);
                     lib.SaveFileMovie();

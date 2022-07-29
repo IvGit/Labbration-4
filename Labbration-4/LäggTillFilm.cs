@@ -21,13 +21,48 @@ namespace Labbration_4
         private void SparaFilm_Click(object sender, EventArgs e)
         {
             film = new Filmer();
-            film.name = NamnText.Text;
-            film.price = PrisText.Text;
+           
+          
             film.format = FormatText.Text;
-            film.playtime = SpeltidText.Text;
+          
 
-            DialogResult = DialogResult.OK;
-            Close();
+            try
+            {
+                string strname = NamnText.Text;
+                string strformat = FormatText.Text;
+
+
+                film = new Filmer();
+                Boolean stat1 = strname.All(Char.IsLetter);
+                Boolean stat2 = strformat.All(Char.IsLetter);
+                film.price = int.Parse(PrisText.Text);
+                film.playtime = int.Parse(SpeltidText.Text);
+
+
+                if (stat1 == true && stat2 == true)
+                {
+                    film.name = NamnText.Text;
+                    film.format = FormatText.Text;
+
+                    DialogResult = DialogResult.OK;
+                    Close();
+
+                }
+                else
+                {
+                    MessageBox.Show("Invalid movie input!!");
+
+                }
+
+            }
+            catch
+            {
+                MessageBox.Show("Samthing happend Moive input");
+
+            }
+
+
+
         }
 
         private void label2_Click(object sender, EventArgs e)

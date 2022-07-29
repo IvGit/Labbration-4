@@ -65,8 +65,8 @@ namespace Labbration_4
         {
             SelectedItem.name = NamnText.Text;
             SelectedItem.format = FormatText.Text;
-            SelectedItem.playtime = SpeltidText.Text;
-            SelectedItem.price = PrisText.Text;
+            SelectedItem.playtime =int.Parse( SpeltidText.Text);
+            SelectedItem.price = int.Parse(PrisText.Text);
             MovieListSource.ResetCurrentItem();
             FilmDataGrid_SelectionChangedd(sender, null);
             lib.SaveFileMovie();
@@ -111,8 +111,8 @@ namespace Labbration_4
 
             var film = (Filmer)FilmDataGrid.SelectedRows[0].DataBoundItem;
             NamnText.Text = film.name;
-            PrisText.Text = film.price;
-            SpeltidText.Text = film.playtime;
+            PrisText.Text = film.price.ToString();
+            SpeltidText.Text = film.playtime.ToString();
             FormatText.Text = film.format;
 
             SelectedItem = film;
