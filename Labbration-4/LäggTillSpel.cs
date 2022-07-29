@@ -23,29 +23,36 @@ namespace Labbration_4
 
         private void SparaFilm_Click(object sender, EventArgs e)
         {
-            int number;
-            string strname = NamnTextSpel.Text;
-            string strplattform = PlattformTextSpel.Text;   
-       
-            spel = new DataSpel();
-            Boolean stat1 = strname.All(Char.IsLetter);
-            Boolean stat2 = strplattform.All(Char.IsLetter);
-            Boolean stat3 = int.TryParse(PrisTextSpel.Text, out number);
-
-            if (stat3 == true && stat1 == true && stat2 == true)
+            try
             {
-                spel.name = NamnTextSpel.Text;
-                spel.platform = PlattformTextSpel.Text;
+                string strname = NamnTextSpel.Text;
+                string strplattform = PlattformTextSpel.Text;
+
+                spel = new DataSpel();
+                Boolean stat1 = strname.All(Char.IsLetter);
+                Boolean stat2 = strplattform.All(Char.IsLetter);
                 spel.price = int.Parse(PrisTextSpel.Text);
-                DialogResult = DialogResult.OK;
-                Close();
-            }
 
-            else
+                if (stat1 == true && stat2 == true)
+                {
+                    spel.name = NamnTextSpel.Text;
+                    spel.platform = PlattformTextSpel.Text;
+                    DialogResult = DialogResult.OK;
+                    Close();
+
+                }
+                else
+                {
+                    MessageBox.Show("Invalid input!!");
+
+                }
+
+            } catch
             {
-                MessageBox.Show("Input is invalid");
-                Close();
+                MessageBox.Show("Samthing happend");
+              
             }
+            
         }
 
        
