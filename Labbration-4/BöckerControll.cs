@@ -98,16 +98,18 @@ namespace Labbration_4
                    if(tillBook.Book.name == st.name)
                     {
                         stat = true;
-                       
-                       tillBook.Book.stock = index++;
-                      
+                        st.stock++;
+                        BoookListSource.ResetBindings(true);
+                        lib.SaveFile();
+
                     }
                 }
-                if(stat==false)
+                
+                if (stat==false)
                 {
                     counter++;
                     tillBook.Book.id = counter;
-                    tillBook.Book.stock = index++;
+                    tillBook.Book.stock++;
                     BoookListSource.Add(tillBook.Book);
                     lib.SaveFile();
                 }
