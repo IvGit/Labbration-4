@@ -48,8 +48,9 @@ namespace Labbration_4
                     if (tillFilm.film.name == st.name)
                     {
                         stat = true;
-
-                        // tillBook.Book.stock = st.stock++;
+                        st.stock++;
+                        MovieListSource.ResetBindings(true);
+                        lib.SaveFileMovie();
 
                     }
                 }
@@ -57,6 +58,7 @@ namespace Labbration_4
                 {
                     counter++;
                     tillFilm.film.id = counter;
+                    tillFilm.film.stock++;
                     MovieListSource.Add(tillFilm.film);
                     lib.SaveFileMovie();
                 }

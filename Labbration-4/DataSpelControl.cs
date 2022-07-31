@@ -116,6 +116,10 @@ namespace Labbration_4
                     if (tillSpel.spel.name == sp.name)
                     {
                         stat = true;
+                        sp.stock++;
+                        SpelListSource.ResetBindings(true);
+                        lib.SaveFileGame();
+
 
                     }
                 }
@@ -124,6 +128,7 @@ namespace Labbration_4
                 {
                     counter++;
                     tillSpel.spel.id = counter;
+                    tillSpel.spel.stock++;
                     SpelListSource.Add(tillSpel.spel);
                     lib.SaveFileGame();
                 }
