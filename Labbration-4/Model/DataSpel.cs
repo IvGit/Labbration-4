@@ -2,8 +2,8 @@
 {
     public class DataSpel
     {
-        public string id { get; set; }
-        public string stock { get; set; }
+        public int id { get; set; }
+        public int stock { get; set; }
         public string name { get; set; }
         public string platform { get; set; }
         public int price { get; set; }

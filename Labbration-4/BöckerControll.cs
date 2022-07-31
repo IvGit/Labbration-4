@@ -15,7 +15,8 @@ namespace Labbration_4
         BindingSource BoookListSource;
         Book SelectedItem;
         Library lib;
-        public int counter =1;
+        private int counter = 55243;
+        private int index = 1;
        
        
 
@@ -87,7 +88,7 @@ namespace Labbration_4
 
         private void läggTutton_Click(object sender, EventArgs e)
         {
-            LäggTillBook tillBook = new LäggTillBook(counter++);
+            LäggTillBook tillBook = new LäggTillBook();
             tillBook.StartPosition = FormStartPosition.CenterParent;  
 
            if(tillBook.ShowDialog() == DialogResult.OK)
@@ -97,18 +98,23 @@ namespace Labbration_4
                    if(tillBook.Book.name == st.name)
                     {
                         stat = true;
+                       
+                       tillBook.Book.stock = index++;
                       
                     }
                 }
-
                 if(stat==false)
                 {
+                    counter++;
+                    tillBook.Book.id = counter;
+                    tillBook.Book.stock = index++;
                     BoookListSource.Add(tillBook.Book);
                     lib.SaveFile();
                 }
                 stat= false;
+                
 
-           }
+            }
 
            
         }

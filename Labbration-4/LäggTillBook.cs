@@ -13,11 +13,11 @@ namespace Labbration_4
     public partial class LäggTillBook : Form
     {
         internal Book Book { get; private set; }
-        private int Counter;
-        public LäggTillBook(int counter)
+       
+        public LäggTillBook()
         {
             InitializeComponent();
-            this.Counter=counter;
+           
            
         }
 

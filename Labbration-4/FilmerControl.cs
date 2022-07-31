@@ -16,6 +16,9 @@ namespace Labbration_4
         Filmer SelectedItem;
         private BindingSource movieListSource;
         Library lib;
+        private bool stat;
+        private int counter = 67243;
+
         public FilmerControl(Library liB, BindingSource movieListSource)
         {
             InitializeComponent();
@@ -36,11 +39,30 @@ namespace Labbration_4
         {
             LäggTillFilm tillFilm = new LäggTillFilm();
             tillFilm.StartPosition = FormStartPosition.CenterParent;
+
             if (tillFilm.ShowDialog() == DialogResult.OK)
             {
-                MovieListSource.Add(tillFilm.film);
-                lib.SaveFileMovie();
+
+                foreach (var st in lib.MovieList)
+                {
+                    if (tillFilm.film.name == st.name)
+                    {
+                        stat = true;
+
+                        // tillBook.Book.stock = st.stock++;
+
+                    }
+                }
+                if (stat == false)
+                {
+                    counter++;
+                    tillFilm.film.id = counter;
+                    MovieListSource.Add(tillFilm.film);
+                    lib.SaveFileMovie();
+                }
                 
+                stat = false;
+
             }
              
         } 

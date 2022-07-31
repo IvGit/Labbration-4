@@ -15,7 +15,7 @@ namespace Labbration_4
         internal DataSpel spel { get; private set; }
        
 
-        public LäggTillSpel(int counter)
+        public LäggTillSpel()
         {
             InitializeComponent();
            

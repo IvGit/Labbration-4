@@ -26,6 +26,7 @@ namespace Labbration_4
            
         }
 
+      
         public void SaveFile()
         {
             XmlDocument doc = new XmlDocument();
@@ -33,6 +34,10 @@ namespace Labbration_4
             foreach (var book in BookList)
             {
                 XmlElement element = doc.CreateElement("book");
+
+                XmlElement id = doc.CreateElement("id");
+                id.InnerText = book.id.ToString();
+                element.AppendChild(id);
 
                 XmlElement name = doc.CreateElement("name");
                 name.InnerText = book.name;
@@ -43,7 +48,7 @@ namespace Labbration_4
                 element.AppendChild(language);
 
                 XmlElement stock = doc.CreateElement("stock");
-                stock.InnerText = book.stock;
+                stock.InnerText = book.stock.ToString();
                 element.AppendChild(stock);
 
                 XmlElement price = doc.CreateElement("price");
@@ -79,6 +84,14 @@ namespace Labbration_4
             foreach (var movie in MovieList)
             {
                 XmlElement element = doc.CreateElement("movie");
+
+                XmlElement id = doc.CreateElement("id");
+                id.InnerText = movie.id.ToString();
+                element.AppendChild(id);
+
+                XmlElement stock = doc.CreateElement("stock");
+                stock.InnerText = movie.stock.ToString();
+                element.AppendChild(stock);
 
                 XmlElement name = doc.CreateElement("name");
                 name.InnerText = movie.name;
@@ -118,6 +131,14 @@ namespace Labbration_4
             foreach (var spel in SpelList)
             {
                 XmlElement element = doc.CreateElement("game");
+
+                XmlElement id = doc.CreateElement("id");
+                id.InnerText = spel.id.ToString();
+                element.AppendChild(id);
+
+                XmlElement stock = doc.CreateElement("stock");
+                stock.InnerText = spel.stock.ToString();
+                element.AppendChild(stock);
 
                 XmlElement name = doc.CreateElement("name");
                 name.InnerText = spel.name;
@@ -292,9 +313,9 @@ namespace Labbration_4
                 foreach (XmlElement elem in element.ChildNodes)
                 {
                     if (elem.Name == "id")
-                        book.id = elem.InnerText;
+                        book.id = int.Parse(elem.InnerText);
                     if (elem.Name == "stock")
-                        book.stock = elem.InnerText;
+                        book.stock = int.Parse(elem.InnerText);
                     if (elem.Name == "name")
                         book.name = elem.InnerText;
                     if (elem.Name == "Författare")
@@ -328,6 +349,10 @@ namespace Labbration_4
                 var movie = new Filmer();
                 foreach (XmlElement elem in element.ChildNodes)
                 {
+                    if (elem.Name == "id")
+                       movie.id = int.Parse(elem.InnerText);
+                    if (elem.Name == "stock")
+                        movie.stock = int.Parse(elem.InnerText);
                     if (elem.Name == "name")
                         movie.name = elem.InnerText;
                     if (elem.Name == "playtime")
@@ -358,6 +383,10 @@ namespace Labbration_4
                 var spel = new DataSpel();
                 foreach (XmlElement elem in element.ChildNodes)
                 {
+                    if (elem.Name == "id")
+                        spel.id = int.Parse(elem.InnerText);
+                    if (elem.Name == "stock")
+                        spel.stock = int.Parse(elem.InnerText);
                     if (elem.Name == "name")
                         spel.name = elem.InnerText;
                     if (elem.Name == "price")

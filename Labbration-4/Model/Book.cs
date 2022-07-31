@@ -3,8 +3,8 @@ namespace Labbration_4
 {
     public class Book
     {
-        public string id { get; set; }
-        public string stock { get; set; }
+        public int id { get; set; }
+        public int stock { get; set; }
         public string name { get; set; }
         public int price { get; set; }
         public string Författare { get; set; }
@@ -18,11 +18,6 @@ namespace Labbration_4
             BoVale = false;
 
         }
-
-
-
-
-
 
         public override string ToString()
         {

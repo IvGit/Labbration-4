@@ -16,7 +16,7 @@ namespace Labbration_4
         private BindingSource spelListSource;
         DataSpel SelectedItem;
         Library lib;
-        private int counter=1;
+        private int counter = 11243;
         private bool stat;
 
         public DataSpelControl(Library liB,BindingSource spelListSource)
@@ -107,7 +107,7 @@ namespace Labbration_4
 
         private void läggTuttonSpel_Click_1(object sender, EventArgs e)
         {
-            LäggTillSpel tillSpel = new LäggTillSpel(counter++);
+            LäggTillSpel tillSpel = new LäggTillSpel();
             tillSpel.StartPosition = FormStartPosition.CenterParent;
             if (tillSpel.ShowDialog() == DialogResult.OK)
             {
@@ -122,6 +122,8 @@ namespace Labbration_4
 
                 if (stat == false)
                 {
+                    counter++;
+                    tillSpel.spel.id = counter;
                     SpelListSource.Add(tillSpel.spel);
                     lib.SaveFileGame();
                 }
