@@ -27,6 +27,8 @@ namespace Labbration_4
             FilmDataGrid.DataSource = movieListSource;
 
         }
+
+
         private void SetTextEnabled(Boolean stat)
         {
             FormatText.Enabled = stat;

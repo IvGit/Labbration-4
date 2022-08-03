@@ -17,7 +17,7 @@
 
         public override string ToString()
         {
-            return $"{playtime} {format}";
+            return $"{name} {price}";
         }
     }
 }

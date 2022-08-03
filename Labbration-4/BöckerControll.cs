@@ -24,7 +24,7 @@ namespace Labbration_4
         private BindingSource bookListSource;
         private bool stat;
 
-        public BöckerControll() { }
+     
         public BöckerControll(Library liB, BindingSource bookListSource)
         {
             InitializeComponent();
@@ -149,6 +149,7 @@ namespace Labbration_4
             SelectedItem.name = NamnText.Text;
             SelectedItem.genre = GenreText.Text;
             SelectedItem.language = SpråkText.Text;
+            SelectedItem.Författare = FörfattareText.Text;
             SelectedItem.format = FormatText.Text;
             SelectedItem.price = int.Parse(PrisText.Text);
             BoookListSource.ResetCurrentItem();

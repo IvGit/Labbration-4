@@ -23,7 +23,7 @@ namespace Labbration_4
         {
 
 
-            return $"{language} {price}";
+            return $"{name} {price}";
         }
     }
 }

@@ -16,7 +16,7 @@
 
         public override string ToString()
         {
-            return $"{price} {name}";
+            return $"{name} {price}";
         }
 
     }

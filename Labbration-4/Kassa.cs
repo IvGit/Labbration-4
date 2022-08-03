@@ -16,13 +16,14 @@ namespace Labbration_4
         BindingSource DataSpellistSource;
         BindingSource FilmerlistSource;
         Library lib;
-     
+        LagerTabs tabs;
         
 
         public Kassa()
         {
             InitializeComponent();
             lib = new Library();
+            tabs = new LagerTabs();
 
             BookListSource = new BindingSource();
             DataSpellistSource = new BindingSource();

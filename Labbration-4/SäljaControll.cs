@@ -26,15 +26,17 @@ namespace Labbration_4
             InitializeComponent();
             lib = new Library();
 
-            BookListSource = bookListSource;
+            BookListSource = bookListSource;    
             lib.LoadFileBooks();
-          //  SäljaListDataGrid.DataSource = lib.BookList;
+          // SäljaListDataGrid.DataSource = lib.BookList;
 
 
             FilmListSource = filmerlistSource;
             lib.LoadFileMovie();
-           // SäljaListDataGrid.DataSource = lib.MovieList;
+            // SäljaListDataGrid.DataSource = lib.MovieList;
+
             
+
 
             DataSpelSource = dataSpelSource;
            lib.LoadFileGame();
@@ -48,18 +50,7 @@ namespace Labbration_4
             textBox1.Text = "";
 
         }
-        private void AddToTabelButton_Click(object sender, EventArgs e)
-        {
-            foreach(var book in lib.BookList)
-            {
-                if(book.name == textBox1.Text.Trim())
-                {
-                    listBox1.Items.Add(book);
-                    lib.SaveFile();
-                }
-            }
-        }
-
+        
         private void FinishButton_Click(object sender, EventArgs e)
         {
             foreach(var item in listBox1.Items)
@@ -90,12 +81,14 @@ namespace Labbration_4
             {
                 var film = (Filmer)item;
                 film.BoVale = true;
+              
             }
             FilmListSource.ResetBindings(false);
             listBox1.Items.Clear();
             textBox1.Text = "";
             textBox1.Focus();
             lib.SaveFileMovie();
+          
         }
         private void FinishButonSpel_Click(object sender, EventArgs e)
         {
@@ -113,20 +106,23 @@ namespace Labbration_4
 
         private void RadioBock_CheckedChanged_1(object sender, EventArgs e)
         {
+
            SäljaListDataGrid.DataSource = lib.BookList;
             if (SäljaListDataGrid.SelectedRows.Count < 1)
                 return;
             var book = (Book)SäljaListDataGrid.SelectedRows[0].DataBoundItem;
-            textBox1.Text = book.price.ToString();
+            textBox1.Text = book.name;
             SäljaListDataGrid.ClearSelection();
             textBox1.Focus();
             textBox1.SelectAll();
+           
 
         }
 
         private void AddMovieToTabelButton_Click(object sender, EventArgs e)
         {
-            foreach (var film in lib.MovieList)
+            SäljaListDataGrid.DataSource = lib.MovieList;
+            foreach (var film in (BindingList<Filmer>)FilmListSource.DataSource)
             {
                 if (film.name== textBox1.Text.Trim())
                 {
@@ -150,7 +146,8 @@ namespace Labbration_4
 
         private void AddSpelToTabelButton_Click(object sender, EventArgs e)
         {
-            foreach (var spel in lib.SpelList)
+            foreach (var spel in (BindingList<DataSpel>)DataSpelSource.DataSource)
+
             {
                 if (spel.name == textBox1.Text.Trim())
                 {
@@ -158,6 +155,48 @@ namespace Labbration_4
                     lib.SaveFileGame();
                 }
             }
+        }
+
+        private void AddBookToTabelButton_Click(object sender, EventArgs e)
+        {
+            
+            BookListSource.DataSource = lib.BookList;
+            foreach (var book in (BindingList<Book>)BookListSource.DataSource)
+            {
+                SäljaListDataGrid.ClearSelection();
+                textBox1.Focus();
+                textBox1.SelectAll();
+
+                if (book.name == textBox1.Text.Trim())
+                {
+                    listBox1.Items.Add(book);
+                    lib.SaveFile();
+                    
+                    
+
+
+                }
+            }
+        }
+
+        
+        private void SäljaListDataGrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (SäljaListDataGrid.SelectedRows.Count < 1)
+            {
+                SetTextEnabled(true);
+                return;
+            }
+
+            var book = (Book)SäljaListDataGrid.SelectedRows[0].DataBoundItem;
+            textBox1.Text = book.name;
+           
+        }
+
+        private void SetTextEnabled(Boolean stat)
+        {
+            textBox1.Enabled = stat;
+           
         }
     }
 }

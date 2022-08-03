@@ -60,6 +60,7 @@ namespace Labbration_4
             c3.Dock = DockStyle.Fill;
             DataSpelTab.Controls.Add(c3);
 
+          
         }
 
     }

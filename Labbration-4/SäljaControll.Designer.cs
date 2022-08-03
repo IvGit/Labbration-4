@@ -79,7 +79,7 @@
             this.AddBookToTabelButton.TabIndex = 2;
             this.AddBookToTabelButton.Text = "Add";
             this.AddBookToTabelButton.UseVisualStyleBackColor = true;
-            this.AddBookToTabelButton.Click += new System.EventHandler(this.AddToTabelButton_Click);
+            this.AddBookToTabelButton.Click += new System.EventHandler(this.AddBookToTabelButton_Click);
             // 
             // splitContainer1
             // 
@@ -249,6 +249,7 @@
             this.SäljaListDataGrid.ShowRowErrors = false;
             this.SäljaListDataGrid.Size = new System.Drawing.Size(830, 430);
             this.SäljaListDataGrid.TabIndex = 0;
+            this.SäljaListDataGrid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.SäljaListDataGrid_CellContentClick);
             // 
             // SäljaControll
             // 
