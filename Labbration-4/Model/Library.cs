@@ -47,6 +47,10 @@ namespace Labbration_4
                 language.InnerText = book.language;
                 element.AppendChild(language);
 
+                XmlElement Författare = doc.CreateElement("Författare");
+                Författare.InnerText = book.Författare;
+                element.AppendChild(Författare);
+
                 XmlElement stock = doc.CreateElement("stock");
                 stock.InnerText = book.stock.ToString();
                 element.AppendChild(stock);

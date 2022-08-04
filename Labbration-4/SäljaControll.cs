@@ -121,10 +121,15 @@ namespace Labbration_4
 
         private void AddMovieToTabelButton_Click(object sender, EventArgs e)
         {
-            SäljaListDataGrid.DataSource = lib.MovieList;
+            FilmListSource.DataSource = lib.MovieList;
+            var film2 = (Filmer)SäljaListDataGrid.SelectedRows[0].DataBoundItem;
+            textBox1.Text = film2.name;
             foreach (var film in (BindingList<Filmer>)FilmListSource.DataSource)
             {
-                if (film.name== textBox1.Text.Trim())
+                SäljaListDataGrid.ClearSelection();
+                textBox1.Focus();
+                textBox1.SelectAll();
+                if (film.name== textBox1.Text.Trim() && film.BoVale != true)
                 {
                     listBox1.Items.Add(film);
                     lib.SaveFileMovie();
@@ -146,10 +151,16 @@ namespace Labbration_4
 
         private void AddSpelToTabelButton_Click(object sender, EventArgs e)
         {
-            foreach (var spel in (BindingList<DataSpel>)DataSpelSource.DataSource)
+            DataSpelSource.DataSource = lib.SpelList;
+            var spel2 = (DataSpel)SäljaListDataGrid.SelectedRows[0].DataBoundItem;
+            textBox1.Text = spel2.name;
 
+            foreach (var spel in (BindingList<DataSpel>)DataSpelSource.DataSource)
             {
-                if (spel.name == textBox1.Text.Trim())
+                SäljaListDataGrid.ClearSelection();
+                textBox1.Focus();
+                textBox1.SelectAll();
+                if (spel.name == textBox1.Text.Trim() && spel.BoVale != true)
                 {
                     listBox1.Items.Add(spel);
                     lib.SaveFileGame();
@@ -161,20 +172,19 @@ namespace Labbration_4
         {
             
             BookListSource.DataSource = lib.BookList;
+            var book2 = (Book)SäljaListDataGrid.SelectedRows[0].DataBoundItem;
+            textBox1.Text = book2.name;
+
             foreach (var book in (BindingList<Book>)BookListSource.DataSource)
             {
                 SäljaListDataGrid.ClearSelection();
                 textBox1.Focus();
                 textBox1.SelectAll();
 
-                if (book.name == textBox1.Text.Trim())
+                if (book.name == textBox1.Text.Trim() && book.BoVale != true)
                 {
                     listBox1.Items.Add(book);
                     lib.SaveFile();
-                    
-                    
-
-
                 }
             }
         }
@@ -188,10 +198,12 @@ namespace Labbration_4
                 return;
             }
 
-            var book = (Book)SäljaListDataGrid.SelectedRows[0].DataBoundItem;
-            textBox1.Text = book.name;
-           
+           // var book2 = (Book)SäljaListDataGrid.SelectedRows[0].DataBoundItem;
+           // textBox1.Text = book2.name;
+
         }
+
+
 
         private void SetTextEnabled(Boolean stat)
         {

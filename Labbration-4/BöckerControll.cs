@@ -83,7 +83,7 @@ namespace Labbration_4
             GenreText.Enabled = stat;
             SpråkText.Enabled = stat;
             NamnText.Enabled = stat;
-            FörfattareText.Enabled=stat;
+            FörfattareText.Enabled = stat;
         }
 
         private void läggTutton_Click(object sender, EventArgs e)
