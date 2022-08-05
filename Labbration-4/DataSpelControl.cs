@@ -39,7 +39,7 @@ namespace Labbration_4
             var spel = (DataSpel)SpelListDataGrid.SelectedRows[0].DataBoundItem;
             NamnTextSpel.Text = spel.name;
             PlattformTextSpel.Text = spel.platform;
-            PrisTextSpel.Text = spel.name;
+            PrisTextSpel.Text = spel.price.ToString();
             SelectedItem = spel;
             SaveButton.Enabled = false;
             CancelButton.Enabled = false;
@@ -59,15 +59,23 @@ namespace Labbration_4
             if (SpelListDataGrid.SelectedRows.Count < 1)
                 return;
             var spel = (DataSpel)SpelListDataGrid.SelectedRows[0].DataBoundItem;
-            SpelListSource.Remove(spel);
-            PlattformTextSpel.Text = "";
-            PrisTextSpel.Text = "";
-            NamnTextSpel.Text = "";
-            SaveButton.Enabled = false;
-            CancelButton.Enabled = false;
-            SpelListDataGrid_SelectionChanged(sender, null);
-          //  lib.SaveFileSpel();
-            // SetTextEnabled(false);
+            if (spel.stock > 1)
+            {
+                spel.stock--;
+                SpelListSource.ResetBindings(true);
+            }
+            else
+            {
+                SpelListSource.Remove(spel);
+                PlattformTextSpel.Text = "";
+                PrisTextSpel.Text = "";
+                NamnTextSpel.Text = "";
+                SaveButton.Enabled = false;
+                CancelButton.Enabled = false;
+                SpelListDataGrid_SelectionChanged(sender, null);
+
+            }
+            lib.SaveFileGame();
         }
 
         private void NamnTextSpel_TextChanged(object sender, EventArgs e)
@@ -90,9 +98,9 @@ namespace Labbration_4
 
         private void SaveButtonSpel_Click(object sender, EventArgs e)
         {
-            SelectedItem.name = NamnText.Text;
-            SelectedItem.platform = GenreText.Text;
-            SelectedItem.price = int.Parse( PlattformTextSpel.Text);
+            SelectedItem.name = NamnTextSpel.Text;
+            SelectedItem.platform = PlattformTextSpel.Text;
+            SelectedItem.price = int.Parse(PrisTextSpel.Text);
             SpelListSource.ResetCurrentItem();
             SpelListDataGrid_SelectionChanged(sender, null);
            lib.SaveFileGame();

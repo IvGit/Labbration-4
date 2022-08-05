@@ -16,6 +16,7 @@ namespace Labbration_4
         public Button AcceptButton { get { return AddBookToTabelButton; } }
 
         Library lib;
+        private int countBuy = 0;
 
         BindingSource BookListSource;
         BindingSource DataSpelSource;
@@ -53,16 +54,34 @@ namespace Labbration_4
         
         private void FinishButton_Click(object sender, EventArgs e)
         {
-            foreach(var item in listBox1.Items)
+            countBuy++;
+            foreach (var item in listBox1.Items)
             {
                 var book = (Book)item;
-                book.BoVale = true;
+                //book.stock--;
+                if(book.stock == 0)
+                {
+                    book.finished = true;
+                    MessageBox.Show("Sorry! The Book is sold out!!");
+                   // book.stock--;
+                }
+
+
+                else if(book.finished == false)
+                {
+                    MessageBox.Show("Thank you for your Order, ", $"{countBuy} an email is sent to you!");
+                    book.stock--;
+
+                }
+               
+
             }
             BookListSource.ResetBindings(false);
             listBox1.Items.Clear();
             textBox1.Text = "";
             textBox1.Focus();
             lib.SaveFile();
+           
         }
         private void radioFilm_CheckedChanged(object sender, EventArgs e)
         {
@@ -181,7 +200,7 @@ namespace Labbration_4
                 textBox1.Focus();
                 textBox1.SelectAll();
 
-                if (book.name == textBox1.Text.Trim() && book.BoVale != true)
+                if (book.name == textBox1.Text.Trim() && book.finished != true)
                 {
                     listBox1.Items.Add(book);
                     lib.SaveFile();

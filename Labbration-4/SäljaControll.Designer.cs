@@ -152,7 +152,7 @@
             this.FinishButonSpel.Name = "FinishButonSpel";
             this.FinishButonSpel.Size = new System.Drawing.Size(75, 34);
             this.FinishButonSpel.TabIndex = 10;
-            this.FinishButonSpel.Text = "Finish";
+            this.FinishButonSpel.Text = "Buy";
             this.FinishButonSpel.UseVisualStyleBackColor = true;
             this.FinishButonSpel.Click += new System.EventHandler(this.FinishButonSpel_Click);
             // 
@@ -162,7 +162,7 @@
             this.FinishButonFilm.Name = "FinishButonFilm";
             this.FinishButonFilm.Size = new System.Drawing.Size(75, 34);
             this.FinishButonFilm.TabIndex = 9;
-            this.FinishButonFilm.Text = "Finish";
+            this.FinishButonFilm.Text = "Buy";
             this.FinishButonFilm.UseVisualStyleBackColor = true;
             this.FinishButonFilm.Click += new System.EventHandler(this.FinishButonFilm_Click);
             // 
@@ -205,7 +205,7 @@
             this.FinishButonBook.Name = "FinishButonBook";
             this.FinishButonBook.Size = new System.Drawing.Size(75, 34);
             this.FinishButonBook.TabIndex = 4;
-            this.FinishButonBook.Text = "Finish";
+            this.FinishButonBook.Text = "Buy";
             this.FinishButonBook.UseVisualStyleBackColor = true;
             this.FinishButonBook.Click += new System.EventHandler(this.FinishButton_Click);
             // 

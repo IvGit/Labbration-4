@@ -75,16 +75,27 @@ namespace Labbration_4
             if (FilmDataGrid.SelectedRows.Count < 1)
                 return;
             var film = (Filmer)FilmDataGrid.SelectedRows[0].DataBoundItem;
-            MovieListSource.Remove(film);
-            
-            PrisText.Text = "";
-            FormatText.Text = "";
-            SpeltidText.Text = "";
-            NamnText.Text = "";
-            SaveButton.Enabled = false;
-            CancelButton.Enabled = false;
-            FilmDataGrid_SelectionChangedd(sender, null);
-            // SetTextEnabled(false);
+            if (film.stock > 1)
+            {
+                film.stock--;
+                MovieListSource.ResetBindings(true);
+            }
+
+            else
+            {
+                MovieListSource.Remove(film);
+                PrisText.Text = "";
+                FormatText.Text = "";
+                SpeltidText.Text = "";
+                NamnText.Text = "";
+                SaveButton.Enabled = false;
+                CancelButton.Enabled = false;
+                FilmDataGrid_SelectionChangedd(sender, null);
+                // SetTextEnabled(false);
+
+            }
+
+            lib.SaveFileMovie();
         }
 
         private void SaveButton_Click(object sender, EventArgs e)

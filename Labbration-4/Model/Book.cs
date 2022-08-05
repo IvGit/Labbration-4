@@ -7,15 +7,15 @@ namespace Labbration_4
         public int stock { get; set; }
         public string name { get; set; }
         public int price { get; set; }
-        public string Författare { get; set; }
+        public string writer { get; set; }
         public string genre { get; set; }
         public string format { get; set; }
         public string language { get; set; }
-        public bool BoVale { get; internal set; }
+        public bool finished { get; internal set; }
 
         public Book()
         {
-            BoVale = false;
+            finished = false;
 
         }
 

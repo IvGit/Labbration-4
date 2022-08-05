@@ -128,17 +128,27 @@ namespace Labbration_4
             if (BookDataGrid.SelectedRows.Count < 1)
                 return;
             var book = (Book)BookDataGrid.SelectedRows[0].DataBoundItem;
-            BoookListSource.Remove(book);
-            FörfattareText.Text = "";
-            GenreText.Text = "";
-            PrisText.Text = "";
-            FormatText.Text = "";
-            SpråkText.Text = "";
-            NamnText.Text = "";
+            if (book.stock > 1)
+            {
+                book.stock--;
+                BoookListSource.ResetBindings(true);
+            }
+
+            else
+            {
+                BoookListSource.Remove(book);
+                FörfattareText.Text = "";
+                GenreText.Text = "";
+                PrisText.Text = "";
+                FormatText.Text = "";
+                SpråkText.Text = "";
+                NamnText.Text = "";
+
+                SaveButton.Enabled = false;
+                CancelButton.Enabled = false;
+                BookDataGrid_Selectionchanged(sender, null);
+            }
             
-            SaveButton.Enabled = false;
-            CancelButton.Enabled = false;
-            BookDataGrid_Selectionchanged(sender, null);
             lib.SaveFile();
         }
 
@@ -149,7 +159,7 @@ namespace Labbration_4
             SelectedItem.name = NamnText.Text;
             SelectedItem.genre = GenreText.Text;
             SelectedItem.language = SpråkText.Text;
-            SelectedItem.Författare = FörfattareText.Text;
+            SelectedItem.writer = FörfattareText.Text;
             SelectedItem.format = FormatText.Text;
             SelectedItem.price = int.Parse(PrisText.Text);
             BoookListSource.ResetCurrentItem();
@@ -170,7 +180,7 @@ namespace Labbration_4
             GenreText.Text = book.genre;
             SpråkText.Text = book.language;
             FormatText.Text = book.format;
-            FörfattareText.Text = book.Författare;
+            FörfattareText.Text = book.writer;
             PrisText.Text = book.price.ToString();
             SelectedItem = book;
             SaveButton.Enabled = false;

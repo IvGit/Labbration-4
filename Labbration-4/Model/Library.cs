@@ -48,7 +48,7 @@ namespace Labbration_4
                 element.AppendChild(language);
 
                 XmlElement Författare = doc.CreateElement("Författare");
-                Författare.InnerText = book.Författare;
+                Författare.InnerText = book.writer;
                 element.AppendChild(Författare);
 
                 XmlElement stock = doc.CreateElement("stock");
@@ -68,7 +68,7 @@ namespace Labbration_4
                 element.AppendChild(format);
 
                 XmlElement BoVale = doc.CreateElement("BoVale");
-                BoVale.InnerText = book.BoVale.ToString();
+                BoVale.InnerText = book.finished.ToString();
                 element.AppendChild(BoVale);
 
 
@@ -323,7 +323,7 @@ namespace Labbration_4
                     if (elem.Name == "name")
                         book.name = elem.InnerText;
                     if (elem.Name == "Författare")
-                        book.Författare = elem.InnerText;
+                        book.writer = elem.InnerText;
                     if (elem.Name == "price")
                         book.price = int.Parse(elem.InnerText);
                     if (elem.Name == "format")
@@ -333,7 +333,7 @@ namespace Labbration_4
                     if (elem.Name == "language")
                         book.language = elem.InnerText;
                     if (elem.Name == "BoVale")
-                        book.BoVale = bool.Parse(elem.InnerText);
+                        book.finished = bool.Parse(elem.InnerText);
 
                 }
                 BookList.Add(book);
