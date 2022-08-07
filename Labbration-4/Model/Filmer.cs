@@ -8,11 +8,11 @@
         public int price { get; set; }
         public string format { get; set; }
         public int playtime { get; set; }
-        public bool BoVale { get; internal set; }
+        public bool finished { get; internal set; }
 
         public Filmer()
         {
-            BoVale = false;
+            finished = false;
         }
 
         public override string ToString()

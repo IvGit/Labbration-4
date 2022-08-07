@@ -54,7 +54,7 @@ namespace Labbration_4
         
         private void FinishButton_Click(object sender, EventArgs e)
         {
-            countBuy++;
+            
             foreach (var item in listBox1.Items)
             {
                 var book = (Book)item;
@@ -69,7 +69,7 @@ namespace Labbration_4
 
                 else if(book.finished == false)
                 {
-                    MessageBox.Show("Thank you for your Order, ", $"{countBuy} an email is sent to you!");
+                    MessageBox.Show("Thank you for your Order, an email is sent to you!");
                     book.stock--;
 
                 }
@@ -99,8 +99,21 @@ namespace Labbration_4
             foreach (var item in listBox1.Items)
             {
                 var film = (Filmer)item;
-                film.BoVale = true;
-              
+                if (film.stock == 0)
+                {
+                    film.finished = true;
+                    MessageBox.Show("Sorry! The film is sold out!!");
+                    
+                }
+
+
+                else if (film.finished == false)
+                {
+                    MessageBox.Show("Thank you for your Order, an email is sent to you!");
+                    film.stock--;
+
+                }
+
             }
             FilmListSource.ResetBindings(false);
             listBox1.Items.Clear();
@@ -114,7 +127,20 @@ namespace Labbration_4
             foreach (var item in listBox1.Items)
             {
                 var spel = (DataSpel)item;
-                spel.BoVale = true;
+                if (spel.stock == 0)
+                {
+                    spel.finished = true;
+                    MessageBox.Show("Sorry! The film is sold out!!");
+
+                }
+
+
+                else if (spel.finished == false)
+                {
+                    MessageBox.Show("Thank you for your Order, an email is sent to you!");
+                    spel.stock--;
+
+                }
             }
             DataSpelSource.ResetBindings(false);
             listBox1.Items.Clear();
@@ -148,7 +174,7 @@ namespace Labbration_4
                 SäljaListDataGrid.ClearSelection();
                 textBox1.Focus();
                 textBox1.SelectAll();
-                if (film.name== textBox1.Text.Trim() && film.BoVale != true)
+                if (film.name== textBox1.Text.Trim() && film.finished != true)
                 {
                     listBox1.Items.Add(film);
                     lib.SaveFileMovie();
@@ -179,7 +205,7 @@ namespace Labbration_4
                 SäljaListDataGrid.ClearSelection();
                 textBox1.Focus();
                 textBox1.SelectAll();
-                if (spel.name == textBox1.Text.Trim() && spel.BoVale != true)
+                if (spel.name == textBox1.Text.Trim() && spel.finished != true)
                 {
                     listBox1.Items.Add(spel);
                     lib.SaveFileGame();

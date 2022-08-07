@@ -7,11 +7,11 @@
         public string name { get; set; }
         public string platform { get; set; }
         public int price { get; set; }
-        public bool BoVale { get; internal set; }
+        public bool finished { get; internal set; }
 
         public DataSpel()
         {
-            BoVale = false;
+            finished = false;
         }
 
         public override string ToString()

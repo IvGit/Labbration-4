@@ -67,7 +67,7 @@ namespace Labbration_4
                 format.InnerText = book.format;
                 element.AppendChild(format);
 
-                XmlElement BoVale = doc.CreateElement("BoVale");
+                XmlElement BoVale = doc.CreateElement("finished");
                 BoVale.InnerText = book.finished.ToString();
                 element.AppendChild(BoVale);
 
@@ -113,8 +113,8 @@ namespace Labbration_4
                 playtime.InnerText = movie.playtime.ToString();
                 element.AppendChild(playtime);
 
-                XmlElement BoVale = doc.CreateElement("BoVale");
-                BoVale.InnerText = movie.BoVale.ToString();
+                XmlElement BoVale = doc.CreateElement("finished");
+                BoVale.InnerText = movie.finished.ToString();
                 element.AppendChild(BoVale);
 
 
@@ -158,8 +158,8 @@ namespace Labbration_4
 
                 
 
-                XmlElement BoVale = doc.CreateElement("BoVale");
-                BoVale.InnerText = spel.BoVale.ToString();
+                XmlElement BoVale = doc.CreateElement("finished");
+                BoVale.InnerText = spel.finished.ToString();
                 element.AppendChild(BoVale);
 
 
@@ -332,7 +332,7 @@ namespace Labbration_4
                         book.genre = elem.InnerText;
                     if (elem.Name == "language")
                         book.language = elem.InnerText;
-                    if (elem.Name == "BoVale")
+                    if (elem.Name == "finished")
                         book.finished = bool.Parse(elem.InnerText);
 
                 }
@@ -365,8 +365,8 @@ namespace Labbration_4
                         movie.price = int.Parse(elem.InnerText);
                     if (elem.Name == "format")
                         movie.format = elem.InnerText;
-                    if (elem.Name == "BoVale")
-                        movie.BoVale = bool.Parse(elem.InnerText);
+                    if (elem.Name == "finished")
+                        movie.finished = bool.Parse(elem.InnerText);
 
                 }
                 MovieList.Add(movie);
@@ -397,8 +397,8 @@ namespace Labbration_4
                         spel.price = int.Parse(elem.InnerText);
                     if (elem.Name == "platform")
                         spel.platform = elem.InnerText;
-                    if (elem.Name == "BoVale")
-                        spel.BoVale = bool.Parse(elem.InnerText);
+                    if (elem.Name == "finished")
+                        spel.finished = bool.Parse(elem.InnerText);
 
                 }
                 SpelList.Add(spel);
